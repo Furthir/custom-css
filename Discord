@@ -43,6 +43,13 @@
 .sidebarRegionScroller-FXiQOh {
     background: none;
 }
+
+/* app blur effect in settings */
+#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div.layer-86YKbF.baseLayer-W6S8cY.stop-animations {
+    opacity: 0.3 !important;
+    filter: blur(5px) !important;       
+}
+
 /*  */
 .container-ZMc96U.themed-Hp1KC_ {
     background: none;
