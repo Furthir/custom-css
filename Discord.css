@@ -1,14 +1,19 @@
-/**
- * @name PurplePitch
- * @author Fython
- * @version 0.50
- * @description Purpledized Theme for Discord
- */
+/*
+ * @name          Discord PurplePitch
+ * @namespace     discord.com
+ * @version       0.1
+ * @description   Purpledized theme for Discord
+ * @author        Fython
+*/
 
+@-moz-document domain("discord.com") {
+/* Root Discord backgrounds and colors changes */
+/* Selection color */
 ::selection {
     background-color: rgba(207,95,181,0.4)
 }
-/* remove homepage backgrounds*/
+
+/* remove/merge homepage backgrounds*/
 .theme-light .container-2cd8Mz, .theme-dark .container-2cd8Mz {
     background-color: transparent;
 }
@@ -31,30 +36,6 @@
     background-size: cover;
 }
 
-.loading-1yrGTe {
-    background: none !important;
-}
-
-.contentRegion-3HkfJJ {
-    background: none;
-}
-
-/* settings */
-.sidebarRegionScroller-FXiQOh {
-    background: none;
-}
-
-/* app blur effect in settings */
-#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div.layer-86YKbF.baseLayer-W6S8cY.stop-animations {
-    opacity: 0.3 !important;
-    filter: blur(5px) !important;       
-}
-
-/*  */
-.container-ZMc96U.themed-Hp1KC_ {
-    background: none;
-}
-
 .scroller-WSmht3 {
     background-color: transparent; 
 }
@@ -63,6 +44,29 @@
     background: none;
 }
 
+
+
+/* loading */
+.loading-1yrGTe {
+    background: none !important;
+}
+
+/* ??? */
+.contentRegion-3HkfJJ {
+    background: none;
+}
+
+/* settings page */
+.sidebarRegionScroller-FXiQOh {
+    background: none;
+}
+
+/* title/topbar */
+.container-ZMc96U.themed-Hp1KC_ {
+    background: none;
+}
+
+/* full app background removal */
 .app-3xd6d0, .mobileApp-3_TCAV {
     background: none;
 }
@@ -83,19 +87,30 @@
     background: none;
 }
 
-.appMount-3lHmkl,
-body {
+.appMount-3lHmkl, body {
     background-color: var(--background-tertiary);
-}
-
-.container-2o3qEW {
-    background: none;
 }
 
 body {
     background: transparent;
 }
 
+/* user list sidebar */
+.container-2o3qEW {
+    background: none;
+}
+
+/* server discover page */
+.theme-dark .pageWrapper-2PwDoS, .theme-light .pageWrapper-2PwDoS {
+    background-color: transparent;
+
+}
+/* download apps pop */
+.downloadApps-14IgKV {
+    background-color: rgba(0,0,0,0.6) !important;
+}
+
+/* Discord Root CSS */
 .theme-dark, .theme-light {
     --header-primary: #ff64c6;
     --header-secondary: #ff7deb;
@@ -239,8 +254,11 @@ body {
     --brand-experiment-90a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
     --brand-experiment-95a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
 }
+}
 
-
+@-moz-document domain("discord.com") {
+/* Individual Items */
+/* Home Button RGB */
 @keyframes HueShiftRGB {
     0% {filter: hue-rotate(0deg);}
     2.5% {filter: hue-rotate(9deg);}
@@ -315,10 +333,26 @@ body {
     filter: invert(0.9) opacity(0.5);
 }
 
+/* Hide Chat Buttons */
 .button-2fCJ0o {
     display: none;
 }
 
+/* remove call buttons, delete this section if you want */
+div[aria-label="Start Voice Call"] {
+    display: none;
+}
+
+div[aria-label="Start Video Call"] {
+    display: none;
+}
+
+/* remove help button, delete this section if you want */
+section[aria-label="Channel header"] a.anchor-1MIwyf.anchorUnderlineOnHover-2qPutX {
+    display: none;
+}
+
+/* Message Hover Effects */
 .message-2CShn3.selected-2LX7Jy, .mouse-mode.full-motion .message-2CShn3 {
     transition-timing-function: ease;
     transition-duration: 0.25s;
@@ -329,17 +363,6 @@ body {
     transition-timing-function: ease;
     transition-duration: 0.25s;
     transition-property: background-color;
-}
-
-.layerContainer-yqaFcK {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: red !important;
-    pointer-events: none;
-    z-index: 1002;
 }
 
 /* Mentioned outline */
@@ -363,16 +386,11 @@ body {
     text-indent: -4rem;
 }
 
-/* profile pop bg */
+/* profile popup bg */
 .backdrop-2ByYRN {
     opacity: 0.2 !important;
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+
 }
 
 .layer-1Ixpg3 {
@@ -401,27 +419,27 @@ body {
 }
 
 
-/* profile pop dark */
+/* profile popup dark */
 .theme-dark .root-g14mjS {
     background-color: rgba(0,0,0,0.65);
     box-shadow: 0 0 0 1px rgba(32,34,37,.6),0 2px 10px 0 rgba(0,0,0,.2);
     backdrop-filter: blur(1px);
 }
 
-/* profile pop light */
+/* profile popup light */
 .theme-light .root-g14mjS {
     background: rgba(0,0,0,0.3);
     -webkit-box-shadow: 0 0 0 1px rgba(185,187,190,.3),0 2px 10px 0 rgba(0,0,0,.1);
     box-shadow: 0 0 0 1px rgba(185,187,190,.3),0 2px 10px 0 rgba(0,0,0,.1);
 }
 
-/* prof banner */
-.profileBanner-1owKI5 {
+/* profile banner fade */
+.profileBanner-1owKI5, .popoutBanner-16rVDY {
     -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
     mask: linear-gradient(to bottom, #000 50%, transparent);
 }
 
-/* home screen buttons */
+/* home screen button hover effects */
 .interactive-iyXY_x {
     transition-property: background-color, color;
     transition-duration: 0.3s
@@ -432,7 +450,7 @@ body {
     transition-duration: 0.3s
 }
 
-/* settings */
+/* settings page */
 .side-2ur1Qk .item-3XjbnG {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -457,7 +475,7 @@ body {
 .standardSidebarView-E9Pc3j {
     position: absolute;
     top: 0;
-    left: 230px;
+    left: 16%;
     bottom: 0;
     right: 0px;
     z-index: 101;
@@ -550,6 +568,12 @@ body {
     align-items: center;
 }
 
+/* app blur effect in settings */
+#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div.layer-86YKbF.baseLayer-W6S8cY.stop-animations {
+    opacity: 0.3 !important;
+    filter: blur(5px) !important;       
+}
+
 /* Status Icons */
 rect[mask="url(#svg-mask-status-online)"] {
     fill: rgb(207,95,181) !important;
@@ -581,10 +605,11 @@ rect[mask="url(#svg-mask-status-offline)"] {
     transition: 0.27s background-color;
 }
 
-/* server context */
+/* server context menu */
 .menu-1QACrS[aria-label="Server Actions"] {
     border-radius: 4px;
     backdrop-filter: blur(2px);
+    background: rgba(0,0,0,0.6);
 }
 
 /* server context buttons */
@@ -664,18 +689,11 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
     fill: #CF5FB5;
 }
 
-/* remove call buttons */
-div[aria-label="Start Voice Call"] {
-    display: none;
-}
-
-div[aria-label="Start Video Call"] {
-    display: none;
-}
-
-/* remove help button */
-section[aria-label="Channel header"] a.anchor-1MIwyf.anchorUnderlineOnHover-2qPutX {
-    display: none;
+#app-mount > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > div > div > div.sidebar-1tnWFu > nav > div.scroller-WSmht3.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN > ul > li:nth-child(5) > div > a > div > div.avatar-1HDIsL > div > svg > svg > rect {
+    mask: none;
+    clip-path: circle(23% at center);
+    fill: #11efab;
+    y: 3;
 }
 
 /* server buttons */
@@ -689,24 +707,13 @@ section[aria-label="Channel header"] a.anchor-1MIwyf.anchorUnderlineOnHover-2qPu
 }
 
 /* account switch pop */
-.theme-light .root-g14mjS {
+.theme-light .root-g14mjS, .theme-dark .root-g14mjS {
     background: rgba(0,0,0,0.3);
     border-radius: 12px;
     box-shadow: none; 
 }
 
-.theme-dark .root-g14mjS {
-    background: rgba(0,0,0,0.3);
-    border-radius: 12px;
-    box-shadow: none; 
-}
-
-.theme-light.authBox-1HR6Ha {
-    background: rgba(0,0,0,0.1);
-}
-
-.theme-dark.authBox-1HR6Ha {
-    color: #747f8d;
+.theme-light.authBox-1HR6Ha, .theme-dark.authBox-1HR6Ha {
     background: rgba(0,0,0,0.1);
 }
 
@@ -730,22 +737,11 @@ section[aria-label="Channel header"] a.anchor-1MIwyf.anchorUnderlineOnHover-2qPu
 
 /* search */
 .avatar-2e8lTP {
-    position: absolute;
     left: -25px;
     margin-top: calc(4px - .125rem);
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    overflow: hidden;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    pointer-events: none;
     z-index: 1;
 }
 
@@ -756,20 +752,12 @@ section[aria-label="Channel header"] a.anchor-1MIwyf.anchorUnderlineOnHover-2qPu
     text-indent: 0;
 }
 
-#app-mount > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > div > div > div.sidebar-1tnWFu > nav > div.scroller-WSmht3.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN > ul > li:nth-child(5) > div > a > div > div.avatar-1HDIsL > div > svg > svg > rect {
-    mask: none;
-    clip-path: circle(23% at center);
-    fill: #11efab;
-    y: 3;
-
-}
-
 /* server home page */
 .theme-dark .background-fkKrXt {
     background-color: transparent;
 }
 
-/* server channel browser */
+/* server channel list */
 .container-3XgAHv {
     background: none;
 }
@@ -808,4 +796,5 @@ section[aria-label="Channel header"] a.anchor-1MIwyf.anchorUnderlineOnHover-2qPu
 .wrapper-NhbLHG {
     padding: 1px 0;
     border-radius: 9px;
+}
 }
