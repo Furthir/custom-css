@@ -1,4 +1,8 @@
 @-moz-document domain("roblox.com") {
+::selection {
+    background-color: rgba(0, 255, 232, .65)
+}
+
 @keyframes RGBFilter{
     0% {filter: contrast(0) sepia(1) hue-rotate(0deg) saturate(9);}
     5% {filter: contrast(0) sepia(1) hue-rotate(18deg) saturate(9);}
@@ -434,7 +438,7 @@ dark-theme .dropdown-menu li.active, .dark-theme .dropdown-menu li, .light-theme
 
 #nav-robux-icon .icon-robux-28x28 {
     background-position: 0 0;
-    filter: contrast(0) sepia(1) hue-rotate(248deg);
+    filter: contrast(0) sepia(1) hue-rotate(185deg) saturate(3.5);
 }
 
 .dark-theme .btn-navigation-nav-menu-md:focus, .dark-theme .btn-navigation-nav-menu-md, .light-theme .btn-navigation-nav-menu-md:focus, .light-theme .btn-navigation-nav-menu-md {
