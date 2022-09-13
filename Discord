@@ -1,28 +1,15 @@
+/**
+ * @name PurplePitch
+ * @author Fython
+ * @version 0.50
+ * @description Purpledized Theme for Discord
+ */
+
 ::selection {
     background-color: rgba(207,95,181,0.4)
 }
-
-a, button, div, input, label, select, span, strong, textarea {
-    outline: 0;
-}
-
-a, abbr, acronym, address, applet, big, blockquote, body, caption ,cite, code, dd, del, dfn, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, table, tbody, td, tfoot, th, thead, tr, tt, ul, var {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-weight: 500;
-    font-style: inherit;
-    font-family: cursive;
-    font-size: 100%;
-    vertical-align: baseline;
-}
-
-/* fuck this stupid container bruh */
-.theme-light .container-2cd8Mz {
-    background-color: transparent;
-}
-
-.theme-dark .container-2cd8Mz {
+/* remove homepage backgrounds*/
+.theme-light .container-2cd8Mz, .theme-dark .container-2cd8Mz {
     background-color: transparent;
 }
 
@@ -51,6 +38,7 @@ a, abbr, acronym, address, applet, big, blockquote, body, caption ,cite, code, d
 .contentRegion-3HkfJJ {
     background: none;
 }
+
 /* settings */
 .sidebarRegionScroller-FXiQOh {
     background: none;
@@ -246,7 +234,6 @@ body {
 }
 
 
-
 @keyframes HueShiftRGB {
     0% {filter: hue-rotate(0deg);}
     2.5% {filter: hue-rotate(9deg);}
@@ -379,6 +366,10 @@ body {
     left: 0;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+}
+
+.layer-1Ixpg3 {
+    backdrop-filter: blur(1.2px)
 }
 
 /* inbox */
