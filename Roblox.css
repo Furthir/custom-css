@@ -578,7 +578,7 @@ button.close {
     transition-property: background-color   
 }
 
-.darkt-theme .stack .card-list .card-item, .light-theme .stack .card-list .card-item {
+.dark-theme .stack .card-list .card-item, .light-theme .stack .card-list .card-item {
     background-color: rgba(0,0,0,0.2);
     border-radius: 12px;
 }
