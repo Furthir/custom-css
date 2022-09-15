@@ -797,4 +797,54 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
     padding: 1px 0;
     border-radius: 9px;
 }
+    
+/* new Discord Profile themes */
+#user-popout {
+    --profile-gradient-primary-color: rgb(100 0 255) !important;
+    --profile-gradient-secondary-color: rgb(80 0 82) !important;
+    --profile-gradient-button-color: hsl(165, calc(var(--saturation-factor, 1) * 65.2%), 18.24%);
+    --profile-gradient-overlay-color: #000000b5 !important;
+    --profile-body-background-color: #0000006b !important;
+    --profile-avatar-border-color: rgb(185 0 255) !important;
+}
+
+.avatar-2OC07D {
+    border: 6px solid rgb(117 0 255);
+    background-color: rgb(117 0 255);
+}
+
+.userPopoutInner-PA9zkU {
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(#8400ff 120px,rgb(125 0 255) 0,rgb(251 0 255));
+}
+
+
+.popoutBannerPremium-2RvDNZ {
+    height: 140px;
+    -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
+    mask: linear-gradient(to bottom, #000 50%, transparent);
+}
+
+.avatarPositionPremium-26XiTj {
+    top: 95px;
+    left: 20px;
+}
+
+.avatarPositionNormal-V4Mjtq {
+    top: 50px;
+    left: 20px;
+}
+
+.popoutBanner-16rVDY {
+    height: 100px;
+    -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
+    mask: linear-gradient(to bottom, #000 50%, transparent);
+}
+
+.overlayBackground-arbZMT {
+    margin: 28px 16px 16px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 8px;
+    max-height: calc(100vh - 128px);
+}
 }
