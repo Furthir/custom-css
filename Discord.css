@@ -1,13 +1,32 @@
-/*
- * @name          Discord PurplePitch
- * @namespace     discord.com
- * @version       0.1
- * @description   Purpledized theme for Discord
- * @author        Fython
-*/
+/* ==UserStyle==
+ * @name         Discord PurplePitch
+ * @namespace    discord.com
+ * @version      0.13
+ * @author       Fython
+ * @description  Purpledized theme for Discord
+==/UserStyle== */
 
 @-moz-document domain("discord.com") {
 /* Root Discord backgrounds and colors changes */
+
+/* BG Image */
+.theme-dark, .theme-light {
+    --background-primary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
+    --background-secondary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
+    --background-secondary-alt: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
+    --background-tertiary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
+}
+
+/* new Discord Profile themes */
+#user-popout {
+    --profile-gradient-primary-color: rgb(100 0 255) !important;
+    --profile-gradient-secondary-color: rgb(80 0 82) !important;
+    --profile-gradient-button-color: hsl(165, calc(var(--saturation-factor, 1) * 65.2%), 18.24%);
+    --profile-gradient-overlay-color: #000000b5 !important;
+    --profile-body-background-color: #0000006b !important;
+    --profile-avatar-border-color: rgb(185 0 255) !important;
+}
+
 /* Selection color */
 ::selection {
     background-color: rgba(207,95,181,0.4)
@@ -126,10 +145,6 @@ body {
     --interactive-hover: #ff63cb;
     --interactive-active: #ff53ea;
     --interactive-muted: #b864f4;
-    --background-primary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
-    --background-secondary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
-    --background-secondary-alt: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
-    --background-tertiary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
     --background-accent: rgba(255, 104, 228, .98);
     --background-floating: #f000;
     --background-mobile-primary: #ffa4f047;
@@ -165,6 +180,7 @@ body {
     --channeltextarea-background: #a2a2a20a;
     --activity-card-background: #ffffff0f;
     --textbox-markdown-syntax: #3b46541f;
+    --input-background: rgba(0,0,0,0.5);
     --deprecated-card-bg: #00ffff38;
     --deprecated-card-editable-bg: rgb(246 246 247 / 57%);
     --deprecated-store-bg: #05ffff29;
@@ -434,7 +450,7 @@ section[aria-label="Channel header"] a.anchor-1MIwyf.anchorUnderlineOnHover-2qPu
 }
 
 /* profile banner fade */
-.profileBanner-1owKI5, .popoutBanner-16rVDY {
+.profileBanner-1owKI5, .popoutBanner-16rVDY, .profileBanner-2zIsK7 {
     -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
     mask: linear-gradient(to bottom, #000 50%, transparent);
 }
@@ -461,6 +477,13 @@ section[aria-label="Channel header"] a.anchor-1MIwyf.anchorUnderlineOnHover-2qPu
     transition-property: background-color;
     
 }
+
+/* app blur effect in settings */
+#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div.layer-86YKbF.baseLayer-W6S8cY.stop-animations {
+    opacity: 0.3 !important;
+    filter: blur(5px) !important;       
+}
+
 
 .side-2ur1Qk .item-3XjbnG:hover { 
     padding-top: 6px;
@@ -797,17 +820,8 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
     padding: 1px 0;
     border-radius: 9px;
 }
-    
-/* new Discord Profile themes */
-#user-popout {
-    --profile-gradient-primary-color: rgb(100 0 255) !important;
-    --profile-gradient-secondary-color: rgb(80 0 82) !important;
-    --profile-gradient-button-color: hsl(165, calc(var(--saturation-factor, 1) * 65.2%), 18.24%);
-    --profile-gradient-overlay-color: #000000b5 !important;
-    --profile-body-background-color: #0000006b !important;
-    --profile-avatar-border-color: rgb(185 0 255) !important;
-}
 
+/* profile theme popout */
 .avatar-2OC07D {
     border: 6px solid rgb(117 0 255);
     background-color: rgb(117 0 255);
@@ -816,6 +830,7 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 .userPopoutInner-PA9zkU {
     border-radius: 8px 8px 0 0;
     background: linear-gradient(#8400ff 120px,rgb(125 0 255) 0,rgb(251 0 255));
+    /* -webkit-mask: linear-gradient(to top, #000 50%, transparent); */
 }
 
 
@@ -846,5 +861,11 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
     background-color: rgba(0,0,0,0.6);
     border-radius: 8px;
     max-height: calc(100vh - 128px);
+    /* -webkit-mask: linear-gradient(to top, #000 50%, transparent); */
+}
+
+/* toggles */
+.container-2nx-BQ, .input-2XRLou {
+    background-color: #CF5FB5 !important;
 }
 }

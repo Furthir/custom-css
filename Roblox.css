@@ -1,9 +1,17 @@
+/* ==UserStyle==
+@name         Roblox Light Glass
+@namespace    roblox.com
+@version      0.24.1
+@author       Fython
+@description  Glassy Theme for Roblox
+==/UserStyle== */
+
 @-moz-document domain("roblox.com") {
 ::selection {
     background-color: rgba(0, 255, 232, .65)
 }
 
-@keyframes RGBFilter{
+@keyframes RGBFilter {
     0% {filter: contrast(0) sepia(1) hue-rotate(0deg) saturate(9);}
     5% {filter: contrast(0) sepia(1) hue-rotate(18deg) saturate(9);}
     10% {filter: contrast(0) sepia(1) hue-rotate(36deg) saturate(9);}
@@ -27,13 +35,36 @@
     100% {filter: contrast(0) sepia(1) hue-rotate(360deg) saturate(9);}
 }
 
+@keyframes RGBBackground {
+    0% {background-color: rgb(255,0,0);}
+    5% {background-color: rgb(255,115,0);}
+    10% {background-color: rgb(255,200,0);}
+    15% {background-color: rgb(255,255,0);}
+    20% {background-color: rgb(200,255,0);}
+    25% {background-color: rgb(115,255,0);}
+    30% {background-color: rgb(0,255,0);}
+    35% {background-color: rgb(0,255,115);}
+    40% {background-color: rgb(17, 239, 171);}
+    45% {background-color: rgb(0,255,200);}
+    50% {background-color: rgb(0,255,255);}
+    55% {background-color: rgb(0,200,255);}
+    60% {background-color: rgb(0,115,255);}
+    65% {background-color: rgb(0,0,255);}
+    70% {background-color: rgb(115,0,255);}
+    75% {background-color: rgb(200,0,255);}
+    80% {background-color: rgb(207, 95, 181);}
+    85% {background-color: rgb(255,0,255);}
+    90% {background-color: rgb(255,0,200);}
+    95% {background-color: rgb(255,0,115);}
+    100% {background-color: rgb(255,0,0);}
+}
 
 .dark-theme .container-footer, .light-theme .container-footer {
     background-color: transparent;
 }
 
 .dark-theme, .light-theme {
-    background-color: transparent;
+    background: none !important;
     color: black
 }
 
@@ -282,18 +313,25 @@ dark-theme .dropdown-menu li.active, .dark-theme .dropdown-menu li, .light-theme
     transition-property: background-color;
 }
 
-.dark-theme .game-card-container, .light-theme .game-card-container {
-    background-color: transparent;
-    transition-timing-function: ease;
-    transition-duration: 0.45s;
-    transition-property: background-color;
+.game-carousel {
+    overflow-x: visible !important;
+    overflow-y: visible !important;
 }
 
-.dark-theme .game-card-container:hover, .light-theme .game-card-container {
+.dark-theme .game-card-container, .light-theme .game-card-container {
+    background-color: transparent;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.35s;
+    transition-property: background-color, transform;
+    transform: scale(1)
+}
+
+.dark-theme .game-card-container:hover, .light-theme .game-card-container:hover {
     background-color: rgba(0,0,0,0.25);
-    transition-timing-function: ease;
-    transition-duration: 0.45s;
-    transition-property: background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.35s;
+    transition-property: background-color, transform;
+    transform: scale(1.15)
 }
 
 .dark-theme .modal-dialog .modal-content, .light-theme .modal-dialog .modal-content {
@@ -575,39 +613,7 @@ button.close {
     background-color: rgba(0,0,0,0.2);
     transition-duration: 0.25s;
     transition-timing-function: ease-in;
-    transition-property: background-color   
-}
-
-
-.dark-theme .stack .card-list .card-item, .light-theme .stack .card-list .card-item {
-    background-color: rgba(0,0,0,0.1);
-    border-radius: 12px;
-    transition-duration: 0.2s;
     transition-property: background-color;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0.15s;
-}
-
-.dark-theme .stack .card-list .card-item:hover, .light-theme .stack .card-list .card-item:hover {
-    background-color: rgba(0,0,0,0.25);
-    transition-duration: 0.2s;
-    transition-property: background-color;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
-}
-
-.dark-theme .btn-control-xs, .light-theme .btn-control-xs {
-    transition: 0.6s border-color, color;
-    background-color: transparent;
-    border-color: #a59898;
-    color: #000;
-}
-
-.dark-theme .btn-control-xs:focus, .dark-theme .btn-control-xs:hover, .light-theme .btn-control-xs:focus, .light-theme .btn-control-xs:hover {
-    transition: 0.6s border-color, color 0.2s;
-    background-color: transparent;
-    border-color: #2306ff;
-    color: #8dc5ff;
 }
 
 .dark-theme .content, .light-theme .content {
@@ -624,7 +630,137 @@ button.close {
     background-color: #4183c5;
     color: #f2f4f5;
 }
+
+.dark-theme .rbx-tabs-horizontal #horizontal-tabs .rbx-tab:not(.active) a:not(:hover), .light-theme .rbx-tabs-horizontal #horizontal-tabs .rbx-tab:not(.active) a:not(:hover) {
+    background-color: transparent;
 }
+
+.content.six-column {
+    width: 93%;
+    max-width: 250%;
+    padding: 0px 10px !important;
+}
+
+.dark-theme #wrap.pinned .right-wrapper:before, .light-theme #wrap.pinned .right-wrapper:before {
+    background-color: transparent;
+}
+
+
+
+.dark-theme .stack .card-list .card-item, .light-theme .stack .card-list .card-item {
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 12px;
+    transition-duration: 0.2s;
+    transition-property: background-color, transform;
+    transition-timing-function: ease-in;
+    transition-delay: 0.15s;
+    transform: scale(1)
+}
+
+.dark-theme .stack .card-list .card-item:hover, .light-theme .stack .card-list .card-item:hover {
+    background-color: rgba(0,0,0,0.25);
+    transition-duration: 0.2s;
+    transition-property: background-color, transform;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
+    transform: scale(1.1);
+}
+
+.dark-theme .btn-control-xs, .light-theme .btn-control-xs {
+    background-color: transparent;
+    border-color: #a59898;
+    color: #000;
+    transform: scale(1);
+    transition-property: background-color, border-color, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.dark-theme .btn-control-xs:focus, .dark-theme .btn-control-xs:hover, .light-theme .btn-control-xs:focus, .light-theme .btn-control-xs:hover {
+    background-color: transparent;
+    border-color: #2306ff;
+    color: #8dc5ff;
+    transform: scale(0.9);
+    transition-property: background-color, border-color, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+.dark-theme .btn-secondary-md, .light-theme .btn-secondary-md {
+    background-color: transparent;
+    border-color: #a59898;
+    color: #000;
+    transform: scale(1);
+    transition-property: background-color, border-color, transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.1s;
+}
+
+.dark-theme .btn-secondary-md:focus, .dark-theme .btn-secondary-md:hover, .light-theme .btn-secondary-md:focus, .light-theme .btn-secondary-md:hover {
+    background-color: transparent;
+    border-color: #2306ff;
+    color: #8dc5ff;
+    transform: scale(1.1);
+    transition-property: background-color, border-color, transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+.social-links .medallion {
+    background-color: transparent;
+    border-color: #a59898;
+    color: #000;
+    transform: scale(1);
+    transition-property: background-color, border-color, transform;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
+}
+
+.social-links .medallion:hover {
+    background-color: transparent;
+    border-color: #2306ff;
+    color: #8dc5ff;
+    transform: scale(1.1);
+    transition-property: background-color, border-color, transform;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
+}
+
+.dark-theme .btn-common-play-game-lg, .light-theme .btn-common-play-game-lg {
+    background-color: #00b06f;
+    border-color: #00b06f;
+    color: #fff;
+    border-radius: 8px;
+    transform: scale(1);
+    transition-property: background-color, border-color, transform;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
+}
+
+.dark-theme .btn-common-play-game-lg:hover, .light-theme .btn-common-play-game-lg:hover {
+/*     animation-name: RGBBackground; */
+/*     animation-duration: 5s; */
+/*     animation-iteration-count: infinite; */
+    background-color: rgb(17, 239, 171);
+    border-color: #00fffb;
+    color: #fff;
+    border-radius: 8px;
+    transform: scale(1.25);
+    transition-property: background-color, border-color, transform;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
+    z-index: 100;
+}
+}
+
 
 @-moz-document domain("roblox.com") {
 html {
