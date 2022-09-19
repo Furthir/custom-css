@@ -1,9 +1,9 @@
 /* ==UserStyle==
-@name         Roblox Light Glass
-@namespace    roblox.com
-@version      0.24.1
-@author       Fython
-@description  Glassy Theme for Roblox
+ * @name         Roblox Light Glass
+ * @namespace    roblox.com
+ * @version      0.24.5
+ * @author       Fython
+ * @description  Glassy Theme for Roblox
 ==/UserStyle== */
 
 @-moz-document domain("roblox.com") {
@@ -758,6 +758,11 @@ button.close {
     transition-timing-function: ease-in;
     transition-delay: 0s;
     z-index: 100;
+}
+
+.dark-theme .container-empty, .dark-theme .section-content-off {
+    background: none !important;
+    color: #bdbebe;
 }
 }
 
