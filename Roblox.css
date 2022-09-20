@@ -75,10 +75,6 @@
     background: rgba(155,155,155,0.07);
 }
 
-.row {
-    margin-left: -3% !important;
-}
-
 .home-container {
     float: unset !important;
     max-width: 970px;
@@ -854,13 +850,38 @@ div[class="server-filter-option"] {
 }
 
 .people-info-card-container .place-container .place-info-container {
-    padding-left: 0px;
+    margin-left: 5%;
+    padding-left: 5%;
     width: 69%;
+}
+
+@media only screen and (max-width:1220px) {
+    .people-info-card-container .place-container .place-info-container .place-title {
+    font-size: large !important;
+    margin-left: 5%;
+    font-weight: 500 !important;
+}
+    .people-info-card-container .place-container .place-info-container {
+    padding-left: 10% !important;
+    margin-left: 0% !important;
+    width: 69% !important;
+}
 }
 
 .people-info-card-container .place-container {
     height: 114px;
     padding: 12px 10px;
+}
+
+.people-info-card-container .place-container .place-info-container .place-title {
+    font-size: large;
+    margin-left: 5%;
+    font-weight: 600;
+    max-width: 100%;
+}
+
+.people-info-card-container .place-container .place-info-container .place-info {
+    text-align: center;
 }
 
 }
