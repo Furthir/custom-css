@@ -629,11 +629,6 @@ button.close {
     padding: 0px 40px !important;
 }
 
-.btr-hide-ads .content {
-    max-width: 90%;
-    text-align: -webkit-center;
-}
-
 .dark-theme .notification, .dark-theme .notification-blue, .dark-theme .notification-red, .light-theme .notification, .light-theme .notification-blue, .light-theme .notification-red {
     background-color: #4183c5;
     color: #f2f4f5;
@@ -884,6 +879,27 @@ div[class="server-filter-option"] {
     text-align: center;
 }
 
+.dark-theme .stack .server-player-count-gauge, .light-theme .stack .server-player-count-gauge {
+	text-align: -webkit-center;
+}
+
+.stack .card-list .card-item .player-thumbnails-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 192px;
+    align-self: center;
+    column-gap: 6px;
+    row-gap: 6px;
+}
+
+}
+
+@-moz-document url("https://www.roblox.com/home") {
+.btr-hide-ads .content {
+	max-width: 90%;
+	text-align: -webkit-center;
+}
 }
 
 @-moz-document domain("roblox.com") {
