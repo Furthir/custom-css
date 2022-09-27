@@ -63,6 +63,10 @@
     background: none;
 }
 
+/* forum channel background */
+.theme-light .container-3wLKDe, .theme-dark .container-3wLKDe {
+    background-color: transparent;
+}
 
 
 /* loading */
@@ -868,4 +872,5 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 .container-2nx-BQ, .input-2XRLou {
     background-color: #CF5FB5 !important;
 }
+
 }
