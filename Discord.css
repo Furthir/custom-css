@@ -1,18 +1,17 @@
 /* ==UserStyle==
  * @name         Discord PurplePitch
  * @namespace    discord.com
- * @version      0.13
+ * @version      0.14
  * @author       Fython
  * @description  Purpledized theme for Discord
 ==/UserStyle== */
 
 @-moz-document domain("discord.com") {
 /* Root Discord backgrounds and colors changes */
-
 /* BG Image */
 .theme-dark, .theme-light {
     --background-primary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
-    --background-secondary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
+	--background-secondary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
     --background-secondary-alt: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
     --background-tertiary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
 }
@@ -24,6 +23,15 @@
     --profile-gradient-button-color: hsl(165, calc(var(--saturation-factor, 1) * 65.2%), 18.24%);
     --profile-gradient-overlay-color: #000000b5 !important;
     --profile-body-background-color: #0000006b !important;
+    --profile-avatar-border-color: rgb(185 0 255) !important;
+}
+
+.profileColors-3Y0XaR {
+    --profile-gradient-primary-color: rgb(153 33 226) !important;
+    --profile-gradient-secondary-color: rgb(251 101 251) !important;
+    --profile-gradient-button-color: hsl(165, calc(var(--saturation-factor, 1) * 65.2%), 18.24%);
+    --profile-gradient-overlay-color: rgba(0,0,0,0.45) !important;
+    --profile-body-background-color: rgba(0,0,0,0.4) !important;
     --profile-avatar-border-color: rgb(185 0 255) !important;
 }
 
@@ -438,6 +446,10 @@ section[aria-label="Channel header"] a.anchor-1MIwyf.anchorUnderlineOnHover-2qPu
     mask: linear-gradient(to bottom, #000, transparent 93%);
 }
 
+.userPopoutInnerNonPremium-1EOFgI {
+    background: linear-gradient(var(--profile-gradient-primary-color),var(--profile-gradient-primary-color) 60px,var(--profile-gradient-secondary-color));
+}
+
 
 /* profile popup dark */
 .theme-dark .root-g14mjS {
@@ -455,6 +467,17 @@ section[aria-label="Channel header"] a.anchor-1MIwyf.anchorUnderlineOnHover-2qPu
 
 /* profile banner fade */
 .profileBanner-1owKI5, .popoutBanner-16rVDY, .profileBanner-2zIsK7 {
+    -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
+    mask: linear-gradient(to bottom, #000 50%, transparent);
+}
+
+.popoutBannerPremium-2RvDNZ, .popoutBannerPremium-3i5EEI {
+    height: 140px;
+    -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
+    mask: linear-gradient(to bottom, #000 50%, transparent);
+}
+
+.bannerSVGWrapper-qc0szY {
     -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
     mask: linear-gradient(to bottom, #000 50%, transparent);
 }
@@ -850,8 +873,12 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 }
 
 .avatarPositionNormal-V4Mjtq {
-    top: 50px;
+	margin-top: 5%;
     left: 20px;
+}
+
+.avatarPositionPremiumBanner-2nq2Fy {
+    margin-top: 10%;
 }
 
 .popoutBanner-16rVDY {
@@ -861,11 +888,10 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 }
 
 .overlayBackground-arbZMT {
-    margin: 28px 16px 16px;
+    margin: 70px 16px 16px;
     background-color: rgba(0,0,0,0.6);
     border-radius: 8px;
     max-height: calc(100vh - 128px);
-    /* -webkit-mask: linear-gradient(to top, #000 50%, transparent); */
 }
 
 /* toggles */
