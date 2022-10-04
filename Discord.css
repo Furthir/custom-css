@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord PurplePitch
  * @namespace    discord.com
- * @version      0.14
+ * @version      0.14.2
  * @author       Fython
  * @description  Purpledized theme for Discord
 ==/UserStyle== */
@@ -203,6 +203,10 @@ body {
     --deprecated-text-input-border-hover: #b9bbbe33;
     --deprecated-text-input-border-disabled: #9bcdff54;
     --deprecated-text-input-prefix: #9fc5ff38;
+    --button-positive-background: #CF5FB5;
+    --button-positive-background-hover: rgba(207, 95, 181, 0.7);
+    --button-positive-background-active: rgba(207, 95, 181, 0.7);
+    --button-positive-background-disabled: rgba(113, 0, 87, 0.7);
 }
 
 .theme-dark, .theme-light {
@@ -376,7 +380,7 @@ div[aria-label="Start Video Call"] {
 }
 
 /* remove help button, delete this section if you want */
-section[aria-label="Channel header"] a.anchor-1MIwyf.anchorUnderlineOnHover-2qPutX {
+#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > div > div > div.chat-2ZfjoI > section > div.toolbar-3_r2xA > a {
     display: none;
 }
 
