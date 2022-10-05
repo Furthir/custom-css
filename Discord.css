@@ -141,6 +141,11 @@ body {
     background-color: rgba(0,0,0,0.6) !important;
 }
 
+/* darken login background */
+.wrapper-1f5byN {
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+}
+
 /* Discord Root CSS */
 .theme-dark, .theme-light {
     --header-primary: #ff64c6;
