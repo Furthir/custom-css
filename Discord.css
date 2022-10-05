@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord PurplePitch
  * @namespace    discord.com
- * @version      0.14.2
+ * @version      0.15
  * @author       Fython
  * @description  Purpledized theme for Discord
 ==/UserStyle== */
@@ -153,7 +153,7 @@ body {
     --text-warning: hsl(650, calc(var(--saturation-factor, 1)*95.7%), 54.1%);
     --text-danger: hsl(659, calc(var(--saturation-factor, 1)*82.6%), 59.4%);
     --text-brand: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
-    --interactive-normal: #ff54c5;
+    --interactive-normal: #ce61c1;
     --interactive-hover: #ff63cb;
     --interactive-active: #ff53ea;
     --interactive-muted: #b864f4;
@@ -418,6 +418,34 @@ div[aria-label="Start Video Call"] {
     text-indent: -4rem;
 }
 
+/* server invites */
+.flex-2S1XBF.flex-3BkGQD.vertical-3aLnqW.flex-3BkGQD.directionColumn-3pi1nm.justifyCenter-rrurWZ.alignStretch-Uwowzr.noWrap-hBpHBz.guildInfo-UCKhrV {
+    align-items: center;
+}
+
+.lookFilled-yCfaCM.colorGreen-3y-Z79 {
+    width: -webkit-fill-available;
+	font-weight: bolder;
+}
+
+.content-1r-J1r {
+    width: max-content;
+    border: solid;
+    border-radius: 10px;
+    border-color: rgb(200 91 177) !important;
+    box-shadow: inset 0px 0px 14px 1px rgb(207 95 181), 0px 0px 6px 6px rgb(207 95 181);
+    padding: 10px;
+    gap: 16px;
+}
+
+.guildIcon-3ZfRfI {
+    background-color: var(--background-primary);
+    flex: 1 1 auto;
+    margin-left: 10px;
+    max-width: 70px;
+    min-height: 70px;
+}
+
 /* profile popup bg */
 .backdrop-2ByYRN {
     opacity: 0.2 !important;
@@ -622,12 +650,6 @@ div[aria-label="Start Video Call"] {
     align-items: center;
 }
 
-/* app blur effect in settings */
-#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div.layer-86YKbF.baseLayer-W6S8cY.stop-animations {
-    opacity: 0.3 !important;
-    filter: blur(5px) !important;       
-}
-
 /* Status Icons */
 rect[mask="url(#svg-mask-status-online)"] {
     fill: rgb(207,95,181) !important;
@@ -671,18 +693,23 @@ rect[mask="url(#svg-mask-status-offline)"] {
     transition: 0.3s background-color;
 }
 
+/* user settings context menu */
+#user-settings-cog {	
+	background-color: rgba(0,0,0,0.6) !important;
+}
+
 .colorDefault-CDqZdO:hover {
-    background-color: rgba(0,0,0,0.2) !important;
+    background-color: rgba(255, 125, 212, 0.3) !important;
     transition: 0.3s background-color, color;
 }
 
 .colorDefault-CDqZdO.focused-3qFvc8 {
-    background-color: rgba(0,0,0,0.2) !important;
+    background-color: rgba(255, 125, 212, 0.3) !important;
     transition: 0.3s background-color, color;
 }
 
 .colorDefault-CDqZdO.focused-3qFvc8:hover {
-    background-color: rgba(0,0,0,0.2) !important;
+    background-color: rgba(255, 125, 212, 0.3) !important;
     color: white;
     transition: 0.3s background-color, color;
 }
