@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord PurplePitch
  * @namespace    discord.com
- * @version      0.15
+ * @version      0.16
  * @author       Fython
  * @description  Purpledized theme for Discord
 ==/UserStyle== */
@@ -57,10 +57,11 @@
     background: rgba(0,0,0,0.3);
 }
 
-.app-2CXKsg {
+.app-2CXKsg { 
     background-image: var(--background-tertiary);
     background-position: unset;
     background-size: cover;
+	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.25); /* used for darkening background */
 }
 
 .scroller-WSmht3 {
@@ -198,6 +199,7 @@ body {
     --activity-card-background: #ffffff0f;
     --textbox-markdown-syntax: #3b46541f;
     --input-background: rgba(0,0,0,0.5);
+	--modal-footer-background: transparent;
     --deprecated-card-bg: #00ffff38;
     --deprecated-card-editable-bg: rgb(246 246 247 / 57%);
     --deprecated-store-bg: #05ffff29;
@@ -350,6 +352,17 @@ body {
     75% {color: #90f;}
     87.5% {color: #f09;}
     100% {color: red;}
+	
+@keyframes BGColorShiftRGB {
+    0% {background-color: red;}
+    12.5% {background-color: #fe0;}
+    25% {background-color: #5f0;}
+    37.5% {background-color: #0f0}
+    50% {background-color: #0fd;}
+    62.5% {background-color: #10f}
+    75% {background-color: #90f;}
+    87.5% {background-color: #f09;}
+    100% {background-color: red;}
 }
 
 .wrapper-3kah-n.selected-1Drb7Z .childWrapper-1j_1ub, .wrapper-3kah-n:hover .childWrapper-1j_1ub {
@@ -384,9 +397,88 @@ div[aria-label="Start Video Call"] {
     display: none;
 }
 
+/* verification banner(?) */
+.colorDefault-1e8tQv {
+    background-color: var(--status-positive-background);
+    color: white;
+}
+
 /* remove help button, delete this section if you want */
 #app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > div > div > div.chat-2ZfjoI > section > div.toolbar-3_r2xA > a {
     display: none;
+}
+
+#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > div > div.content-1SgpWY > div.container-2cd8Mz > section > div.toolbar-3_r2xA > a {
+	display; none;
+}
+
+/* homepage topbar buttons */
+.tabBar-ra-EuL .item-3mHhwr {
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+    min-width: 40px;
+}
+
+.tabBar-ra-EuL .addFriend-emTWY1.addFriend-emTWY1.addFriend-emTWY1, .tabBar-ra-EuL .addFriend-emTWY1.addFriend-emTWY1.addFriend-emTWY1:hover {
+    background-color: transparent;
+    color: var(--interactive-normal);
+	transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+}
+
+.tabBar-ra-EuL .addFriend-emTWY1.addFriend-emTWY1.addFriend-emTWY1:hover {
+	background-color: var(--background-modifier-hover) !important;
+}
+
+.tabBar-ra-EuL .addFriend-emTWY1.addFriend-emTWY1.addFriend-emTWY1[aria-selected=true] {
+	background-color: var(--background-modifier-selected);
+    color: #5cff5c;
+}
+
+.container-3tKtM_ {
+	transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+	border: 5px solid var(--background-modifier-selected);
+
+/* homepage, active now */
+.theme-light .inset-SbsSFp, .theme-dark .inset-SbsSFp {
+    background-color: rgba(0,0,0,0.25);
+    border-radius: 6px;
+    border: 3px rebeccapurple solid;
+}
+
+.itemCard-3Etziu:first-of-type {
+    margin-top: 0;
+    border: 4px purple solid;
+}
+
+.itemCard-3Etziu.wrapper-2RrXDg.outer-2JOHae.padded-2NSY6O.interactive-2zD88a {
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+}
+
+.itemCard-3Etziu.wrapper-2RrXDg.outer-2JOHae.padded-2NSY6O.interactive-2zD88a:hover {
+    background-color: rgba(167, 96, 166, 0.3);
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+}
+
+section.section-3G9aLW {
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+}
+
+section.section-3G9aLW:hover {
+    background-color: rgba(244, 116, 255, 0.25);
+	transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
 }
 
 /* Message Hover Effects */
@@ -548,7 +640,6 @@ div[aria-label="Start Video Call"] {
     filter: blur(5px) !important;       
 }
 
-
 .side-2ur1Qk .item-3XjbnG:hover { 
     padding-top: 6px;
     padding-bottom: 6px;
@@ -566,10 +657,6 @@ div[aria-label="Start Video Call"] {
     bottom: 0;
     right: 0px;
     z-index: 101;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-
 }
 
 .sidebarRegion-1VBisG, .sidebarRegionScroller-FXiQOh {
@@ -701,6 +788,10 @@ rect[mask="url(#svg-mask-status-offline)"] {
 /* user settings context menu */
 #user-settings-cog {	
 	background-color: rgba(0,0,0,0.6) !important;
+}
+	/* context submenu */
+	.submenuPaddingContainer-_k62dJ {
+    background: rgba(0,0,0,0.5);
 }
 
 .colorDefault-CDqZdO:hover {
@@ -914,7 +1005,7 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 }
 
 .avatarPositionPremiumBanner-2nq2Fy {
-    margin-top: 10%;
+    margin-top: 3%;
 }
 
 .popoutBanner-16rVDY {
