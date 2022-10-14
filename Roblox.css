@@ -93,6 +93,10 @@
     border-radius: 8px;
 }
 
+.dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .container-empty, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-loading {
+    background-color: rgba(0,0,0,0.1);
+}
+
 .dark-theme .notification-stream-body, .light-theme .notification-stream-body {
     background-color: transparent;
     color: #fff;
