@@ -352,7 +352,8 @@ body {
     75% {color: #90f;}
     87.5% {color: #f09;}
     100% {color: red;}
-	
+}
+
 @keyframes BGColorShiftRGB {
     0% {background-color: red;}
     12.5% {background-color: #fe0;}
@@ -442,6 +443,7 @@ div[aria-label="Start Video Call"] {
     transition-duration: 0.25s;
     transition-property: background-color;
 	border: 5px solid var(--background-modifier-selected);
+}
 
 /* homepage, active now */
 .theme-light .inset-SbsSFp, .theme-dark .inset-SbsSFp {
