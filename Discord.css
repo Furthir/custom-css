@@ -517,6 +517,13 @@ section.section-3G9aLW:hover {
     text-indent: -4rem;
 }
 
+/* recolor text */
+.markup-eYLPri h1, .markup-eYLPri h2, .markup-eYLPri h3, .markup-eYLPri h4, .markup-eYLPri h5, .markup-eYLPri h6 {
+    font-weight: 700;
+    color: white;
+    line-height: 1.5rem;
+}
+
 /* server invites */
 .flex-2S1XBF.flex-3BkGQD.vertical-3aLnqW.flex-3BkGQD.directionColumn-3pi1nm.justifyCenter-rrurWZ.alignStretch-Uwowzr.noWrap-hBpHBz.guildInfo-UCKhrV {
     align-items: center;
