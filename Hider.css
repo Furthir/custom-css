@@ -12,3 +12,9 @@
     visibility: hidden;
 }
 }
+
+@-moz-document domain("speedtest.net") {
+.result-item-icon.result-item-isp .result-data, .result-item-icon.result-item-isp .result-label {
+    visibility: hidden;
+}
+}
