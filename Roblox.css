@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Roblox Light Glass
  * @namespace    roblox.com
- * @version      0.24.81
+ * @version      0.24.82
  * @author       Fython
  * @description  Glassy Theme for Roblox
 ==/UserStyle== */
@@ -290,7 +290,6 @@ dark-theme .dropdown-menu li.active, .dark-theme .dropdown-menu li, .light-theme
     transition-property: background-color;
     transition-duration: 0.3s;
 }
-
 
 .dark-theme .dropdown-menu li:focus, .dark-theme .dropdown-menu li:hover, .light-theme .dropdown-menu li:focus, .light-theme .dropdown-menu li:hover {
     background-color: rgba(0,0,0,0.4);
@@ -765,7 +764,6 @@ button.close {
     z-index: 100;
 }
 
-
 /* ropro server filter */
 #serverFiltersDropdownBox, #serverFiltersDropdownBoxMini {
     width: 200px;
@@ -782,7 +780,6 @@ button.close {
 div[class="server-filter-option"] {
     background: rgba(0,0,0,0.1) !important;
 }
-
 
 .dark-theme .btn-control-md, .light-theme .btn-control-md {
     background-color: transparent;
@@ -921,7 +918,7 @@ div[class="server-filter-option"] {
 	transform: scale(1.1);
     border-color: #00a2ff;
 }
-
+}
 @-moz-document url("https://www.roblox.com/home") {
 .btr-hide-ads .content {
 	max-width: 90%;
