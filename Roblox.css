@@ -897,6 +897,29 @@ div[class="server-filter-option"] {
     row-gap: 6px;
 }
 
+/* friends */
+.dark-theme .avatar-card-btns, light-theme .avatar-card-btns {
+    background-color: transparent;
+    color: #fff;
+}
+
+.dark-theme .avatar-card-btns .accept-friend {
+    background-color: #2cb378;
+    border-color: #fff;
+    border-radius: 8px;
+	transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color, transform;
+	transform: scale(1);
+}
+
+.dark-theme .avatar-card-btns .accept-friend:focus, .dark-theme .avatar-card-btns .accept-friend:hover {
+    background-color: #00b1a530;
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color, transform;
+	transform: scale(1.1);
+    border-color: #00a2ff;
 }
 
 @-moz-document url("https://www.roblox.com/home") {
