@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Roblox Light Glass
  * @namespace    roblox.com
- * @version      0.24.83
+ * @version      0.24.84
  * @author       Fython
  * @description  Glassy Theme for Roblox
 ==/UserStyle== */
@@ -91,6 +91,21 @@
     border-color: rgba(57,59,61,.2);
     color: #606162;
     border-radius: 8px;
+}
+
+/* notification button */
+.dark-theme .btn-uiblox-common-common-notification-bell-md {
+    background-color: transparent;
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+}
+
+.dark-theme .btn-uiblox-common-common-notification-bell-md:hover {
+    background-color: rgba(0,0,0,0.3);
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
 }
 
 .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .container-empty, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-loading {
@@ -651,6 +666,12 @@ button.close {
     background-color: transparent;
 }
 
+/* game page */
+div#rbx-private-running-games {
+	z-index: 100;
+	overflow: visible;
+}
+
 .dark-theme .stack .card-list .card-item, .light-theme .stack .card-list .card-item {
     background-color: rgba(0,0,0,0.1);
     border-radius: 12px;
@@ -922,6 +943,15 @@ div[class="server-filter-option"] {
 	transform: scale(1.1);
     border-color: #00a2ff;
 }
+
+/* tooltips */
+.dark-theme .tooltip .tooltip-inner, .light-theme .tooltip .tooltip-inner {
+    background-color: rgba(0,0,0,0.4);
+    color: #bdbebe;
+    border-radius: 10px;
+    backdrop-filter: blur(1px);
+}
+
 
 /* side menu */
 /* remove "Get Premium" button */
