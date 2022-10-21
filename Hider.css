@@ -18,3 +18,9 @@
     visibility: hidden;
 }
 }
+
+@-moz-document domain("fast.com") {
+.test-info-group {
+    display: none;
+}
+}
