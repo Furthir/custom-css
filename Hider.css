@@ -1,5 +1,6 @@
+/* to hide ip addresses and locations being shown on some sites */
+
 @-moz-document domain("google.com") {
-/* why the hell does google just fuckin doxx you */
 .b0KoTc {
     visibility: hidden;
 }

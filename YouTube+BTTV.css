@@ -1,3 +1,5 @@
+/* Youtube and YT Music */
+
 @-moz-document domain("youtube.com") {
 .ytp-play-progress {
     z-index: 34;
