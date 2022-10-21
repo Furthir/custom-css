@@ -1,6 +1,8 @@
+@-moz-document domain("youtube.com") {
 .ytp-play-progress {
     z-index: 34;
 }
+
 .ytp-progress-linear-live-buffer, .ytp-ad-progress, .ytp-load-progress, .ytp-play-progress, .ytp-hover-progress {
     position: absolute;
     left: 0;
@@ -10,21 +12,24 @@
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
 }
+
 .ytp-swatch-background-color {
     background-color: #CF5FB5;
 }
-
 
 .ytp-chrome-top, .ytp-chrome-bottom {
     position: absolute;
     text-shadow: 0 0 2px rgb(0 0 0 / 50%);
 }
 
-#page-manager.ytd-app {
-    --ytd-toolbar-offset: var(--ytd-masthead-height, var(--ytd-toolbar-height));
-    overflow-x: auto;
-    margin-top: var(--ytd-masthead-height,var(--ytd-toolbar-height));
+.yt-spec-button-shape-next--size-m {
+    padding: 0 16px;
+    height: 36px;
+    font-size: 14px;
+    line-height: 36px;
+    border-radius: 4px;
 }
+
 ytd-app {
     --app-drawer-width: 240px;
     --app-drawer-content-container-background-color: var(--yt-spec-general-background-a);
@@ -36,13 +41,7 @@ ytd-app {
     right: 0;
     top: 0;
 }
-style attribute {
-    cursor: default;
-}
-style attribute {
-    font-size: 10px;
-    font-family: Roboto, Arial, sans-serif;
-}
+
 html:not(.style-scope)[system-icons] {
     --ytd-searchbox-legacy-button-icon-color: #030303;
 }
@@ -85,14 +84,10 @@ html:not(.style-scope) {
     --yt-swatch-input-text: var(--yt-deprecated-luna-black);
     --yt-swatch-tab-selected-text: rgb(15, 15, 15);
     --yt-swatch-textbox-bg: rgb(255, 255, 255);
-}
-html:not(.style-scope) {
     --yt-subscription-product-grid-margin: 24px;
     --yt-subscription-product-grid-margin-two-thirds: 16px;
     --yt-subscription-product-grid-margin-half: 12px;
     --yt-subscription-product-grid-margin-one-third: 8px;
-}
-html:not(.style-scope) {
     --paper-tooltip_-_margin: 8px;
     --paper-tooltip_-_font-size: var(--ytd-thumbnail-attribution_-_font-size);
     --paper-tooltip_-_font-weight: var(--ytd-thumbnail-attribution_-_font-weight);
@@ -106,8 +101,6 @@ html:not(.style-scope) {
     --yt-button-tooltip-z-index: 2300;
     --iron-overlay-backdrop-opacity: 0.8;
     --paper-tab-content-focused-font-weight: 500;
-}
-html:not(.style-scope) {
     --ytd-z-index-report-form-overlay: 100;
     --ytd-z-index-engagement-panel-scrim: 600;
     --ytd-z-index-engagement-panel-scrimmed: 601;
@@ -128,8 +121,6 @@ html:not(.style-scope) {
     --ytd-grid-max-width: 1284px;
     --ytd-scrollbar-width: 8px;
     --ytd-default-promo-panel-renderer-height: 600px;
-}
-html:not(.style-scope) {
     --ytd-searchbox-border-color: hsla(0, 0%, 53.3%, 0.2);
     --ytd-searchbox-legacy-border-color: #ccc;
     --ytd-searchbox-legacy-border-shadow-color: #eee;
@@ -141,8 +132,6 @@ html:not(.style-scope) {
     --ytd-searchbox-legacy-button-icon-color: #333;
     --ytd-searchbox-background: hsl(0, 0%, 100%);
     --ytd-searchbox-text-color: hsl(0, 0%, 6.7%);
-}
-html:not(.style-scope) {
     --paper-dialog-background-color: var(--yt-spec-brand-background-solid);
     --paper-listbox-background-color: var(--yt-spec-brand-background-solid);
     --paper-listbox-color: var(--yt-spec-text-primary);
@@ -192,8 +181,6 @@ html:not(.style-scope) {
     --paper-menu-color: var(--yt-spec-text-primary);
     --yt-icon-width: 40px;
     --yt-icon-height: 40px;
-}
-html:not(.style-scope) {
     --ytd-rich-grid-items-per-row: 4;
     --ytd-rich-grid-posts-per-row: 3;
     --ytd-rich-grid-slim-items-per-row: 6;
@@ -203,8 +190,6 @@ html:not(.style-scope) {
     --ytd-rich-grid-mini-item-min-width: 240px;
     --ytd-rich-grid-mini-item-max-width: 320px;
     --ytd-rich-grid-slim-item-max-width: 220px;
-}
-html:not(.style-scope) {
     --ytd-channel-title_-_font-size: var(--yt-channel-title-font-size, 2.4rem);
     --ytd-channel-title_-_font-weight: 400;
     --ytd-channel-title_-_line-height: var(--yt-channel-title-line-height, 3rem);
@@ -254,8 +239,6 @@ html:not(.style-scope) {
     --ytd-guide-highlight_-_font-weight: 500;
     --ytd-guide-highlight_-_line-height: var(--yt-guide-highlight-line-height, 1.8rem);
     --ytd-guide-highlight_-_letter-spacing: var(--yt-guide-highlight-letter-spacing, normal);
-}
-html:not(.style-scope) {
     --ytd-grid-base: 103px;
     --ytd-margin-base: 4px;
     --ytd-avatar-size: 32px;
@@ -303,8 +286,6 @@ html:not(.style-scope) {
     --yt-multi-line-ellipsis_-_display: -webkit-box;
     --yt-upsell-dialog-layout-vertical-width: 400px;
     --yt-upsell-dialog-layout-horizontal-width: 800px;
-}
-html:not(.style-scope) {
     --yt-button-margin: 0;
     --yt-button-padding: 10px 16px;
     --yt-button-padding-minus-border: 9px 15px;
@@ -312,8 +293,6 @@ html:not(.style-scope) {
     --yt-button-padding-minus-focus-outline-width: 2px;
     --yt-button-with-icon-padding-minus-focus-outline: 4px 14px;
     --yt-button-border-radius: 2px;
-}
-html:not(.style-scope) {
     --yt-deprecated-blue-light: hsl(205.9, 80%, 43.1%);
     --yt-deprecated-opalescence-grey-opacity-lighten-3: hsla(0, 0%, 53.3%, 0.4);
     --yt-deprecated-opalescence-soft-grey-opacity-lighten-3: hsla( 0, 0%, 93.3%, 0.4 );
@@ -447,9 +426,6 @@ html:not(.style-scope) {
     --yt-pdg-paid-stickers-author-subtext-font-size: 13px;
     --yt-pdg-paid-stickers-margin-left: 38px;
     --yt-live-chat-ninja-message-background-color: transparent;
-}
-
-html:not(.style-scope) {
     --yt-deprecated-luna-black: hsl(0, 0%, 6.7%);
     --yt-deprecated-opalescence-grey: hsl(0, 0%, 53.3%);
     --yt-deprecated-opalescence-soft-grey: hsl(0, 0%, 93.3%);
@@ -463,12 +439,12 @@ html:not(.style-scope) {
     --yt-deprecated-dark-surface-100: hsl(0, 0%, 7%);
 }
 
-html:not(.style-scope)[dark], :not(.style-scope)[dark] {
+html {
     --yt-spec-brand-background-solid: #000;
     --yt-spec-brand-background-primary: rgb(0 0 0 / 100%);
     --yt-spec-brand-background-secondary: rgb(0 0 0);
     --yt-spec-general-background-a: #000000;
-    --yt-spec-general-background-b: #000000;
+    --yt-spec-general-background-b: #0a0a0a;
     --yt-spec-general-background-c: #000000;
     --yt-spec-error-background: #000000;
     --yt-spec-text-primary: #92ffe2;
@@ -488,7 +464,7 @@ html:not(.style-scope)[dark], :not(.style-scope)[dark] {
     --yt-spec-touch-response-inverse: #fff;
     --yt-spec-brand-icon-active: #CF5FB5;
     --yt-spec-brand-icon-inactive: #606060;
-    --yt-spec-brand-button-background: #CF5FB5;
+    --yt-spec-brand-button-background: #CF5FB5 !important; 
     --yt-spec-brand-link-text: #CF5FB5;
     --yt-spec-wordmark-text: #212121;
     --yt-spec-10-percent-layer: rgba(0, 0, 0, 0.1);
@@ -536,17 +512,10 @@ html:not(.style-scope)[dark], :not(.style-scope)[dark] {
     --yt-spec-filled-button-focus-outline: rgba(0, 0, 0, 0.6);
     --yt-spec-selected-nav-text: #CF5FB5;
     --yt-spec-static-overlay-button-hover: rgba(255, 255, 255, 0.5);
+    background-color: #f9f9f9 !important;
 }
 
 .ytp-chrome-controls .ytp-button[aria-pressed]:after {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 2px;
-    border-radius: 2px;
-    width: 0;
-    left: 20px;
-    bottom: 8px;
     background-color: #CF5FB5;
     -webkit-transition: left .1s cubic-bezier(0.4,0,1,1),width .1s cubic-bezier(0.4,0,1,1);
     transition: left .1s cubic-bezier(0.4,0,1,1),width .1s cubic-bezier(0.4,0,1,1);
@@ -691,6 +660,8 @@ html:not(.style-scope) {
     --layout-justified_-_-webkit-justify-content: space-between;
     --layout-justified_-_justify-content: space-between;
 }
+
+/* BTTV */
 .bttv-rs-theme-light, :root {
     --bttv-rs-gray-50: #f7f7fa;
     --bttv-rs-gray-100: #f2f2f5;
@@ -1015,10 +986,7 @@ html:not(.style-scope) {
     --bttv-rs-calendar-date-selected-text: #fff;
     --bttv-rs-popover-shadow: 0 1px 8px rgba(0,0,0,0.12);
 }
-html {
-    background-color: #f9f9f9!important;
-    -webkit-text-size-adjust: none;
-}
+
 .html5-video-player:not(.ytp-touch-mode) ::-webkit-scrollbar {
     width: 10px;
     background-color: #424242;
@@ -1030,4 +998,118 @@ html {
 }
 .html5-video-player:not(.ytp-touch-mode) ::-webkit-scrollbar-track {
     background-color: #424242;
+}
+}
+
+@-moz-document domain("youtube.com") {
+yt-icon.ytd-logo {
+    height: 20px;
+    width: 90px;
+    padding: 18px 14px 18px 16px;
+    color: #00ffad;
+
+}
+/* remove clip button */
+#flexible-item-buttons > ytd-button-renderer {
+    display: none;
+}
+
+/* sub button */
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
+    background-color: #ff67f6;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+    transition-property: background-color;
+}
+
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
+    background-color: #e033d6;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+    transition-property: background-color;
+}
+
+#owner.ytd-watch-metadata {
+    align-items: center;
+    justify-content: space-between;
+}
+
+ytd-button-renderer.style-destructive[is-paper-button] {
+    border-radius: 4px;
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+}
+
+ytd-button-renderer.style-destructive[is-paper-button]:hover {
+    background-color: rgb(255, 43, 181);
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+}
+}
+
+@-moz-document domain("music.youtube.com") {
+ytmusic-play-button-renderer:hover .content-wrapper.ytmusic-play-button-renderer, ytmusic-play-button-renderer:focus .content-wrapper.ytmusic-play-button-renderer {
+    transform: scale(var(--ytmusic-play-button-active-scale-factor));
+    background: rgb(255 143 221 / 88%);
+}
+
+/* sub button */
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
+    background-color: #ff67f6;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+    transition-property: background-color;
+}
+
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
+    background-color: #e033d6;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+    transition-property: background-color;
+
+}
+
+body {
+    background-color: #000000;
+}
+
+html {
+    --ytmusic-color-white1: #fff;
+    --ytmusic-color-grey2: #aaa;
+    --ytmusic-color-grey3: #909090;
+    --ytmusic-color-grey4: #717171;
+    --ytmusic-color-grey5: #606060;
+    --ytmusic-color-black1: #212121;
+    --ytmusic-color-black2: #181818;
+    --ytmusic-color-black4: #030303;
+    --ytmusic-color-blackpure: #000;
+    --ytmusic-color-lightred: #ff4e45;
+    --ytmusic-color-youtubered: #ff43fd;
+    --ytmusic-color-mediumred: #c00;
+    --ytmusic-color-lightblue: #3ea6ff;
+    --ytmusic-color-yellow: #fbc02d;
+    --ytmusic-color-lightgreen: #2ba640;
+    --ytmusic-color-lightteal: #00aaa7;
+    --ytmusic-color-white1-alpha10: rgba(255, 255, 255, 0.1);
+    --ytmusic-color-white1-alpha15: rgba(255, 255, 255, 0.15);
+    --ytmusic-color-white1-alpha20: rgba(255, 255, 255, 0.2);
+    --ytmusic-color-white1-alpha30: rgba(255, 255, 255, 0.3);
+    --ytmusic-color-white1-alpha50: rgba(255, 255, 255, 0.5);
+    --ytmusic-color-white1-alpha70: rgba(255, 255, 255, 0.7);
+    --ytmusic-color-blackpure-alpha0: rgba(0, 0, 0, 0);
+    --ytmusic-color-blackpure-alpha10: rgba(0, 0, 0, 0.1);
+    --ytmusic-color-blackpure-alpha60: rgba(0, 0, 0, 0.6);
+    --ytmusic-color-blackpure-alpha65: rgba(0, 0, 0, 0.65);
+    --ytmusic-color-mediumred-alpha90: rgba(204, 0, 0, 0.9);
+    --ytmusic-opalescence-dark-grey: #333;
+    --ytmusic-color-white-opacity-0-05: rgba(255, 255, 255, 0.05);
+    --ytmusic-color-white-opacity-0-5: rgba(255, 255, 255, 0.5);
+    --ytmusic-color-black-opacity-0-4: rgba(0, 0, 0, 0.4);
+    --ytmusic-color-blue-1: #065fd4;
+    --ytmusic-color-green-1: #3a923f;
+    --ytmusic-color-grey-4: #ccc;
+    --ytmusic-white-5: #4e4e4e;
+}
 }
