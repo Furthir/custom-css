@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Roblox Light Glass
  * @namespace    roblox.com
- * @version      0.24.82
+ * @version      0.24.83
  * @author       Fython
  * @description  Glassy Theme for Roblox
 ==/UserStyle== */
@@ -895,12 +895,16 @@ div[class="server-filter-option"] {
 }
 
 /* friends */
+.dark-theme .open .dropdown-menu, .light-theme .open .dropdown-menu {
+    background-color: rgba(0,0,0,0.2);
+}
+
 .dark-theme .avatar-card-btns, light-theme .avatar-card-btns {
     background-color: transparent;
     color: #fff;
 }
 
-.dark-theme .avatar-card-btns .accept-friend {
+.dark-theme .avatar-card-btns .accept-friend, .light-theme .avatar-card-btns .accept-friend {
     background-color: #2cb378;
     border-color: #fff;
     border-radius: 8px;
@@ -910,7 +914,7 @@ div[class="server-filter-option"] {
 	transform: scale(1);
 }
 
-.dark-theme .avatar-card-btns .accept-friend:focus, .dark-theme .avatar-card-btns .accept-friend:hover {
+.dark-theme .avatar-card-btns .accept-friend:hover, .light-theme .avatar-card-btns .accept-friend:hover {
     background-color: #00b1a530;
     transition-timing-function: ease;
     transition-duration: 0.25s;
@@ -918,6 +922,13 @@ div[class="server-filter-option"] {
 	transform: scale(1.1);
     border-color: #00a2ff;
 }
+
+/* side menu */
+/* remove "Get Premium" button */
+.dark-theme .rbx-upgrade-now .btn-secondary-md:link, .light-theme .rbx-upgrade-now .btn-secondary-md:link {
+	display: none;
+}
+
 }
 @-moz-document url("https://www.roblox.com/home") {
 .btr-hide-ads .content {
