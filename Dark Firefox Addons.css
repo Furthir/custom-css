@@ -1,0 +1,129 @@
+@-moz-document domain("addons.mozilla.org") {
+/* page background */
+.LandingPage {
+	background: black;
+}
+
+.Page-content {
+	background: #000;
+}
+
+/* text colors */
+h1, h2 {
+    color: white;
+}
+
+/* cards */
+.LandingPage-header {
+	background-color: #424141;
+	color: white;
+}
+
+.Card-header {
+	background: #353535;
+	color: white;
+}
+
+.AddonsCard--horizontal .Card-contents {
+	background: #353535 !important;
+	color: white !important;
+}
+
+.AddonsCard--horizontal ul.AddonsCard-list .SearchResult-wrapper:focus, .AddonsCard--horizontal ul.AddonsCard-list .SearchResult-wrapper {
+	background: #353535;
+	color: white;
+}
+
+.SearchResult-link, .SearchResult-link:active, .SearchResult-link:link, .SearchResult-link:visited {
+	color: white;
+}
+
+.SearchResult:hover .SearchResult-link{
+	color: white;
+}
+
+.AddonsCard--horizontal ul.AddonsCard-list .SearchResult-wrapper:focus, .AddonsCard--horizontal ul.AddonsCard-list .SearchResult-wrapper:hover {
+    background: rgb(122, 122, 122);
+    color: white;
+}
+
+.CardList ul > li {
+	background: #1c1c1c;
+	color: white;
+}
+
+.SearchResult-summary {
+	color: #9f9f9f;
+}
+
+.Paginate {
+	background-color: #5e5e5e;
+}
+
+    /* search footer card */
+.Card-footer {
+	background: none;
+}
+
+.Paginate .Button.Paginate-item, .Paginate .Button.Paginate-item:link, .Paginate .Button.Paginate-item:visited {
+	color: #fff;
+}
+.Paginate .Button.Paginate-item:active, .Paginate .Button.Paginate-item:hover {
+	background-color: #2c2c2d;
+	transition-timing-function: ease;
+	transition-duration: 0.25s;
+	transition-property: background-color;
+}
+
+.Paginate .Button.Paginate-item {
+	transition-timing-function: ease;
+	transition-duration: 0.25s;
+	transition-property: background-color;
+}
+
+.Paginate-page-number {
+	color: #e1e1e1;
+}
+/* category buttons */
+.Categories-link {
+	transition-timing-function: ease;
+	transition-duration: 0.25s;
+	transition-property: background-color;
+}
+.Categories-link, .Categories-link:active, .Categories-link:hover, .Categories-link:link, .Categories-link:visited {
+	transition-timing-function: ease;
+	transition-duration: 0.25s;
+	transition-property: background-color;
+}
+
+/* search bar */
+.AutoSearchInput-query {
+	background-color: #000;
+	color: #fff;
+}
+
+/* search filters */
+.ExpandableCard-ToggleLink:link {
+	color: #fff;
+}
+
+.Select {
+	background: #737373 url(/static-frontend/865634cee658e2e0ae76af2078344137.svg) no-repeat calc(100% - 10px) 50%;
+	color: #20123a;
+}
+
+/* dropdowns */
+.DropdownMenu-items {
+	background: rgba(0,0,0,0.4);
+	color: white;
+}
+
+.DropdownMenuItem-link a, .DropdownMenuItem-link a:link, .DropdownMenuItem-link button, .DropdownMenuItem-link button:link {
+	color: #a9a9ca;
+}
+
+.DropdownMenuItem-link a:active, .DropdownMenuItem-link a:focus, .DropdownMenuItem-link a:hover, .DropdownMenuItem-link button:active, .DropdownMenuItem-link button:focus, .DropdownMenuItem-link button:hover {
+	color: #9e86ca;
+}
+
+}
