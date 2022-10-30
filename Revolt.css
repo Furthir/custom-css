@@ -1,158 +1,212 @@
-/* ==UserStyle==
- * @name         Discord Purple Night
- * @namespace    discord.com
- * @version      0.17
- * @author       Fython
- * @description  Purpledized theme for Discord
-==/UserStyle== */
-
-@-moz-document domain("discord.com") {
-/* Root Discord backgrounds and colors changes */
+/* Root Revolt backgrounds and colors changes */
 /* BG Image */
-.theme-dark, .theme-light {
-    --background-primary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
-	--background-secondary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
+:root {
+    --background: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg) !important;
+    --primary-background: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg) !important;
+	--secondary-background: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
     --background-secondary-alt: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
-    --background-tertiary: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg);
+    --tertiary-background: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg) !important;
 }
 
-/* new Discord Profile themes */
-#user-popout {
-    --profile-gradient-primary-color: rgb(100 0 255) !important;
-    --profile-gradient-secondary-color: rgb(80 0 82) !important;
-    --profile-gradient-button-color: hsl(165, calc(var(--saturation-factor, 1) * 65.2%), 18.24%);
-    --profile-gradient-overlay-color: #000000b5 !important;
-    --profile-body-background-color: #0000006b !important;
-    --profile-avatar-border-color: rgb(185 0 255) !important;
+/* status icons */
+    /* Online */
+circle[fill="#50fa7b"] {
+    fill: var(--status-online);
+}
+    /* Idle/Away */
+circle[fill="#ffb86c"] {
+    fill: var(--status-away);
+}
+    /* Focus */
+circle[fill="#4799F0"] {
+    fill: var(--status-focus);
+}
+    /* DND/Busy */
+circle[fill="#ff5555"] {
+    fill: var(--status-busy);
+}
+    /* Offline/Invis */
+circle[fill="#6272a4"] {
+    fill: var(--status-invisible);
 }
 
-.profileColors-3Y0XaR {
-    --profile-gradient-primary-color: rgb(153 33 226) !important;
-    --profile-gradient-secondary-color: rgb(251 101 251) !important;
-    --profile-gradient-button-color: hsl(165, calc(var(--saturation-factor, 1) * 65.2%), 18.24%);
-    --profile-gradient-overlay-color: rgba(0,0,0,0.45) !important;
-    --profile-body-background-color: rgba(0,0,0,0.4) !important;
-    --profile-avatar-border-color: rgb(185 0 255) !important;
+/* app */
+body, html {
+    background: url(https://cdn.discordapp.com/attachments/954151307600597052/954167277224353812/wp8713868-night-beauty-wallpapers.jpg) !important;
+    background-size: cover !important;
 }
 
-/* Selection color */
+/* selection color */
 ::selection {
     background-color: rgba(207,95,181,0.4)
 }
 
-/* remove/merge homepage backgrounds*/
-.theme-light .container-2cd8Mz, .theme-dark .container-2cd8Mz {
-    background-color: transparent;
+/* server settings page */
+._settings_t7t23_33 {
+    background: transparent;
 }
-
-.nowPlayingColumn-1eCBCN {
-    background: none;
-}
-
-.scroller-hE2gWq {
-    border: none;
-}
-
-.emptyCard-KDifrB {
-    background: rgba(0,0,0,0.3);
-}
-
-.app-2CXKsg { 
-    background-image: var(--background-tertiary);
-    background-position: unset;
-    background-size: cover;
-	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.25); /* used for darkening background */
-}
-
-.scroller-WSmht3 {
-    background-color: transparent; 
-}
-
-.sidebar-1tnWFu {
-    background: none;
-}
-
-/* forum channel background */
-.theme-light .container-3wLKDe, .theme-dark .container-3wLKDe {
-    background-color: transparent;
-}
-
-
-/* loading */
-.loading-1yrGTe {
-    background: none !important;
-}
-
-/* ??? */
-.contentRegion-3HkfJJ {
-    background: none;
-}
-
-/* settings page */
-.sidebarRegionScroller-FXiQOh {
-    background: none;
-}
-
-/* app directory */
-.theme-light .directoryModal-YJsOMv, .theme-dark .directoryModal-YJsOMv {
-    background-color: transparent;
-}
-
-/* title/topbar */
-.container-ZMc96U.themed-Hp1KC_ {
-    background: none;
-}
-
-/* full app background removal */
-.app-3xd6d0, .mobileApp-3_TCAV {
-    background: none;
-}
-
-.content-1SgpWY {
-    background: none;
-}
-
-.layer-86YKbF.baseLayer-W6S8cY {
-    background-color: transparent;
-}
-
-.bg-1QIAus {
-    background-color: transparent;
-}
-
-.chat-2ZfjoI {
-    background: none;
-}
-
-.appMount-3lHmkl, body {
-    background-color: var(--background-tertiary);
-}
-
-body {
+._settings_t7t23_33 ._sidebar_t7t23_39 {
     background: transparent;
 }
 
-/* user list sidebar */
-.container-2o3qEW {
+/* message/members list */
+.hpNYLK {
+    background: transparent;
+}
+
+/* members list */
+.jyizw {
+    background-color: rgba(0,0,0,0.1);
+    backdrop-filter: blur(1px);
+}
+
+.fWMCga, .dUCGFk {
     background: none;
 }
 
-/* server discover page */
-.theme-dark .pageWrapper-2PwDoS, .theme-light .pageWrapper-2PwDoS {
-    background-color: transparent;
-
+/* server/channel lists */
+.JkpVA {
+    background: none;
 }
-/* download apps pop */
-.downloadApps-14IgKV {
-    background-color: rgba(0,0,0,0.6) !important;
+/* discover */
+.jAWgqa, .kcZkuw, .gAGipD, .cRCSBm {
+    background: none !important;
+}
+:root {
+    --secondary-background: transparent !important;
+}
+.cRCSBm {
+    background: transparent !important;
 }
 
-/* darken login background */
-.wrapper-1f5byN {
-    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+    /* discover sidebar */
+.cRCSBm {
+    background: none;
 }
 
-/* Discord Root CSS */
+    /* discover cards */
+.jwSlvG {
+    background: rgba(0,0,0,0.2);
+}
+
+/* Revolt Root CSS */
+:root, html :root {
+    --accent: rgb(255, 121, 198) !important;
+    --accent-rgb: 255,121,198;
+	--background-modifier-accent: rgba(255, 0, 197, .13);
+    --background-rgb: none;
+    --foreground: #f8f8f2;
+    --foreground-rgb: 248,248,242;
+    --block: #1C1D26;
+    --block-rgb: 28,29,38;
+    --message-box: rgba(0,0,0,0.3);
+    --message-box-rgb: 52,54,70;
+    --mention: rgb(139,233,253,0.05);
+    --mention-rgb: 139,233,253;
+    --success: #50fa7b;
+    --success-rgb: 80,250,123;
+    --warning: #ffb86c;
+    --warning-rgb: 255,184,108;
+    --tooltip: #000000;
+    --tooltip-rgb: 0,0,0;
+    --error: #ff5555;
+    --error-rgb: 255,85,85;
+    --hover: rgba(255, 163, 231, .19) !important;
+    --hover-rgb: 255,163,231;
+    --scrollbar-thumb: #bd93f9;
+    --scrollbar-thumb-rgb: 189,147,249;
+    --scrollbar-track: transparent;
+    --scrollbar-track-rgb: 0,0,0;
+    --primary-background-rgb: 40,42,54;
+    --primary-header: #343646;
+    --primary-header-rgb: 52,54,70;
+    --secondary-background-rgb: 28,29,38;
+    --secondary-foreground: #f8f8f2;
+    --secondary-foreground-rgb: 248,248,242;
+    --secondary-header: rgba(0,0,0,0.3);
+    --secondary-header-rgb: 0,0,0;
+    --tertiary-background: #282a36;
+    --tertiary-background-rgb: 40,42,54;
+    --tertiary-foreground: #AEAEA9;
+    --tertiary-foreground-rgb: 174,174,169;
+    --status-online: rgb(207, 95, 181);
+    --status-online-rgb: 207, 85, 181;
+    --status-away: rgb(17, 239, 171);
+    --status-away-rgb: 17,239,171;
+    --status-focus: rgb(255, 0, 0);
+    --status-focus-rgb: 255,0,0;
+    --status-busy: rgb(255, 0, 124);
+    --status-busy-rgb: 255,0,124;
+    --status-streaming: rgb(110, 20, 239);
+    --status-streaming-rgb: 110,20,239;
+    --status-invisible: rgb(0, 0, 0);
+    --status-invisible-rgb: 0,0,0;
+    --sidebar-active: rgba(0,0,0,0);
+    --sidebar-active-rgb: 47,49,54;
+    --light: false;
+    --light-rgb: 0,0,0;
+    --accent-contrast: white;
+    --accent-contrast-rgb: 255,255,255;
+    --background-contrast: white;
+    --background-contrast-rgb: 255,255,255;
+    --foreground-contrast: black;
+    --foreground-contrast-rgb: 0,0,0;
+    --block-contrast: white;
+    --block-contrast-rgb: 255,255,255;
+    --message-box-contrast: white;
+    --message-box-contrast-rgb: 255,255,255;
+    --mention-contrast: black;
+    --mention-contrast-rgb: 0,0,0;
+    --success-contrast: black;
+    --success-contrast-rgb: 0,0,0;
+    --warning-contrast: black;
+    --warning-contrast-rgb: 0,0,0;
+    --tooltip-contrast: white;
+    --tooltip-contrast-rgb: 255,255,255;
+    --error-contrast: white;
+    --error-contrast-rgb: 255,255,255;
+    --hover-contrast: white;
+    --hover-contrast-rgb: 255,255,255;
+    --scrollbar-thumb-contrast: white;
+    --scrollbar-thumb-contrast-rgb: 255,255,255;
+    --scrollbar-track-contrast: white;
+    --scrollbar-track-contrast-rgb: 255,255,255;
+    --primary-background-contrast: white;
+    --primary-background-contrast-rgb: 255,255,255;
+    --primary-header-contrast: white;
+    --primary-header-contrast-rgb: 255,255,255;
+    --secondary-background-contrast: white;
+    --secondary-background-contrast-rgb: 255,255,255;
+    --secondary-foreground-contrast: black;
+    --secondary-foreground-contrast-rgb: 0,0,0;
+    --secondary-header-contrast: white;
+    --secondary-header-contrast-rgb: 255,255,255;
+    --tertiary-background-contrast: white;
+    --tertiary-background-contrast-rgb: 255,255,255;
+    --tertiary-foreground-contrast: white;
+    --tertiary-foreground-contrast-rgb: 255,255,255;
+    --status-online-contrast: black;
+    --status-online-contrast-rgb: 0,0,0;
+    --status-away-contrast: black;
+    --status-away-contrast-rgb: 0,0,0;
+    --status-focus-contrast: white;
+    --status-focus-contrast-rgb: 255,255,255;
+    --status-busy-contrast: white;
+    --status-busy-contrast-rgb: 255,255,255;
+    --status-streaming-contrast: white;
+    --status-streaming-contrast-rgb: 255,255,255;
+    --status-invisible-contrast: white;
+    --status-invisible-contrast-rgb: 255,255,255;
+    --sidebar-active-contrast: white;
+    --sidebar-active-contrast-rgb: 255,255,255;
+    --min-opacity: 0;
+    --min-opacity-rgb: 0,0,0;
+    --header-height: 48px;
+    --header-height-rgb: undefined,undefined,undefined;
+    --effective-bottom-offset: 0px;
+    --effective-bottom-offset-rgb: undefined,undefined,undefined;
+}
+
 .theme-dark, .theme-light {
     --header-primary: #ff64c6;
     --header-secondary: #ff7deb;
@@ -169,13 +223,12 @@ body {
     --interactive-active: #ff53ea;
     --interactive-muted: #b864f4;
     --background-accent: rgba(255, 104, 228, .98);
-    --background-floating: rgba(0,0,0,0.5);
+    --background-floating: #f000;
     --background-mobile-primary: #ffa4f047;
     --background-mobile-secondary: #ff97f173;
     --background-modifier-hover: rgba(255, 163, 231, .19);
     --background-modifier-active: rgba(255, 151, 234, .16);
     --background-modifier-selected: #ff6aeda1;
-    --background-modifier-accent: rgba(255, 0, 197, .13);
     --info-positive-text: #cdffe9;
     --info-warning-text: #d7fffc;
     --info-danger-text: #d2fff9;
@@ -201,7 +254,7 @@ body {
     --channels-default: #ff50f3a8;
     --guild-header-text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.4);
     --channeltextarea-background: #a2a2a20a;
-    --activity-card-background: rgba(0,0,0,0.2);
+    --activity-card-background: #ffffff0f;
     --textbox-markdown-syntax: #3b46541f;
     --input-background: rgba(0,0,0,0.5);
 	--modal-footer-background: transparent;
@@ -220,87 +273,6 @@ body {
     --button-positive-background-active: rgba(207, 95, 181, 0.7);
     --button-positive-background-disabled: rgba(113, 0, 87, 0.7);
 }
-
-.theme-dark, .theme-light {
-    --info-positive-background: hsla(650, calc(var(--saturation-factor, 1)*47.3%), 43.9%, 0.1);
-    --info-positive-foreground: hsl(659, calc(var(--saturation-factor, 1)*47.3%), 43.9%);
-    --info-warning-background: hsla(650, calc(var(--saturation-factor, 1)*95.7%), 54.1%, 0.1);
-    --info-warning-foreground: hsl(650, calc(var(--saturation-factor, 1)*95.7%), 54.1%);
-    --info-danger-background: hsla(650, calc(var(--saturation-factor, 1)*82.6%), 59.4%, 0.1);
-    --info-danger-foreground: hsl(659, calc(var(--saturation-factor, 1)*82.6%), 59.4%);
-    --status-positive-background: hsl(659, calc(var(--saturation-factor, 1)*47.3%), 43.9%);
-    --status-positive-text: #ffffff21;
-    --status-warning-background: hsl(650, calc(var(--saturation-factor, 1)*95.7%), 54.1%);
-    --status-danger-background: hsl(650, calc(var(--saturation-factor, 1)*82.6%), 59.4%);
-    --status-danger-text: #ffffff1a;
-    --focus-primary: hsl(650, calc(var(--saturation-factor, 1)*100%), 47.8%);
-}
-
-:root {
-    --font-primary: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-display: Ginto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-code: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-    --font-korean: Whitney, "Apple SD Gothic Neo", "NanumBarunGothic", "\B9D1\C740 \ACE0\B515", "Malgun Gothic", Gulim, êµ´ë¦¼, Dotum, ë‹ì›€, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-japanese: Whitney, Hiragino Sans, "\30D2\30E9\30AE\30CE\89D2\30B4 ProN W3", "Hiragino Kaku Gothic ProN", "\30E1\30A4\30EA\30AA", Meiryo, Osaka, "MS PGothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-chinese-simplified: Whitney, "Microsoft YaHei New", å¾®è½¯é›…é»‘, "Microsoft Yahei", "Microsoft JhengHei", å®‹ä½“, SimSun, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-chinese-traditional: Whitney, "Microsoft JhengHei", å¾®è»Ÿæ­£é»‘é«”, "Microsoft JhengHei UI", "Microsoft YaHei", å¾®è»Ÿé›…é»‘, å®‹ä½“, SimSun, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.theme-light {
-    --brightness: calc(0.5 + var(--saturation-factor, 1)*0.5);
-    --contrast: var(--saturation-factor, 1);
-}
-
-[data-popout-root], html {
-    --brand-experiment-100: hsl(650, calc(var(--saturation-factor, 1)*77.8%), 98.2%);
-    --brand-experiment-130: hsl(656, calc(var(--saturation-factor, 1)*87.5%), 96.9%);
-    --brand-experiment-160: hsl(655, calc(var(--saturation-factor, 1)*84.6%), 94.9%);
-    --brand-experiment-200: hsl(656, calc(var(--saturation-factor, 1)*83.3%), 92.9%);
-    --brand-experiment-230: hsl(656, calc(var(--saturation-factor, 1)*87%), 91%);
-    --brand-experiment-260: hsl(655, calc(var(--saturation-factor, 1)*86.2%), 88.6%);
-    --brand-experiment-300: hsl(655, calc(var(--saturation-factor, 1)*86.1%), 85.9%);
-    --brand-experiment-330: hsl(655, calc(var(--saturation-factor, 1)*85.1%), 81.6%);
-    --brand-experiment-360: hsl(655, calc(var(--saturation-factor, 1)*86.1%), 77.5%);
-    --brand-experiment-400: hsl(655, calc(var(--saturation-factor, 1)*86.1%), 71.8%);
-    --brand-experiment-430: hsl(655, calc(var(--saturation-factor, 1)*85.7%), 69.8%);
-    --brand-experiment-460: hsl(655, calc(var(--saturation-factor, 1)*85.5%), 67.5%);
-    --brand-experiment: hsl(650, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
-    --brand-experiment-500: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
-    --brand-experiment-530: hsl(655, calc(var(--saturation-factor, 1)*66.7%), 58.8%);
-    --brand-experiment-560: hsl(655, calc(var(--saturation-factor, 1)*51.4%), 52.4%);
-    --brand-experiment-600: hsl(655, calc(var(--saturation-factor, 1)*46.7%), 44.1%);
-    --brand-experiment-630: hsl(655, calc(var(--saturation-factor, 1)*46.7%), 38.2%);
-    --brand-experiment-660: hsl(655, calc(var(--saturation-factor, 1)*47.1%), 33.3%);
-    --brand-experiment-700: hsl(655, calc(var(--saturation-factor, 1)*47%), 25.9%);
-    --brand-experiment-730: hsl(655, calc(var(--saturation-factor, 1)*46.8%), 24.3%);
-    --brand-experiment-760: hsl(654, calc(var(--saturation-factor, 1)*46.9%), 22.2%);
-    --brand-experiment-800: hsl(655, calc(var(--saturation-factor, 1)*47.5%), 19.4%);
-    --brand-experiment-830: hsl(655, calc(var(--saturation-factor, 1)*47.4%), 14.9%);
-    --brand-experiment-860: hsl(655, calc(var(--saturation-factor, 1)*46.9%), 9.6%);
-    --brand-experiment-900: hsl(653, calc(var(--saturation-factor, 1)*50%), 3.1%);
-    --brand-experiment-05a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
-    --brand-experiment-10a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.1);
-    --brand-experiment-15a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.15);
-    --brand-experiment-20a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.2);
-    --brand-experiment-25a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.25);
-    --brand-experiment-30a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.3);
-    --brand-experiment-35a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.35);
-    --brand-experiment-40a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.4);
-    --brand-experiment-45a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.45);
-    --brand-experiment-50a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.5);
-    --brand-experiment-55a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.55);
-    --brand-experiment-60a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.6);
-    --brand-experiment-65a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.65);
-    --brand-experiment-70a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.7);
-    --brand-experiment-75a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.75);
-    --brand-experiment-80a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.8);
-    --brand-experiment-85a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
-    --brand-experiment-90a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
-    --brand-experiment-95a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
-}
-}
-
-@-moz-document domain("discord.com") {
 /* Individual Items */
 /* Home Button RGB */
 @keyframes HueShiftRGB {
@@ -388,10 +360,26 @@ body {
 .image-20MDYu {
     filter: invert(0.9) opacity(0.5);
 }
+/* discover page */
+    /* search box */
+.jaBfkO {
+    background: rgba(0,0,0,0.2);
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background;
+}
 
-/* Hide Chat Buttons */
-.button-2fCJ0o {
-    display: none;
+.jaBfkO input:focus-visible {
+    background: var(--hover);
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background;
+}
+
+    /* cards */
+.KldgT {
+    -webkit-mask: linear-gradient(to bottom, #000 50%, rgb(53 53 53 / 0%));
+    mask: linear-gradient(to bottom, #000 50%, transparent);
 }
 
 /* remove call buttons, delete this section if you want */
@@ -401,6 +389,18 @@ div[aria-label="Start Voice Call"] {
 
 div[aria-label="Start Video Call"] {
     display: none;
+}
+
+/* topbar */
+.fPzJRX {
+    background: rgba(0,0,0,0.1);
+    backdrop-filter: blur(1px);
+    background-size: cover !important;
+    background-position: center center !important;
+}
+
+.dzRjrU {
+	backdrop-filter: blur(1px);
 }
 
 /* verification banner(?) */
@@ -487,15 +487,31 @@ section.section-3G9aLW:hover {
     transition-duration: 0.25s;
     transition-property: background-color;
 }
+/* message box */
+.jBEnry {
+    background: rgb(45, 45, 45, 0.2);
+    backdrop-filter: blur(1px);
+}
+
+/* emoji picker */
+.kpGWUw {
+    box-shadow: var(--elevation-stroke),var(--elevation-high);
+    background: transparent;
+}
+
+.hRGhez {
+	background: transparent;
+}
 
 /* Message Hover Effects */
-.message-2CShn3.selected-2LX7Jy, .mouse-mode.full-motion .message-2CShn3 {
+.jCxwsP, .kUMlXs, .gRLOyd {
     transition-timing-function: ease;
     transition-duration: 0.25s;
     transition-property: background-color;
 }
 
-.message-2CShn3.selected-2LX7Jy, .mouse-mode.full-motion .message-2CShn3:hover {
+.jCxwsP:hover, .kUMlXs:hover, .gRLOyd:hover {
+	background: var(--background-message-hover);
     transition-timing-function: ease;
     transition-duration: 0.25s;
     transition-property: background-color;
@@ -514,7 +530,6 @@ section.section-3G9aLW:hover {
     padding: 0px;
     padding-right: 2px !important;
     border: 1px solid transparent;
-	border-radius: 8px;
 }
 
 .compact-2Nkcau .contents-2MsGLg {
@@ -551,7 +566,7 @@ section.section-3G9aLW:hover {
 }
 
 .guildIcon-3ZfRfI {
-    background-color: var(--background-primary);
+    background-color: var(--primary-background);
     flex: 1 1 auto;
     margin-left: 10px;
     max-width: 70px;
@@ -559,10 +574,9 @@ section.section-3G9aLW:hover {
 }
 
 /* profile popup bg */
-.backdrop-2ByYRN {
-    opacity: 0.2 !important;
-    position: fixed;
-
+.kVCswW {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
 }
 
 .layer-1Ixpg3 {
@@ -593,20 +607,9 @@ section.section-3G9aLW:hover {
 .userPopoutInnerNonPremium-1EOFgI {
     background: linear-gradient(var(--profile-gradient-primary-color),var(--profile-gradient-primary-color) 60px,var(--profile-gradient-secondary-color));
 }
-
-
-/* profile popup dark */
-.theme-dark .root-g14mjS {
-    background-color: rgba(0,0,0,0.65);
-    box-shadow: 0 0 0 1px rgba(32,34,37,.6),0 2px 10px 0 rgba(0,0,0,.2);
-    backdrop-filter: blur(1px);
-}
-
-/* profile popup light */
-.theme-light .root-g14mjS {
+/* profile popup */
+._content_17p8w_77 {
     background: rgba(0,0,0,0.3);
-    -webkit-box-shadow: 0 0 0 1px rgba(185,187,190,.3),0 2px 10px 0 rgba(0,0,0,.1);
-    box-shadow: 0 0 0 1px rgba(185,187,190,.3),0 2px 10px 0 rgba(0,0,0,.1);
 }
 
 /* profile banner fade */
@@ -637,57 +640,57 @@ section.section-3G9aLW:hover {
     transition-duration: 0.3s
 }
 
-/* user buttons (mute/deafen/settings) */
-.button-12Fmur {
-    transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color;
-}
-
-	/* profile button */
-.withTagAsButton-OsgQ9L, .withTagless-10ooWt {
-    transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color;
-}
-
-.withTagAsButton-OsgQ9L:hover, .withTagless-10ooWt:hover {
-    background-color: var(--background-message-hover);
-    color: var(--interactive-hover);
-	transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color;
-}
-
 /* settings page */
-.side-2ur1Qk .item-3XjbnG {
-    padding-top: 6px;
-    padding-bottom: 6px;
-    margin-bottom: 2px;
-    border-radius: 4px;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    transition-property: background-color;
-}
-
-.itemFilled-1cPbtg {
-    background-color: var(--background-secondary);
+    /* text boxes */
+.bEeAEn, .habcqT {
+    background: rgba(0,0,0,0.2);
     transition-timing-function: ease;
     transition-duration: 0.25s;
     transition-property: background-color;
 }
 
-.itemFilled-1cPbtg:hover:not([aria-checked=true]) {
-    background-color: var(--background-modifier-hover);
+.bEeAEn:hover, .habcqT:hover {
+    background: var(--hover);
     transition-timing-function: ease;
     transition-duration: 0.25s;
     transition-property: background-color;
 }
-	/* voice&video sliders */
-.theme-light .bar-1Bhnl9, .theme-light .markDash-yk2kJ-, .theme-dark .bar-1Bhnl9, .theme-dark .markDash-yk2kJ- {
-    background: linear-gradient(89deg, #d858f2, #f29d58);
-    -webkit-mask: linear-gradient(to left, #d858f2, transparent 105%);
-    mask: linear-gradient(to bottom, #000, transparent 93%);
+
+    /* dropdown buttons */
+.jfwTbF {
+    background: rgba(0,0,0,0.2);
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+}
+
+.jfwTbF:hover {
+    background: var(--hover);
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+}
+
+    /* profile */
+._user_11fa1_1 ._preview_11fa1_107 {
+    background: none !important;
+}
+
+._user_11fa1_1 ._preview_11fa1_107>div {
+    transform: scale(1);
+}
+
+._settings_t7t23_33 ._action_t7t23_224 ._closeButton_t7t23_240 {
+    border: solid 2px purple !important;
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+}
+
+._settings_t7t23_33 ._action_t7t23_224 ._closeButton_t7t23_240:hover {
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
 }
 
 /* app blur effect in settings */
@@ -798,30 +801,6 @@ section.section-3G9aLW:hover {
     align-items: center;
 }
 
-/* Status Icons */
-rect[mask="url(#svg-mask-status-online)"] {
-    fill: rgb(207,95,181) !important;
-    mask: none;
-    clip-path: circle(50% at center) !important;
-}
-
-rect[mask="url(#svg-mask-status-idle)"] {
-    fill: #11efab !important;
-    mask: none;
-    clip-path: circle(50% at center) !important;
-}
-
-rect[mask="url(#svg-mask-status-dnd)"] {
-    fill: red !important;
-    mask: none;
-    clip-path: circle(50% at center) !important;
-}
-
-rect[mask="url(#svg-mask-status-offline)"] {
-    fill: black !important;
-    mask: none;
-    clip-path: circle(50% at center) !important;
-}
 
 /* Members list */
 .layout-1qmrhw {
@@ -899,12 +878,6 @@ section[aria-label="Channel header"] div[aria-label="Online"] rect[fill*="hsl"] 
     clip-path: circle(38% at center) !important;
 }
 
-rect[mask="url(#413550a8-19f9-4ad5-a716-9016a2eba69e)"] {
-    mask: none !important;
-    x: 0px; /* ignore warnings */
-    y: 2px;
-    clip-path: circle(23% at center) !important;
-}
 
 div[aria-label="Set Status"] rect[fill="hsl(214, calc(var(--saturation-factor, 1) * 9.9%), 50.4%)"] {
     fill: black;
@@ -920,13 +893,6 @@ div[aria-label="Set Status"] rect[fill="hsl(38, calc(var(--saturation-factor, 1)
 
 div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1) * 47.3%), 43.9%)"] {
     fill: #CF5FB5;
-}
-
-#app-mount > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > div > div > div.sidebar-1tnWFu > nav > div.scroller-WSmht3.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN > ul > li:nth-child(5) > div > a > div > div.avatar-1HDIsL > div > svg > svg > rect {
-    mask: none;
-    clip-path: circle(23% at center);
-    fill: #11efab;
-    y: 3;
 }
 
 /* server buttons */
@@ -969,20 +935,12 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 }
 
 /* search */
-.avatar-2e8lTP {
-    left: -25px;
-    margin-top: calc(4px - .125rem);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    z-index: 1;
+.bQkbYV {
+	background: rgba(0,0,0,0.2);
 }
 
-.cozy-VmLDNB .contents-2MsGLg {
-    position: static;
-    margin-left: 28px;
-    padding-left: 0;
-    text-indent: 0;
+.bQkbYV:hover {
+    background: var(--background-message-hover);
 }
 
 /* server home page */
@@ -1029,63 +987,6 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 .wrapper-NhbLHG {
     padding: 1px 0;
     border-radius: 9px;
-}
-
-/* discover page */
-	/* search results */
-.card-1rhKXq {
-    background-color: transparent;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.25s;
-    transition-property: background-color, transform;
-    transform: scale(1);
-}
-
-.card-1rhKXq:hover {
-    background-color: rgba(0,0,0,0.25);
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.25s;
-    transition-property: background-color, transform;
-    transform: scale(1.09);
-}
-
-	/* search box */
-.theme-dark .searchBox-pyIJJj, .theme-light .searchBox-pyIJJj {
-    background-color: rgba(0,0,0,0.3);
-}
-
-	/* search tags */
-.categoryPill-1zjNrr {
-    transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color;
-}
-
-.categoryPill-1zjNrr:hover:not(.selected-bLcqYK) {
-    background-color: var(--background-modifier-hover);
-	transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color;
-}
-
-	/* language search dropdown */
-.popout-1KHNAq {
-    border: 1px solid rgb(133 17 150);
-    background: rgba(0,0,0,0.3);
-}
-
-	/* page number buttons */
-.pageButton-1GMGeJ {
-    transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color;
-}
-
-.pageButton-1GMGeJ:hover {
-    transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color;
-    background-color: var(--background-message-hover);
 }
 
 /* profile theme popout */
@@ -1135,7 +1036,6 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 }
 
 /* toggles */
-.checked-25WXMf {
-    background: #CF5FB5 !important;
-}
+.container-2nx-BQ, .input-2XRLou {
+    background-color: #CF5FB5 !important;
 }
