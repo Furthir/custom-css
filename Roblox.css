@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Roblox Light Glass
  * @namespace    roblox.com
- * @version      0.24.84.1
+ * @version      0.24.85
  * @author       Fython
  * @description  Glassy Theme for Roblox
 ==/UserStyle== */
@@ -110,6 +110,10 @@
 
 .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .container-empty, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-loading {
     background-color: rgba(0,0,0,0.1);
+}
+
+.light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .container-empty, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-loading {
+    background-color: transparent;
 }
 
 .dark-theme .notification-stream-body, .light-theme .notification-stream-body {
@@ -849,6 +853,7 @@ div[class="server-filter-option"] {
     transition-delay: 0s;
 }
 
+/* homepage friends */
 .popover.bottom.people-info-card-container {
     background: rgba(0,0,0,0.1);
     backdrop-filter: blur(1px);
@@ -864,6 +869,12 @@ div[class="server-filter-option"] {
 .people-info-card-container {
     max-width: 30%;
     min-width: auto;
+}
+
+.friend-list .friend .friend-name-container, .people-list .friend .friend-name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .people-info-card-container .place-container .place-info-container {
@@ -978,7 +989,7 @@ html {
     --btr-theme-color: #212121;
     --btr-header-color: rgba(155,155,155,0.12);
     --btr-nav-color: #121212;
-    --btr-body-padding: -24px;
+    --btr-body-padding: 0px !important;
     background-size: cover !important;
     background-attachment: fixed !important;
     background-repeat: no-repeat !important;

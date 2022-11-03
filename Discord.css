@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.17
+ * @version      0.17.2
  * @author       Fython
  * @description  Purpledized theme for Discord
 ==/UserStyle== */
@@ -483,6 +483,12 @@ section.section-3G9aLW {
 
 section.section-3G9aLW:hover {
     background-color: rgba(244, 116, 255, 0.25);
+	transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+}
+
+.peopleListItem-u6dGxF.active-2UF8Zh, .peopleListItem-u6dGxF:hover, .peopleListItem-u6dGxF {
 	transition-timing-function: ease;
     transition-duration: 0.25s;
     transition-property: background-color;
