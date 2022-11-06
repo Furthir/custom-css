@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Roblox Light Glass
  * @namespace    roblox.com
- * @version      0.24.85
+ * @version      0.24.85.1
  * @author       Fython
  * @description  Glassy Theme for Roblox
 ==/UserStyle== */
@@ -618,7 +618,10 @@ button.close {
     align-items: flex-start;
     margin-top: 20px;
     padding: 0;
-
+}
+	
+#container-main > .content::before, #MasterContainer #BodyWrapper::before {
+	display: none !important;
 }
 
 #container-main {
@@ -974,6 +977,7 @@ div[class="server-filter-option"] {
 #desktop-app-banner .banner-container, #desktop-app-banner .banner-container:after, #desktop-app-banner .banner-container:before {
     display: none;
 }
+
 /* ------------------------ */
 }
 @-moz-document url("https://www.roblox.com/home") {

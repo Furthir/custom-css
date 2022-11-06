@@ -1,10 +1,11 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.17.2
+ * @version      0.18
  * @author       Fython
  * @description  Purpledized theme for Discord
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/Discord.css
+ * @preprocessor stylus
  * homepageURL   https://github.com/Furthir/custom-css/
 ==/UserStyle== */
 
@@ -19,22 +20,24 @@
 }
 
 /* new Discord Profile themes */
-#user-popout {
-    --profile-gradient-primary-color: rgb(100 0 255) !important;
-    --profile-gradient-secondary-color: rgb(80 0 82) !important;
-    --profile-gradient-button-color: hsl(165, calc(var(--saturation-factor, 1) * 65.2%), 18.24%);
-    --profile-gradient-overlay-color: #000000b5 !important;
-    --profile-body-background-color: #0000006b !important;
-    --profile-avatar-border-color: rgb(185 0 255) !important;
-}
+@css {
+	#user-popout {
+		--profile-gradient-primary-color: rgb(100 0 255) !important;
+		--profile-gradient-secondary-color: rgb(80 0 82) !important;
+		--profile-gradient-button-color: hsl(165, calc(var(--saturation-factor, 1) * 65.2%), 18.24%);
+		--profile-gradient-overlay-color: #000000b5 !important;
+		--profile-body-background-color: #0000006b !important;
+		--profile-avatar-border-color: rgb(185 0 255) !important;
+	}
 
-.profileColors-3Y0XaR {
-    --profile-gradient-primary-color: rgb(153 33 226) !important;
-    --profile-gradient-secondary-color: rgb(251 101 251) !important;
-    --profile-gradient-button-color: hsl(165, calc(var(--saturation-factor, 1) * 65.2%), 18.24%);
-    --profile-gradient-overlay-color: rgba(0,0,0,0.45) !important;
-    --profile-body-background-color: rgba(0,0,0,0.4) !important;
-    --profile-avatar-border-color: rgb(185 0 255) !important;
+	.profileColors-3Y0XaR {
+		--profile-gradient-primary-color: rgb(153 33 226) !important;
+		--profile-gradient-secondary-color: rgb(251 101 251) !important;
+		--profile-gradient-button-color: hsl(165, calc(var(--saturation-factor, 1) * 65.2%), 18.24%);
+		--profile-gradient-overlay-color: rgba(0,0,0,0.45) !important;
+		--profile-body-background-color: rgba(0,0,0,0.4) !important;
+		--profile-avatar-border-color: rgb(185 0 255) !important;
+	}
 }
 
 /* Selection color */
@@ -155,151 +158,154 @@ body {
 }
 
 /* Discord Root CSS */
-.theme-dark, .theme-light {
-    --header-primary: #ff64c6;
-    --header-secondary: #ff7deb;
-    --text-normal: #e4f2ff;
-    --text-muted: #76b4ff;
-    --text-link: var(--background-accent);
-    --text-link-low-saturation: var(--background-accent);
-    --text-positive: var(--background-accent);
-    --text-warning: hsl(650, calc(var(--saturation-factor, 1)*95.7%), 54.1%);
-    --text-danger: hsl(659, calc(var(--saturation-factor, 1)*82.6%), 59.4%);
-    --text-brand: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
-    --interactive-normal: #ce61c1;
-    --interactive-hover: #ff63cb;
-    --interactive-active: #ff53ea;
-    --interactive-muted: #b864f4;
-    --background-accent: rgba(255, 104, 228, .98);
-    --background-floating: rgba(0,0,0,0.5);
-    --background-mobile-primary: #ffa4f047;
-    --background-mobile-secondary: #ff97f173;
-    --background-modifier-hover: rgba(255, 163, 231, .19);
-    --background-modifier-active: rgba(255, 151, 234, .16);
-    --background-modifier-selected: #ff6aeda1;
-    --background-modifier-accent: rgba(255, 0, 197, .13);
-    --info-positive-text: #cdffe9;
-    --info-warning-text: #d7fffc;
-    --info-danger-text: #d2fff9;
-    --info-help-background: hsla(650,calc(var(--saturation-factor, 1)*100%),43.9%,0.1);
-    --info-help-foreground: hsl(650,calc(var(--saturation-factor, 1)*100%),43.9%);
-    --info-help-text: #cefff0;
-    --status-warning-text: #ffb5b5;
-    --scrollbar-thin-track: transparent;
-    --scrollbar-auto-thumb: #cccccc2e;
-    --scrollbar-auto-track: #f2f2f20f;
-    --scrollbar-auto-scrollbar-color-thumb: #e3e5e838;
-    --scrollbar-auto-scrollbar-color-track: #f2f3f533;
-    --elevation-stroke: 0 0 0 1px rgba(6, 6, 7, 0.08);
-    --elevation-low: 0 1px 0 rgba(6, 6, 7, 0.1), 0 1.5px 0 rgba(6, 6, 7, 0.025), 0 2px 0 rgba(6, 6, 7, 0.025);
-    --elevation-medium: 0 4px 4px rgba(0, 0, 0, 0.08);
-    --elevation-high: 0 8px 16px rgba(0, 0, 0, 0.16);
-    --logo-primary: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
-    --control-brand-foreground: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
-    --control-brand-foreground-new: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
-    --background-mentioned: hsla(150, calc(var(--saturation-factor, 1)*95.7%), 54.1%, 0.15);
-    --background-mentioned-hover: hsla(150, calc(var(--saturation-factor, 1)*95.7%), 54.1%, 0.2);
-    --background-message-hover: rgb(229 125 206 / 25%);
-    --channels-default: #ff50f3a8;
-    --guild-header-text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.4);
-    --channeltextarea-background: #a2a2a20a;
-    --activity-card-background: rgba(0,0,0,0.2);
-    --textbox-markdown-syntax: #3b46541f;
-    --input-background: rgba(0,0,0,0.5);
-	--modal-footer-background: transparent;
-    --deprecated-card-bg: #00ffff38;
-    --deprecated-card-editable-bg: rgb(246 246 247 / 57%);
-    --deprecated-store-bg: #05ffff29;
-    --deprecated-quickswitcher-input-background: #ffffff08;
-    --deprecated-quickswitcher-input-placeholder: rgb(79 84 92 / 11%);
-    --deprecated-text-input-bg: rgba(172, 204, 255, .02);
-    --deprecated-text-input-border: hsla(217, 100%, 80%, .3);
-    --deprecated-text-input-border-hover: #b9bbbe33;
-    --deprecated-text-input-border-disabled: #9bcdff54;
-    --deprecated-text-input-prefix: #9fc5ff38;
-    --button-positive-background: #CF5FB5;
-    --button-positive-background-hover: rgba(207, 95, 181, 0.7);
-    --button-positive-background-active: rgba(207, 95, 181, 0.7);
-    --button-positive-background-disabled: rgba(113, 0, 87, 0.7);
-}
+@css {
+	.theme-dark, .theme-light {
+		--header-primary: #ff64c6;
+		--header-secondary: #ff7deb;
+		--text-normal: #e4f2ff;
+		--text-muted: #76b4ff;
+		--text-link: var(--background-accent);
+		--text-link-low-saturation: var(--background-accent);
+		--text-positive: var(--background-accent);
+		--text-warning: hsl(650, calc(var(--saturation-factor, 1)*95.7%), 54.1%);
+		--text-danger: hsl(659, calc(var(--saturation-factor, 1)*82.6%), 59.4%);
+		--text-brand: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
+		--interactive-normal: #ce61c1;
+		--interactive-hover: #ff63cb;
+		--interactive-active: #ff53ea;
+		--interactive-muted: #b864f4;
+		--background-accent: rgba(255, 104, 228, .98);
+		--background-floating: rgba(0,0,0,0.5);
+		--background-mobile-primary: #ffa4f047;
+		--background-mobile-secondary: #ff97f173;
+		--background-modifier-hover: rgba(255, 163, 231, .19);
+		--background-modifier-active: rgba(255, 151, 234, .16);
+		--background-modifier-selected: #ff6aeda1;
+		--background-modifier-accent: rgba(255, 0, 197, .13);
+		--info-positive-text: #cdffe9;
+		--info-warning-text: #d7fffc;
+		--info-danger-text: #d2fff9;
+		--info-help-background: hsla(650,calc(var(--saturation-factor, 1)*100%),43.9%,0.1);
+		--info-help-foreground: hsl(650,calc(var(--saturation-factor, 1)*100%),43.9%);
+		--info-help-text: #cefff0;
+		--status-warning-text: #ffb5b5;
+		--scrollbar-thin-track: transparent;
+		--scrollbar-auto-thumb: #cccccc2e;
+		--scrollbar-auto-track: #f2f2f20f;
+		--scrollbar-auto-scrollbar-color-thumb: #e3e5e838;
+		--scrollbar-auto-scrollbar-color-track: #f2f3f533;
+		--elevation-stroke: 0 0 0 1px rgba(6, 6, 7, 0.08);
+		--elevation-low: 0 1px 0 rgba(6, 6, 7, 0.1), 0 1.5px 0 rgba(6, 6, 7, 0.025), 0 2px 0 rgba(6, 6, 7, 0.025);
+		--elevation-medium: 0 4px 4px rgba(0, 0, 0, 0.08);
+		--elevation-high: 0 8px 16px rgba(0, 0, 0, 0.16);
+		--logo-primary: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
+		--control-brand-foreground: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
+		--control-brand-foreground-new: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
+		--background-mentioned: hsla(150, calc(var(--saturation-factor, 1)*95.7%), 54.1%, 0.15);
+		--background-mentioned-hover: hsla(150, calc(var(--saturation-factor, 1)*95.7%), 54.1%, 0.2);
+		--background-message-hover: rgb(229 125 206 / 25%);
+		--channels-default: #ff50f3a8;
+		--guild-header-text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.4);
+		--channeltextarea-background: #a2a2a20a;
+		--activity-card-background: rgba(0,0,0,0.2);
+		--textbox-markdown-syntax: #3b46541f;
+		--input-background: rgba(0,0,0,0.5);
+		--modal-footer-background: transparent;
+		--deprecated-card-bg: #00ffff38;
+		--deprecated-card-editable-bg: rgb(246 246 247 / 57%);
+		--deprecated-store-bg: #05ffff29;
+		--deprecated-quickswitcher-input-background: #ffffff08;
+		--deprecated-quickswitcher-input-placeholder: rgb(79 84 92 / 11%);
+		--deprecated-text-input-bg: rgba(172, 204, 255, .02);
+		--deprecated-text-input-border: hsla(217, 100%, 80%, .3);
+		--deprecated-text-input-border-hover: #b9bbbe33;
+		--deprecated-text-input-border-disabled: #9bcdff54;
+		--deprecated-text-input-prefix: #9fc5ff38;
+		--button-positive-background: #CF5FB5;
+		--button-positive-background-hover: rgba(207, 95, 181, 0.7);
+		--button-positive-background-active: rgba(207, 95, 181, 0.7);
+		--button-positive-background-disabled: rgba(113, 0, 87, 0.7);
+	}
 
-.theme-dark, .theme-light {
-    --info-positive-background: hsla(650, calc(var(--saturation-factor, 1)*47.3%), 43.9%, 0.1);
-    --info-positive-foreground: hsl(659, calc(var(--saturation-factor, 1)*47.3%), 43.9%);
-    --info-warning-background: hsla(650, calc(var(--saturation-factor, 1)*95.7%), 54.1%, 0.1);
-    --info-warning-foreground: hsl(650, calc(var(--saturation-factor, 1)*95.7%), 54.1%);
-    --info-danger-background: hsla(650, calc(var(--saturation-factor, 1)*82.6%), 59.4%, 0.1);
-    --info-danger-foreground: hsl(659, calc(var(--saturation-factor, 1)*82.6%), 59.4%);
-    --status-positive-background: hsl(659, calc(var(--saturation-factor, 1)*47.3%), 43.9%);
-    --status-positive-text: #ffffff21;
-    --status-warning-background: hsl(650, calc(var(--saturation-factor, 1)*95.7%), 54.1%);
-    --status-danger-background: hsl(650, calc(var(--saturation-factor, 1)*82.6%), 59.4%);
-    --status-danger-text: #ffffff1a;
-    --focus-primary: hsl(650, calc(var(--saturation-factor, 1)*100%), 47.8%);
+	.theme-dark, .theme-light {
+		--info-positive-background: hsla(650, calc(var(--saturation-factor, 1)*47.3%), 43.9%, 0.1);
+		--info-positive-foreground: hsl(659, calc(var(--saturation-factor, 1)*47.3%), 43.9%);
+		--info-warning-background: hsla(650, calc(var(--saturation-factor, 1)*95.7%), 54.1%, 0.1);
+		--info-warning-foreground: hsl(650, calc(var(--saturation-factor, 1)*95.7%), 54.1%);
+		--info-danger-background: hsla(650, calc(var(--saturation-factor, 1)*82.6%), 59.4%, 0.1);
+		--info-danger-foreground: hsl(659, calc(var(--saturation-factor, 1)*82.6%), 59.4%);
+		--status-positive-background: hsl(659, calc(var(--saturation-factor, 1)*47.3%), 43.9%);
+		--status-positive-text: #ffffff21;
+		--status-warning-background: hsl(650, calc(var(--saturation-factor, 1)*95.7%), 54.1%);
+		--status-danger-background: hsl(650, calc(var(--saturation-factor, 1)*82.6%), 59.4%);
+		--status-danger-text: #ffffff1a;
+		--focus-primary: hsl(650, calc(var(--saturation-factor, 1)*100%), 47.8%);
+	}
+
+	.theme-light {
+		--brightness: calc(0.5 + var(--saturation-factor, 1)*0.5);
+		--contrast: var(--saturation-factor, 1);
+	}
+
+	[data-popout-root], html {
+		--brand-experiment-100: hsl(650, calc(var(--saturation-factor, 1)*77.8%), 98.2%);
+		--brand-experiment-130: hsl(656, calc(var(--saturation-factor, 1)*87.5%), 96.9%);
+		--brand-experiment-160: hsl(655, calc(var(--saturation-factor, 1)*84.6%), 94.9%);
+		--brand-experiment-200: hsl(656, calc(var(--saturation-factor, 1)*83.3%), 92.9%);
+		--brand-experiment-230: hsl(656, calc(var(--saturation-factor, 1)*87%), 91%);
+		--brand-experiment-260: hsl(655, calc(var(--saturation-factor, 1)*86.2%), 88.6%);
+		--brand-experiment-300: hsl(655, calc(var(--saturation-factor, 1)*86.1%), 85.9%);
+		--brand-experiment-330: hsl(655, calc(var(--saturation-factor, 1)*85.1%), 81.6%);
+		--brand-experiment-360: hsl(655, calc(var(--saturation-factor, 1)*86.1%), 77.5%);
+		--brand-experiment-400: hsl(655, calc(var(--saturation-factor, 1)*86.1%), 71.8%);
+		--brand-experiment-430: hsl(655, calc(var(--saturation-factor, 1)*85.7%), 69.8%);
+		--brand-experiment-460: hsl(655, calc(var(--saturation-factor, 1)*85.5%), 67.5%);
+		--brand-experiment: hsl(650, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
+		--brand-experiment-500: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
+		--brand-experiment-530: hsl(655, calc(var(--saturation-factor, 1)*66.7%), 58.8%);
+		--brand-experiment-560: hsl(655, calc(var(--saturation-factor, 1)*51.4%), 52.4%);
+		--brand-experiment-600: hsl(655, calc(var(--saturation-factor, 1)*46.7%), 44.1%);
+		--brand-experiment-630: hsl(655, calc(var(--saturation-factor, 1)*46.7%), 38.2%);
+		--brand-experiment-660: hsl(655, calc(var(--saturation-factor, 1)*47.1%), 33.3%);
+		--brand-experiment-700: hsl(655, calc(var(--saturation-factor, 1)*47%), 25.9%);
+		--brand-experiment-730: hsl(655, calc(var(--saturation-factor, 1)*46.8%), 24.3%);
+		--brand-experiment-760: hsl(654, calc(var(--saturation-factor, 1)*46.9%), 22.2%);
+		--brand-experiment-800: hsl(655, calc(var(--saturation-factor, 1)*47.5%), 19.4%);
+		--brand-experiment-830: hsl(655, calc(var(--saturation-factor, 1)*47.4%), 14.9%);
+		--brand-experiment-860: hsl(655, calc(var(--saturation-factor, 1)*46.9%), 9.6%);
+		--brand-experiment-900: hsl(653, calc(var(--saturation-factor, 1)*50%), 3.1%);
+		--brand-experiment-05a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
+		--brand-experiment-10a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.1);
+		--brand-experiment-15a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.15);
+		--brand-experiment-20a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.2);
+		--brand-experiment-25a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.25);
+		--brand-experiment-30a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.3);
+		--brand-experiment-35a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.35);
+		--brand-experiment-40a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.4);
+		--brand-experiment-45a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.45);
+		--brand-experiment-50a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.5);
+		--brand-experiment-55a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.55);
+		--brand-experiment-60a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.6);
+		--brand-experiment-65a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.65);
+		--brand-experiment-70a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.7);
+		--brand-experiment-75a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.75);
+		--brand-experiment-80a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.8);
+		--brand-experiment-85a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
+		--brand-experiment-90a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
+		--brand-experiment-95a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
+	}
 }
 
 :root {
     --font-primary: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-display: Ginto, "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-code: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-    --font-korean: Whitney, "Apple SD Gothic Neo", "NanumBarunGothic", "\B9D1\C740 \ACE0\B515", "Malgun Gothic", Gulim, êµ´ë¦¼, Dotum, ë‹ì›€, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-korean: Whitney, "Apple SD Gothic Neo", "NanumBarunGothic", "\B9D1\C740 \ACE0\B515", "Malgun Gothic", Gulim, Dotum, "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-japanese: Whitney, Hiragino Sans, "\30D2\30E9\30AE\30CE\89D2\30B4 ProN W3", "Hiragino Kaku Gothic ProN", "\30E1\30A4\30EA\30AA", Meiryo, Osaka, "MS PGothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-chinese-simplified: Whitney, "Microsoft YaHei New", å¾®è½¯é›…é»‘, "Microsoft Yahei", "Microsoft JhengHei", å®‹ä½“, SimSun, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-chinese-traditional: Whitney, "Microsoft JhengHei", å¾®è»Ÿæ­£é»‘é«”, "Microsoft JhengHei UI", "Microsoft YaHei", å¾®è»Ÿé›…é»‘, å®‹ä½“, SimSun, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-chinese-simplified: Whitney, "Microsoft YaHei New",  "Microsoft Yahei", "Microsoft JhengHei", SimSun, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-chinese-traditional: Whitney, "Microsoft JhengHei", "Microsoft JhengHei UI", "Microsoft YaHei",  SimSun, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.theme-light {
-    --brightness: calc(0.5 + var(--saturation-factor, 1)*0.5);
-    --contrast: var(--saturation-factor, 1);
-}
-
-[data-popout-root], html {
-    --brand-experiment-100: hsl(650, calc(var(--saturation-factor, 1)*77.8%), 98.2%);
-    --brand-experiment-130: hsl(656, calc(var(--saturation-factor, 1)*87.5%), 96.9%);
-    --brand-experiment-160: hsl(655, calc(var(--saturation-factor, 1)*84.6%), 94.9%);
-    --brand-experiment-200: hsl(656, calc(var(--saturation-factor, 1)*83.3%), 92.9%);
-    --brand-experiment-230: hsl(656, calc(var(--saturation-factor, 1)*87%), 91%);
-    --brand-experiment-260: hsl(655, calc(var(--saturation-factor, 1)*86.2%), 88.6%);
-    --brand-experiment-300: hsl(655, calc(var(--saturation-factor, 1)*86.1%), 85.9%);
-    --brand-experiment-330: hsl(655, calc(var(--saturation-factor, 1)*85.1%), 81.6%);
-    --brand-experiment-360: hsl(655, calc(var(--saturation-factor, 1)*86.1%), 77.5%);
-    --brand-experiment-400: hsl(655, calc(var(--saturation-factor, 1)*86.1%), 71.8%);
-    --brand-experiment-430: hsl(655, calc(var(--saturation-factor, 1)*85.7%), 69.8%);
-    --brand-experiment-460: hsl(655, calc(var(--saturation-factor, 1)*85.5%), 67.5%);
-    --brand-experiment: hsl(650, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
-    --brand-experiment-500: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
-    --brand-experiment-530: hsl(655, calc(var(--saturation-factor, 1)*66.7%), 58.8%);
-    --brand-experiment-560: hsl(655, calc(var(--saturation-factor, 1)*51.4%), 52.4%);
-    --brand-experiment-600: hsl(655, calc(var(--saturation-factor, 1)*46.7%), 44.1%);
-    --brand-experiment-630: hsl(655, calc(var(--saturation-factor, 1)*46.7%), 38.2%);
-    --brand-experiment-660: hsl(655, calc(var(--saturation-factor, 1)*47.1%), 33.3%);
-    --brand-experiment-700: hsl(655, calc(var(--saturation-factor, 1)*47%), 25.9%);
-    --brand-experiment-730: hsl(655, calc(var(--saturation-factor, 1)*46.8%), 24.3%);
-    --brand-experiment-760: hsl(654, calc(var(--saturation-factor, 1)*46.9%), 22.2%);
-    --brand-experiment-800: hsl(655, calc(var(--saturation-factor, 1)*47.5%), 19.4%);
-    --brand-experiment-830: hsl(655, calc(var(--saturation-factor, 1)*47.4%), 14.9%);
-    --brand-experiment-860: hsl(655, calc(var(--saturation-factor, 1)*46.9%), 9.6%);
-    --brand-experiment-900: hsl(653, calc(var(--saturation-factor, 1)*50%), 3.1%);
-    --brand-experiment-05a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
-    --brand-experiment-10a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.1);
-    --brand-experiment-15a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.15);
-    --brand-experiment-20a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.2);
-    --brand-experiment-25a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.25);
-    --brand-experiment-30a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.3);
-    --brand-experiment-35a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.35);
-    --brand-experiment-40a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.4);
-    --brand-experiment-45a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.45);
-    --brand-experiment-50a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.5);
-    --brand-experiment-55a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.55);
-    --brand-experiment-60a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.6);
-    --brand-experiment-65a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.65);
-    --brand-experiment-70a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.7);
-    --brand-experiment-75a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.75);
-    --brand-experiment-80a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.8);
-    --brand-experiment-85a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
-    --brand-experiment-90a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
-    --brand-experiment-95a: hsla(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%, 0.05);
-}
 }
 
 @-moz-document domain("discord.com") {
