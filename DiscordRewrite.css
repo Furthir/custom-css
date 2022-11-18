@@ -17,23 +17,28 @@
  "Default": 	"url(https://i.postimg.cc/zDyDH2Sn/default.jpg)",
  "Energy":		"url(https://i.postimg.cc/BQktY9NZ/energy.png)",
  "Lightscape":  "url(https://i.postimg.cc/1Xgkg6pS/lightscape.jpg)",
+ "Skylake":		"url(https://i.postimg.cc/ZqQMg7tP/skylake.jpg)",
  "Custom":		"custom-bg",
  "AMOLED":		"black",
  "None": 		"#18191b",
 }
  @var text custom-bg "Custom BG, include url()" "url()"
+ @var text bg-blur	 "Background Blur"			"0"
 ==/UserStyle== */
+
+/* set variables */
+sT = background-color 0.25s ease
 
 @-moz-document domain("discord.com") {
 /* Root Discord backgrounds and colors changes */
 /* BG Image */
 .theme-dark, .theme-light {
-	--background-primary: bg-img !important;
-	--background-secondary: bg-img;
-	--background-secondary-alt: bg-img;
+	--background-primary: rgba(0,0,0,0.35) !important;
+	--background-secondary: none !important;
+	--background-secondary-alt: none !important;
 	--background-tertiary: bg-img !important;
 }
-rgb(31, 29, 29)
+
 /* new Discord Profile themes */
 @css {
 	#user-popout {
@@ -97,6 +102,10 @@ rgb(31, 29, 29)
 	background-color: transparent;
 }
 
+/* voice channel background */
+.callContainer-HtHELf .theme-dark {
+	background: none;
+}
 
 /* loading */
 .loading-1yrGTe {
@@ -181,7 +190,7 @@ body {
 	--text-link: var(--background-accent);
 	--text-link-low-saturation: var(--background-accent);
 	--text-positive: var(--background-accent);
-	--interactive-normal: #ce61c1;
+	--interactive-normal: accentColor;
 	--interactive-hover: #ff63cb;
 	--interactive-active: #ff53ea;
 	--interactive-muted: #b864f4;
@@ -193,6 +202,7 @@ body {
 	--background-modifier-active: rgba(255, 151, 234, .16);
 	--background-modifier-selected: #ff6aeda1;
 	--background-modifier-accent: rgba(255, 0, 197, .13);
+	--modal-background: rgba(0,0,0,0.3);
 	--info-positive-text: #cdffe9;
 	--info-warning-text: #d7fffc;
 	--info-danger-text: #d2fff9;
@@ -553,7 +563,7 @@ section.section-3G9aLW:hover {
     text-indent: -4rem;
 }
 
-/* cozy message timestamps */
+/* message timestamps */
 .cozy-VmLDNB .timestamp-p1Df1m.alt-1dvXnH {
     position: absolute;
     right: 5px;
@@ -564,6 +574,13 @@ section.section-3G9aLW:hover {
 	position: absolute;
 	float: right !important;
 	right: 5px;
+}
+
+/* message edited text */
+.edited-1v5nT8 {
+    position: absolute;
+    bottom: 4px;
+    right: 50px;
 }
 
 // commands popup
@@ -1203,6 +1220,18 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 .checked-25WXMf {
     background: #CF5FB5 !important;
 }
+
+.callContainer-HtHELf {
+    background: transparent;
+    border-left: dashed 1px #8b008b;
+}
+
+/* activities modal */
+.scrollTierBackgroundUpsell-2oh_9T {
+    background-color: var(--background-primary);
+}
+
+/* --------------- */
 }
 
 /* Rewrite and variables */
@@ -1220,7 +1249,26 @@ if image-groups {
 			margin-left: 0px;
 		}
 	}
+.bg-1QIAus {
+	backdrop-filter: blur((bg-blur)px);
+}
+
 .textBadge-1fdDPJ {
 	background: altAccent !important;
 }
+
+/* activities modal */
+.activityItem-1Z9CTr {
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+	
+	&:hover {
+    background: var(--background-modifier-hover);
+    transition-timing-function: ease;
+    transition-duration: 0.25s;
+    transition-property: background-color;
+	}
+}
+/* ------------------------------ */
 }
