@@ -7,13 +7,10 @@
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordRewrite.css?dummy=.user.css
  * homepageURL   https://github.com/Furthir/custom-css/
  * @preprocessor stylus
- 
- @var checkbox image-groups 	"Group Multi-attachment messages" 0
- @var checkbox compact-friends	"Sidebar drawer"				  0
- @var checkbox hide-chat-btn	"Hide chat buttons" 			  1
- @var checkbox hide-call-btn	"Hide call buttons"				  0
- @var color selectColor "Selection Color"	 rgba(0,0,0,0.2)
- @var color accentColor "Accent Color"	 	 #CF5FB5
+ -----------------------------------------------------------------------------
+ @var checkbox image-groups "Group Multi-attachment messages" 0
+ @var color selectColor "Selection Color"	 rgba(255,78,229,0.2)
+ @var color accentColor "Accent Color"	 	 rgb(207,95,181)
  @var color altAccent 	"Alt Accent Color"	 rebeccapurple
  
  @var select bg-img "Background Image" {
@@ -424,6 +421,20 @@ body {
 
 .image-20MDYu {
 	filter: invert(0.9) opacity(0.5);
+}
+
+/* Hide Chat Buttons */
+.button-2fCJ0o {
+	display: none;
+}
+
+/* remove call buttons, delete this section if you want */
+div[aria-label="Start Voice Call"] {
+	display: none;
+}
+
+div[aria-label="Start Video Call"] {
+	display: none;
 }
 
 /* verification banner(?) */
@@ -1238,44 +1249,10 @@ if image-groups {
 			margin-left: 0px;
 		}
 	}
-
-if compact-friends {
-	.sidebar-1tnWFu {
-		width: 65px;
-		transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
-		transition-duration: 0.85s;
-	}
-	
-	.sidebar-1tnWFu:hover {
-		width: 240px;
-		transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
-		transition-duration: 0.25s;
-	}
-}
-
-if hide-chat-btn {
-	/* remove call buttons */
-	.button-2fCJ0o {
-		display: none;
-	}
-}
-
-if hide-call-btn {
-	/* remove call buttons */
-	div[aria-label="Start Voice Call"] {
-		display: none;
-	}
-
-	div[aria-label="Start Video Call"] {
-		display: none;
-	}
-}
-/* BG Blur */
 .bg-1QIAus {
 	backdrop-filter: blur((bg-blur)px);
 }
 
-/* accent apply */
 .textBadge-1fdDPJ {
 	background: altAccent !important;
 }

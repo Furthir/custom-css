@@ -1,17 +1,26 @@
 /* ==UserStyle==
- * @name         Roblox Light Glass
+ * @name         Roblox Light Glass Rewrite
  * @namespace    roblox.com
- * @version      0.25
+ * @version      0.25.2
  * @author       Fython
  * @description  Glassy Theme for Roblox
  * @preprocessor stylus
  ------------------------------------------------
-  @var text custom-bg "Custom BG, include url()" "url()"
+ @var select bg-image "Preset Background Image" {
+ "Default":  	"url(https://i.postimg.cc/1Xgkg6pS/lightscape.jpg)",
+ "Energy":		"url(https://i.postimg.cc/BQktY9NZ/energy.png)",
+ "Skylake":		"url(https://i.postimg.cc/ZqQMg7tP/skylake.jpg)",
+ "Skymountain": "url(https://i.postimg.cc/yYhHptZ7/Skymountain.jpg)",
+ "Custom":		"custom-bg",
+}
+
+ @var text  custom-bg  "Custom BG, include url()"  "url()"
+ @var range bgblur  "Background blur"              [0, 0, 10, 1, "px"]
 ==/UserStyle== */
 
 @-moz-document domain("roblox.com") {
 ::selection {
-    background-color: rgba(0, 255, 232, .65)
+    background-color: rgba(0, 255, 232, .65);
 }
 
 @keyframes RGBFilter {
@@ -67,8 +76,9 @@
 }
 
 .dark-theme, .light-theme {
-    background: none !important;
+    background: rgba(0,0,0,0.1) !important;
     color: black
+
 }
 
 #container-main > .content, #MasterContainer #BodyWrapper {
@@ -617,6 +627,12 @@ button.close {
     background-size: inherit !important;
 }
 
+#container-main {
+    background-attachment: fixed;
+    background-position: left center, right center !important;
+	backdrop-filter: blur(bgblur);
+}
+
 #container-main > div.content {
     align-items: flex-start;
     margin-top: 20px;
@@ -627,10 +643,6 @@ button.close {
 	display: none !important;
 }
 
-#container-main {
-    background-attachment: fixed;
-    background-position: left center, right center !important;
-}
 
 .dark-theme .menu-vertical, .light-theme .menu-vertical {
     background-color: transparent;
@@ -1003,8 +1015,7 @@ html {
     min-height: 100%;
     background-position: right, bottom !important;
     box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.1);
-  background-image: url(bgimg) 
-      !important;
+	background-image: bg-image !important;
 
 }
 }
