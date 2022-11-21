@@ -8,25 +8,25 @@
  * homepageURL   https://github.com/Furthir/custom-css/
  * @preprocessor stylus
  
- @var checkbox image-groups 	"Group Multi-attachment messages" 	0
- @var checkbox compact-friends	"Sidebar drawer"				  	0
- @var checkbox hide-chat-btn	"Hide chat buttons"	 				1
- @var checkbox hide-call-btn	"Hide call buttons"					0
- @var color selectColor "Selection Color"	 rgba(0,0,0,0.2)
- @var color accentColor "Accent Color"	 	 #CF5FB5
- @var color altAccent 	"Alt Accent Color"	 rebeccapurple
+ @var checkbox 	image-groups 	"Group Multi-attachment messages" 	0
+ @var checkbox 	compact-friends	"Sidebar drawer"		  	0
+ @var checkbox 	hide-chat-btn	"Hide chat buttons" 			1
+ @var checkbox 	hide-call-btn	"Hide call buttons"			0
+ @var color 	selectColor 	"Selection Color"			rgba(0,0,0,0.2)
+ @var color 	accentColor 	"Accent Color"	 			#CF5FB5
+ @var color 	altAccent 	"Alt Accent Color"			rebeccapurple
  ----------------------------------------
  @var select bg-img "Background Image" {
- "Default": 	"url(https://i.postimg.cc/zDyDH2Sn/default.jpg)",
+ "Default": 		"url(https://i.postimg.cc/zDyDH2Sn/default.jpg)",
  "Energy":		"url(https://i.postimg.cc/BQktY9NZ/energy.png)",
- "Lightscape":	"url(https://i.postimg.cc/1Xgkg6pS/lightscape.jpg)",
+ "Lightscape":		"url(https://i.postimg.cc/1Xgkg6pS/lightscape.jpg)",
  "Skylake":		"url(https://i.postimg.cc/ZqQMg7tP/skylake.jpg)",
  "Custom":		"custom-bg",
  "AMOLED":		"black",
  "None": 		"#18191b",
 }
 -----------------------------------------
- @var text custom-bg "Custom BG, include url()" "url()"
+ @var text custom-bg	 "Custom BG, include url()" 		"url()"
  @var text bg-blur	 "Background Blur"			"0"
 ==/UserStyle== */
 
