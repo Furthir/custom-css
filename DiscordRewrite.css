@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.19.2.1
+ * @version      0.19.2.2
  * @author       Fython
  * @description  Purplelized theme for Discord
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordRewrite.css?dummy=.user.css
@@ -33,7 +33,7 @@
  @var color		statusOnline	"Online Status Color"		rgba(207, 95, 181, 1)
  @var color		statusIdle		"Idle Status Color"			rgba(17, 239, 171, 1)
  @var color		statusDND		"DND Status Color"			rgba(255, 0, 0, 1)
- @var color		statusOff		"Offline Status Color"		rgba(0, 0, 0, 1)
+ @var color		statusOffline	"Offline Status Color"		rgba(0, 0, 0, 1)
 ==/UserStyle== */
 
 /* set variables */
@@ -254,7 +254,7 @@ body {
     --status-green-600: statusOnline;
     --status-yellow-500: statusIdle;
     --status-red-500: statusDND;
-	--status-grey-500: statusOff;
+	--status-grey-500: statusOffline;
 }
 
 @css {
@@ -901,7 +901,7 @@ rect[mask="url(#svg-mask-status-dnd)"] {
 }
 
 rect[mask="url(#svg-mask-status-offline)"] {
-    fill: statusOff !important;
+    fill: statusOffline !important;
     mask: none;
     clip-path: circle(50% at center) !important;
 }
