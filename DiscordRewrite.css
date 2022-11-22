@@ -1241,31 +1241,32 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 
 /* Rewrite and variables */
 if image-groups {
-		.container-2sjPya {
-			display: flex;
-			row-gap: 10px;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: flex-start;
-		}
-		
-		.container-2sjPya>* {
-			padding-left: 1rem !important;
-			margin-left: 0px;
-		}
+	.container-2sjPya {
+		display: flex;
+		row-gap: 10px;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-start;
 	}
+	
+	.container-2sjPya>* {
+		padding-left: 1rem !important;
+		margin-left: 0px;
+	}
+}
 
 if sidebar-drawer {
-	.sidebar-1tnWFu {
-		width: 65px;
-		transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
-		transition-duration: 0.85s;
-		transition-delay: 0.25s;
-	
-	&:hover {
-		width: 240px;
-		transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
-		transition-duration: 0.25s;
+		.sidebar-1tnWFu {
+			width: 65px;
+			transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+			transition-duration: 0.85s;
+			transition-delay: 0.25s;
+
+		&:hover {
+			width: 240px;
+			transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+			transition-duration: 0.25s;
+		}
 	}
 }
 
