@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.19.1.2
+ * @version      0.19.2
  * @author       Fython
  * @description  Purplelized theme for Discord
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordRewrite.css?dummy=.user.css
@@ -9,11 +9,10 @@
  * @preprocessor stylus
  
  @var checkbox 	image-groups 	"Group Multi-attachment messages" 	0
- @var checkbox 	compact-friends	"Sidebar drawer"		 		 	0
+ @var checkbox 	sidebar-drawer	"Sidebar drawer"		 		 	0
  @var checkbox 	hide-chat-btn	"Hide chat buttons" 				1
  @var checkbox 	hide-call-btn	"Hide call buttons"					0
  @var checkbox	hide-nitro		"Hide Nitro Button"					1
- @var color		selectColor 	"Selection Color"					rgba(0,0,0,0.2)
  @var color		accentColor 	"Accent Color"	 					#CF5FB5
  @var color		altAccent 		"Alt Accent Color"					rebeccapurple
  ----------------------------------------
@@ -26,9 +25,15 @@
  "AMOLED":			"black",
  "None": 			"#18191b",
 }
------------------------------------------
- @var text custom-bg	"Custom BG, include url()" 		"url()"
- @var text bg-blur	 	"Background Blur"				"0"
+ ----------------------------------------
+ @var text 		custom-bg	"Custom BG, include url()" 		"url()"
+ @var range 	bg-blur  	"Background blur"             	[0, 0, 10, 1, "px"]
+ ----------------------------------------
+ @var color		selectColor 	"Selection Color"			rgba(0, 0, 0, 0.2)
+ @var color		statusOnline	"Online Status Color"		rgba(207, 95, 181, 1)
+ @var color		statusIdle		"Idle Status Color			rgba(17, 239, 171, 1)
+ @var color		statusDND		"DND Status Color"			rgba(255, 0, 0, 1)
+ @var color		statusOff		"Offline Status Color"		rgba(0, 0, 0, 1)
 ==/UserStyle== */
 
 /* set variables */
@@ -246,6 +251,10 @@ body {
 	--button-positive-background-disabled: rgba(113, 0, 87, 0.7);
 	--status-positive-text: #ffffff21;
 	--status-danger-text: #ffffff1a;
+    --status-green-600: statusOnline;
+    --status-yellow-500: statusIdle;
+    --status-red-500: statusDND;
+	--status-grey-500: statusOff;
 }
 
 @css {
@@ -480,6 +489,11 @@ body {
 	background-color: rgba(0,0,0,0.25);
 	border-radius: 6px;
 	border: 3px rebeccapurple solid;
+}
+
+.container-1oAagU {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 
 .itemCard-3Etziu:first-of-type {
@@ -1241,14 +1255,14 @@ if image-groups {
 		}
 	}
 
-if compact-friends {
+if sidebar-drawer {
 	.sidebar-1tnWFu {
 		width: 65px;
 		transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
 		transition-duration: 0.85s;
-	}
+		transition-delay: 0.25s;
 	
-	.sidebar-1tnWFu:hover {
+	&:hover {
 		width: 240px;
 		transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
 		transition-duration: 0.25s;
@@ -1279,10 +1293,9 @@ if hide-nitro {
 	}
 }
 
-
 /* BG Blur */
 .bg-1QIAus {
-	backdrop-filter: blur((bg-blur)px);
+	backdrop-filter: blur(bg-blur);
 }
 
 /* accent apply */
