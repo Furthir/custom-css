@@ -31,7 +31,7 @@
  ----------------------------------------
  @var color		selectColor 	"Selection Color"			rgba(0, 0, 0, 0.2)
  @var color		statusOnline	"Online Status Color"		rgba(207, 95, 181, 1)
- @var color		statusIdle		"Idle Status Color			rgba(17, 239, 171, 1)
+ @var color		statusIdle		"Idle Status Color"			rgba(17, 239, 171, 1)
  @var color		statusDND		"DND Status Color"			rgba(255, 0, 0, 1)
  @var color		statusOff		"Offline Status Color"		rgba(0, 0, 0, 1)
 ==/UserStyle== */
