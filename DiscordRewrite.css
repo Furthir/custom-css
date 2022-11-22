@@ -883,25 +883,25 @@ section.section-3G9aLW:hover {
 
 /* Status Icons */
 rect[mask="url(#svg-mask-status-online)"] {
-    fill: rgb(207,95,181) !important;
+    fill: statusOnline !important;
     mask: none;
     clip-path: circle(50% at center) !important;
 }
 
 rect[mask="url(#svg-mask-status-idle)"] {
-    fill: #11efab !important;
+    fill: statusIdle !important;
     mask: none;
     clip-path: circle(50% at center) !important;
 }
 
 rect[mask="url(#svg-mask-status-dnd)"] {
-    fill: red !important;
+    fill: statusDND !important;
     mask: none;
     clip-path: circle(50% at center) !important;
 }
 
 rect[mask="url(#svg-mask-status-offline)"] {
-    fill: black !important;
+    fill: statusOff !important;
     mask: none;
     clip-path: circle(50% at center) !important;
 }
