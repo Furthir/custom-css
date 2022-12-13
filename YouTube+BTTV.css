@@ -524,13 +524,17 @@ html {
 }
 
 button.yt-icon-button {
-vertical-align: middle;
-outline: none;
-background: none;
-margin: 0;
-border: none;
-padding: 0;
-color: #42f5aa;
+	vertical-align: middle;
+	outline: none;
+	background: none;
+	margin: 0;
+	border: none;
+	padding: 0;
+	color: #42f5aa;
+}
+
+#button.ytd-menu-renderer yt-icon.ytd-menu-renderer {
+    color: white;
 }
 
 html:not(.style-scope)[system-icons] {
