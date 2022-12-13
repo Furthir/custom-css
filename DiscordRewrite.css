@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.19.3.1
+ * @version      0.19.3.2
  * @author       Fython
  * @description  Purplelized theme for Discord
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordRewrite.css?dummy=.user.css
@@ -15,14 +15,6 @@
  @var checkbox	hide-nitro		"Hide Nitro Button"					1
  @var color		accentColor 	"Accent Color"	 					#CF5FB5
  @var color		altAccent 		"Alt Accent Color"					rebeccapurple
- @var select	cfont	"Font"	{
-  "Whitney (old)":		"Whitney",
-  "Cursive":			"Cursive",
-  "Serif":				"Serif",
-  "Noto Sans":			"Noto Sans",
-  "gg sans (bad)":		"gg sans",
- }
- 
  @var text sep "-------------------------------" ___________________
  ----------------------------------------
  @var select bg-img "Background Image" {
@@ -53,6 +45,16 @@
  @var color		prfSecond		"Profile Secondary Color"		rgba(80, 0, 82, 1)
  @var color		prfBodyBG		"Profile Body Color"			rgba(0, 0, 0, 0.4)
  @var color 	prfOverlay		"Profile Overlay Color"			rgba(0, 0, 0, 0.45)
+
+ @var select	cfont	"Font"	{
+  "Whitney (old)":		"Whitney",
+  "Cursive":			"Cursive",
+  "Serif":				"Serif",
+  "Noto Sans":			"Noto Sans",
+  "gg sans (bad)":		"gg sans",
+ }
+ @var color		cfolder			"Custom Folder Color"		rgba(88, 101, 242, 0.4)
+ 
 ==/UserStyle== */
 
 /* set variables */
@@ -454,56 +456,6 @@ body {
 	display: none;
 }
 
-
-/* homepage, active now */
-.theme-light .inset-SbsSFp, .theme-dark .inset-SbsSFp {
-	background-color: rgba(0,0,0,0.25);
-	border-radius: 6px;
-	border: 3px rebeccapurple solid;
-}
-
-.container-1oAagU {
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-}
-
-.itemCard-3Etziu:first-of-type {
-	margin-top: 0;
-	border: 4px purple solid;
-}
-
-.itemCard-3Etziu.wrapper-2RrXDg.outer-2JOHae.padded-2NSY6O.interactive-2zD88a {
-	transition-timing-function: ease;
-	transition-duration: 0.25s;
-	transition-property: background-color;
-}
-
-.itemCard-3Etziu.wrapper-2RrXDg.outer-2JOHae.padded-2NSY6O.interactive-2zD88a:hover {
-	background-color: rgba(167, 96, 166, 0.3);
-	transition-timing-function: ease;
-	transition-duration: 0.25s;
-	transition-property: background-color;
-}
-
-section.section-3G9aLW {
-	transition-timing-function: ease;
-	transition-duration: 0.25s;
-	transition-property: background-color;
-}
-
-section.section-3G9aLW:hover {
-	background-color: rgba(244, 116, 255, 0.25);
-	transition-timing-function: ease;
-	transition-duration: 0.25s;
-	transition-property: background-color;
-}
-
-.peopleListItem-u6dGxF.active-2UF8Zh, .peopleListItem-u6dGxF:hover, .peopleListItem-u6dGxF {
-	transition-timing-function: ease;
-	transition-duration: 0.25s;
-	transition-property: background-color;
-}
-
 /* Message Hover Effects */
 .message-2CShn3.selected-2LX7Jy, .mouse-mode.full-motion .message-2CShn3 {
 	transition-timing-function: ease;
@@ -553,7 +505,7 @@ section.section-3G9aLW:hover {
     right: 50px;
 }
 
-// commands popup
+/* commands popup */
 .categoryHeader-OpJ1Ly {
     background-color: transparent;
 }
@@ -871,6 +823,11 @@ rect[mask="url(#svg-mask-status-offline)"] {
     clip-path: circle(50% at center) !important;
 }
 
+/* server list */
+.folder-241Joy, .folderIconWrapper-1oRIZr {
+	background-color: cfolder !important;
+}
+
 /* Members list */
 .layout-1qmrhw {
     border-radius: 6px;
@@ -883,9 +840,6 @@ rect[mask="url(#svg-mask-status-offline)"] {
     backdrop-filter: blur(2px);
     background: rgba(0,0,0,0.6);
 }
-
-/* server context buttons */
-
 
 /* user settings context menu */
 #user-settings-cog {	
@@ -1354,6 +1308,45 @@ if customPrf {
 	background: none !important;
 }
 
+/* homepage, active now */
+.theme-light .inset-SbsSFp, .theme-dark .inset-SbsSFp {
+	background-color: rgba(0,0,0,0.25);
+	border-radius: 6px;
+	border: 3px rebeccapurple solid;
+}
+
+.container-1oAagU {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.itemCard-3Etziu:first-of-type {
+	margin-top: 0;
+	border: 4px purple solid;
+}
+
+.itemCard-3Etziu.wrapper-2RrXDg.outer-2JOHae.padded-2NSY6O.interactive-2zD88a {
+	transition: sT;
+	
+	&:hover {
+	background-color: rgba(167, 96, 166, 0.3);
+	transition: sT;
+	}
+}
+
+section.section-3G9aLW {
+	transition: sT;
+	
+	&:hover {
+	background-color: rgba(244, 116, 255, 0.25);
+	transition-: sT;
+	}
+}
+
+.peopleListItem-u6dGxF.active-2UF8Zh, .peopleListItem-u6dGxF:hover, .peopleListItem-u6dGxF {
+	transition: sT;
+}
+
 /* side buttons */
 .circleIconButton-1VxDrg {
 	color: accentColor;
@@ -1367,6 +1360,11 @@ if customPrf {
     background: none;
     box-shadow: 0 4px 16px 0 rgb(0 0 0);
     border-left: solid 4px accentColor !important;
+}
+
+/* snow home button */
+#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > nav > ul > div.scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt > div.tutorialContainer-1pL9QS > div > div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > div > svg > g:nth-child(1) > rect {
+	clip-path: circle(0px at center);
 }
 /* ------------------------------ */
 }
