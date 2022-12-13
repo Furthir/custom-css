@@ -562,7 +562,6 @@ dark-theme .dropdown-menu li.active, .dark-theme .dropdown-menu li, .light-theme
 #simplemodal-overlay {
     background-color: rgba(0,0,0,0.5) !important;
     opacity: 0.8;
-    backdrop-filter: blur(2px);
     height: 3328px;
     width: 1189px;
     position: fixed;
