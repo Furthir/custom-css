@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.19.3.2
+ * @version      0.19.3.3
  * @author       Fython
  * @description  Purplelized theme for Discord
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordRewrite.css?dummy=.user.css
@@ -823,11 +823,6 @@ rect[mask="url(#svg-mask-status-offline)"] {
     clip-path: circle(50% at center) !important;
 }
 
-/* server list */
-.folder-241Joy, .folderIconWrapper-1oRIZr {
-	background-color: cfolder !important;
-}
-
 /* Members list */
 .layout-1qmrhw {
     border-radius: 6px;
@@ -1360,6 +1355,11 @@ section.section-3G9aLW {
     background: none;
     box-shadow: 0 4px 16px 0 rgb(0 0 0);
     border-left: solid 4px accentColor !important;
+}
+
+/* server list */
+.folder-241Joy, .folderIconWrapper-1oRIZr {
+	background-color: cfolder !important;
 }
 
 /* snow home button */
