@@ -1,15 +1,16 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.19.3.3
+ * @version      0.19.4
  * @author       Fython
  * @description  Purplelized theme for Discord
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordRewrite.css?dummy=.user.css
  * homepageURL   https://github.com/Furthir/custom-css/
  * @preprocessor stylus
  
- @var checkbox 	image-groups 	"Group Multi-attachment messages" 	0
- @var checkbox 	sidebar-drawer	"Sidebar drawer"		 		 	0
+ @var checkbox 	image-groups 	"Group Multi-attachment messages" 	1
+ @var checkbox 	sidebar-drawer	"Sidebar drawer"		 		 	1
+ @var checkbox	rgbhome			"RGB Home Button"					1
  @var checkbox 	hide-chat-btn	"Hide chat buttons" 				1
  @var checkbox 	hide-call-btn	"Hide call buttons"					0
  @var checkbox	hide-nitro		"Hide Nitro Button"					1
@@ -29,6 +30,7 @@
 
  @var text 		custom-bg	"Custom BG, include url()" 		"url()"
  @var range 	bg-blur  	"Background blur"             	[0, 0, 10, 1, "px"]
+ @var color		bgoverlay	"Background Overlay"			rgba(0,0,0,0.26)
  
  @var text sep2 "-------------------------------" ___________________
  ----------------------------------------
@@ -60,7 +62,9 @@
 /* set variables */
 sT = background-color 0.25s ease
 prfBorder = transparent
-
+accentHover = (accentColor + rgb(35,60,35) - rgba(0,0,0,0.1))
+altHover = (altAccent + rgba(20,20,20,-0.2))
+accentDark = (accentColor - rgb(50,70,50))
 @-moz-document domain("discord.com") {
 /* Root Discord backgrounds and colors changes */
 /* BG Image */
@@ -78,11 +82,11 @@ prfBorder = transparent
 
 /* remove/merge homepage backgrounds*/
 .theme-light .container-2cd8Mz, .theme-dark .container-2cd8Mz {
-	background-color: transparent;
+	background-color: transparent !important;
 }
 
 .nowPlayingColumn-1eCBCN {
-	background: none;
+	background: none !important;
 }
 
 .scroller-hE2gWq {
@@ -97,25 +101,25 @@ prfBorder = transparent
 	background-image: var(--background-tertiary);
 	background-position: unset;
 	background-size: cover;
-	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.25); /* used for darkening background */
+	box-shadow: inset 0 0 0 2000px bgoverlay; /* used for darkening background */
 }
 
 .scroller-WSmht3 {
-	background-color: transparent; 
+	background-color: transparent !important; 
 }
 
 .sidebar-1tnWFu {
-	background: none;
+	background: none !important;
 }
 
 /* forum channel background */
 .theme-light .container-3wLKDe, .theme-dark .container-3wLKDe {
-	background-color: transparent;
+	background-color: transparent !important;
 }
 
 /* voice channel background */
 .callContainer-HtHELf .theme-dark {
-	background: none;
+	background: none !important;
 }
 
 /* loading */
@@ -125,51 +129,51 @@ prfBorder = transparent
 
 /* ??? */
 .contentRegion-3HkfJJ {
-	background: none;
+	background: none !important;
 }
 
 /* settings page */
 .sidebarRegionScroller-FXiQOh {
-	background: none;
+	background: none !important;
 }
 
 /* app directory */
 .theme-light .directoryModal-YJsOMv, .theme-dark .directoryModal-YJsOMv {
-	background-color: transparent;
+	background-color: transparent !important;
 }
 
 /* title/topbar */
 .container-ZMc96U.themed-Hp1KC_ {
-	background: none;
+	background: none !important;
 }
 
 /* full app background removal */
 .app-3xd6d0, .mobileApp-3_TCAV {
-	background: none;
+	background: none !important;
 }
 
 .content-1SgpWY {
-	background: none;
+	background: none !important;
 }
 
 .layer-86YKbF.baseLayer-W6S8cY {
-	background-color: transparent;
+	background-color: transparent !important;
 }
 
 .bg-1QIAus {
-	background-color: transparent;
+	background-color: transparent !important;
 }
 
 .chat-2ZfjoI {
-	background: none;
+	background: none !important;
 }
 
 .appMount-3lHmkl, body {
-	background-color: var(--background-tertiary);
+	background-color: var(--background-tertiary) !important;
 }
 
 body {
-	background: transparent;
+	background: transparent !important;
 }
 
 /* user list sidebar */
@@ -201,16 +205,16 @@ body {
 	--text-link: var(--background-accent);
 	--text-link-low-saturation: var(--background-accent);
 	--text-positive: var(--background-accent);
-	--interactive-normal: accentColor;
+	--interactive-normal: (accentColor + rgb(10,10,10));
 	--interactive-hover: (accentColor + rgb(20,60,60));
 	--interactive-active: (accentColor + rgb(10,10,10));
-	--interactive-muted: (accentColor - rgb(40,40,40));
+	--interactive-muted: (accentColor - rgb(60,60,60));
 	--background-accent: accentColor;
 	--background-floating: rgba(0,0,0,0.5);
 	--background-mobile-primary: #ffa4f047;
 	--background-mobile-secondary: #ff97f173;
-	--background-modifier-accent: rgba(255, 0, 197, .13);
-	--background-modifier-active: rgba(255, 151, 234, .16);
+	--background-modifier-accent: (accentColor - rgba(90,49,60,0.6));
+	--background-modifier-active: (accentColor + rgb(40,40,40) - rgba(0,0,0,0.5));
 	--background-modifier-selected: (accentColor - rgba(0,0,0,0.3));
 	--background-modifier-hover: (accentColor - rgba(0,0,0,0.65));
 	--background-message-hover: (accentColor - rgba(50,50,50,0.8));
@@ -237,16 +241,12 @@ body {
 	--textbox-markdown-syntax: #3b46541f;
 	--button-positive-background: accentColor;
 	--button-positive-background-hover: (accentColor - rgba(0,0,0,0.3));
-	--button-positive-background-active: rgba(207, 95, 181, 0.7);
-	--button-positive-background-disabled: rgba(113, 0, 87, 0.7);
-	--status-positive-text: #ffffff21;
-	--status-warning-text: #ffb5b5;
-	--text-warning: (altAccent + rgb(10,10,10));
-	--status-danger-text: #ffffff1a;
-	--status-green-600: statusOnline;
-	--status-yellow-500: statusIdle;
-	--status-red-500: statusDND;
-	--status-grey-500: statusOffline;
+	--button-positive-background-active: (accentColor + rgb(29,3,60));
+	--button-positive-background-disabled: (accentColor - rgba(50,50,50,0.3));
+	--button-secondary-background: (altAccent - rgb(20,20,28));
+	--button-secondary-background-hover: altHover;
+	--button-secondary-background-active: (altAccent + rgb(29,3,60) - rgba(0,0,0,0.1));
+	--button-secondary-background-disabled: (altAccent - rgba(50,50,50,0.3));
 	--deprecated-card-bg: #00ffff38;
 	--deprecated-card-editable-bg: rgb(246 246 247 / 57%);
 	--deprecated-store-bg: #05ffff29;
@@ -260,8 +260,10 @@ body {
 	--text-brand: (altAccent - rgb(10,10,10));
 }
 [data-popout-root], html {
-	--brand-experiment: accentColor - rgb(10,10,10);
+	--brand-experiment: (accentColor - rgb(10,10,10))
 	--brand-experiment-360: accentColor
+	--brand-experiment-500: accentColor
+	--brand-experiment-560: accentHover
 	--brand-experiment-600: accentColor
 }
 @css {
@@ -303,9 +305,7 @@ body {
 		--brand-experiment-400: hsl(655, calc(var(--saturation-factor, 1)*86.1%), 71.8%);
 		--brand-experiment-430: hsl(655, calc(var(--saturation-factor, 1)*85.7%), 69.8%);
 		--brand-experiment-460: hsl(655, calc(var(--saturation-factor, 1)*85.5%), 67.5%);
-		--brand-experiment-500: hsl(655, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
 		--brand-experiment-530: hsl(655, calc(var(--saturation-factor, 1)*66.7%), 58.8%);
-		--brand-experiment-560: hsl(655, calc(var(--saturation-factor, 1)*51.4%), 52.4%);
 		--brand-experiment-630: hsl(655, calc(var(--saturation-factor, 1)*46.7%), 38.2%);
 		--brand-experiment-660: hsl(655, calc(var(--saturation-factor, 1)*47.1%), 33.3%);
 		--brand-experiment-700: hsl(655, calc(var(--saturation-factor, 1)*47%), 25.9%);
@@ -422,25 +422,6 @@ body {
 	100% {background-color: red;}
 }
 
-.wrapper-3kah-n.selected-1Drb7Z .childWrapper-1j_1ub,
-.wrapper-3kah-n:hover .childWrapper-1j_1ub {
-	animation-name: HueShiftRGB;
-	border-radius: 15px;
-	animation-duration: 15s;
-	animation-iteration-count: infinite;
-}
-
-.homeIcon-r0w4ny {
-	animation-name: ColorShiftRGB;
-	border-radius: 15px;
-	animation-duration: 15s;
-	animation-iteration-count: infinite;
-}
-
-.image-20MDYu {
-	filter: invert(0.9) opacity(0.5);
-}
-
 /* verification banner(?) */
 .colorDefault-1e8tQv {
 	background-color: var(--status-positive-background);
@@ -527,34 +508,6 @@ body {
     line-height: 1.5rem;
 }
 
-/* server invites */
-.flex-2S1XBF.flex-3BkGQD.vertical-3aLnqW.flex-3BkGQD.directionColumn-3pi1nm.justifyCenter-rrurWZ.alignStretch-Uwowzr.noWrap-hBpHBz.guildInfo-UCKhrV {
-    align-items: center;
-}
-
-.lookFilled-yCfaCM.colorGreen-3y-Z79 {
-    width: -webkit-fill-available;
-	font-weight: bolder;
-}
-
-.content-1r-J1r {
-    width: max-content;
-    border: solid;
-    border-radius: 10px;
-    border-color: rgb(200 91 177) !important;
-    box-shadow: inset 0px 0px 14px 1px rgb(207 95 181), 0px 0px 6px 6px rgb(207 95 181);
-    padding: 10px;
-    gap: 16px;
-}
-
-.guildIcon-3ZfRfI {
-    background-color: var(--background-primary);
-    flex: 1 1 auto;
-    margin-left: 10px;
-    max-width: 70px;
-    min-height: 70px;
-}
-
 /* profile popup bg */
 .backdrop-2ByYRN {
     opacity: 0.2 !important;
@@ -564,15 +517,6 @@ body {
 
 .layer-1Ixpg3 {
     backdrop-filter: blur(1.2px)
-}
-
-/* inbox */
-.container-nwU-8G {
-    backdrop-filter: blur(1.3px);
-    align-items: center;
-    min-height: 400px;
-    text-align: center;
-    padding: 0 16px;
 }
 
 /* user popout */
@@ -796,31 +740,6 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-}
-
-/* Status Icons */
-rect[mask="url(#svg-mask-status-online)"] {
-    fill: var(--status-green-600) !important;
-    mask: none;
-    clip-path: circle(50% at center) !important;
-}
-
-rect[mask="url(#svg-mask-status-idle)"] {
-    fill: var(--status-yellow-500) !important;
-    mask: none;
-    clip-path: circle(50% at center) !important;
-}
-
-rect[mask="url(#svg-mask-status-dnd)"] {
-    fill: var(--status-red-500) !important;
-    mask: none;
-    clip-path: circle(50% at center) !important;
-}
-
-rect[mask="url(#svg-mask-status-offline)"] {
-    fill: var(--status-grey-500) !important;
-    mask: none;
-    clip-path: circle(50% at center) !important;
 }
 
 /* Members list */
@@ -1158,7 +1077,7 @@ if sidebar-drawer {
 }
 
 if hide-chat-btn {
-	/* remove call buttons */
+	/* remove chat buttons */
 	.button-2fCJ0o {
 		display: none;
 	}
@@ -1176,9 +1095,32 @@ if hide-call-btn {
 }
 
 if hide-nitro {
-	#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > div > div > div > nav > div.scroller-WSmht3.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN > ul > li:nth-child(3) > div > a {
+	div.scroller-WSmht3.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN > ul > li:nth-child(4) > div > a {
 		display: none;
 	}
+}
+
+/* RGB Home Button */
+if rgbhome {
+	.wrapper-3kah-n.selected-1Drb7Z .childWrapper-1j_1ub,
+	.wrapper-3kah-n:hover .childWrapper-1j_1ub {
+		animation-name: HueShiftRGB;
+		border-radius: 15px;
+		animation-duration: 15s;
+		animation-iteration-count: infinite;
+	}
+
+	.homeIcon-r0w4ny {
+		animation-name: ColorShiftRGB;
+		border-radius: 15px;
+		animation-duration: 15s;
+		animation-iteration-count: infinite;
+	}
+}
+
+/*no friends*/
+.image-20MDYu {
+	filter: invert(0.9) opacity(0.5);
 }
 
 /* BG Blur */
@@ -1239,6 +1181,31 @@ if customPrf {
 /* toggles */
 .checked-25WXMf {
     background: altAccent !important;
+}
+
+/* Status Icons */
+rect[mask="url(#svg-mask-status-online)"] {
+    fill: statusOnline !important;
+    mask: none;
+    clip-path: circle(50% at center) !important;
+}
+
+rect[mask="url(#svg-mask-status-idle)"] {
+    fill: statusIdle !important;
+    mask: none;
+    clip-path: circle(50% at center) !important;
+}
+
+rect[mask="url(#svg-mask-status-dnd)"] {
+    fill: statusDND !important;
+    mask: none;
+    clip-path: circle(50% at center) !important;
+}
+
+rect[mask="url(#svg-mask-status-offline)"] {
+    fill: statusOffline !important;
+    mask: none;
+    clip-path: circle(50% at center) !important;
 }
 
 /* server context buttons */
@@ -1303,11 +1270,39 @@ if customPrf {
 	background: none !important;
 }
 
+/* server invites */
+.flex-2S1XBF.flex-3BkGQD.vertical-3aLnqW.flex-3BkGQD.directionColumn-3pi1nm.justifyCenter-rrurWZ.alignStretch-Uwowzr.noWrap-hBpHBz.guildInfo-UCKhrV {
+    align-items: center;
+}
+
+.lookFilled-yCfaCM.colorGreen-3y-Z79 {
+    width: -webkit-fill-available;
+	font-weight: bolder;
+}
+
+.content-1r-J1r {
+    width: max-content;
+    border: solid;
+    border-radius: 10px;
+    border-color: accentColor !important;
+    box-shadow: inset 0px 0px 14px 1px accentColor, 0px 0px 6px 6px accentColor;
+    padding: 10px;
+    gap: 16px;
+}
+
+.guildIcon-3ZfRfI {
+    background-color: var(--background-primary);
+    flex: 1 1 auto;
+    margin-left: 10px;
+    max-width: 70px;
+    min-height: 70px;
+}
+
 /* homepage, active now */
 .theme-light .inset-SbsSFp, .theme-dark .inset-SbsSFp {
 	background-color: rgba(0,0,0,0.25);
 	border-radius: 6px;
-	border: 3px rebeccapurple solid;
+	border: 3px accentDark solid;
 }
 
 .container-1oAagU {
@@ -1317,14 +1312,14 @@ if customPrf {
 
 .itemCard-3Etziu:first-of-type {
 	margin-top: 0;
-	border: 4px purple solid;
+	border: 4px accentDark solid;
 }
 
 .itemCard-3Etziu.wrapper-2RrXDg.outer-2JOHae.padded-2NSY6O.interactive-2zD88a {
 	transition: sT;
 	
 	&:hover {
-	background-color: rgba(167, 96, 166, 0.3);
+	background-color: (accentHover - rgba(0,0,0,0.5));
 	transition: sT;
 	}
 }
@@ -1333,13 +1328,30 @@ section.section-3G9aLW {
 	transition: sT;
 	
 	&:hover {
-	background-color: rgba(244, 116, 255, 0.25);
+	background-color: (accentHover - rgba(0,0,0,.0.7));
 	transition-: sT;
 	}
 }
 
 .peopleListItem-u6dGxF.active-2UF8Zh, .peopleListItem-u6dGxF:hover, .peopleListItem-u6dGxF {
 	transition: sT;
+}
+
+/* drop popups */
+.messagesPopoutWrap-3zryHW, /*pins*/
+.browser-mnQ1T7 { 			/*threads*/
+	background-color: rgba(0,0,0,0.4);
+	backdrop-filter: blur(2px);
+}
+
+/* inbox */
+.container-nwU-8G {
+    backdrop-filter: blur(1.3px);
+	background-color: rgba(0,0,0,0.25);
+    align-items: center;
+    min-height: 400px;
+    text-align: center;
+    padding: 0 16px;
 }
 
 /* side buttons */
@@ -1362,8 +1374,20 @@ section.section-3G9aLW {
 	background-color: cfolder !important;
 }
 
+.expandedFolderBackground-1kSAf6 {
+	background-color: cfolder !important;
+}
+ /*add server pop*/
+.container-x8Y1ix, .rowContainer-3t7486  {
+	transition: sT;
+	
+	&:hover {
+		background-color: --background-modifier-hover;
+		transition: sT;
+	}
+}
 /* snow home button */
-#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > nav > ul > div.scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt > div.tutorialContainer-1pL9QS > div > div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > div > svg > g:nth-child(1) > rect {
+div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > div > svg > g:nth-child(1) > rect {
 	clip-path: circle(0px at center);
 }
 /* ------------------------------ */
