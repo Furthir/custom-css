@@ -65,11 +65,13 @@ prfBorder = transparent
 accentHover = (accentColor + rgb(35,60,35) - rgba(0,0,0,0.1))
 altHover = (altAccent + rgba(20,20,20,-0.2))
 accentDark = (accentColor - rgb(50,70,50))
+defBG = rgba(0,0,0,0.35)
+
 @-moz-document domain("discord.com") {
 /* Root Discord backgrounds and colors changes */
 /* BG Image */
 .theme-dark, .theme-light {
-	--background-primary: rgba(0,0,0,0.35) !important;
+	--background-primary: defBG !important;
 	--background-secondary: none !important;
 	--background-secondary-alt: none !important;
 	--background-tertiary: bg-img !important;
@@ -94,7 +96,7 @@ accentDark = (accentColor - rgb(50,70,50))
 }
 
 .emptyCard-KDifrB {
-	background: rgba(0,0,0,0.3);
+	background: defBG;
 }
 
 .app-2CXKsg { 
@@ -486,21 +488,6 @@ body {
     right: 50px;
 }
 
-/* commands popup */
-.categoryHeader-OpJ1Ly {
-    background-color: transparent;
-}
-
-.theme-dark .autocomplete-3NRXG8 {
-    background-color: rgba(0,0,0,0.4);
-	backdrop-filter: blur(3px);
-}
-
-.attachedBars-2BCP3l {
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(3px);
-}
-
 /* recolor text */
 .markup-eYLPri h1, .markup-eYLPri h2, .markup-eYLPri h3, .markup-eYLPri h4, .markup-eYLPri h5, .markup-eYLPri h6 {
     font-weight: 700;
@@ -535,20 +522,6 @@ body {
     background: linear-gradient(90deg, var(--profile-gradient-primary-color),var(--profile-gradient-primary-color) 60px,var(--profile-gradient-secondary-color));
 }
 
-
-/* profile popup dark */
-.theme-dark .root-g14mjS {
-    background-color: rgba(0,0,0,0.65);
-    box-shadow: 0 0 0 1px rgba(32,34,37,.6),0 2px 10px 0 rgba(0,0,0,.2);
-    backdrop-filter: blur(1px);
-}
-
-/* profile popup light */
-.theme-light .root-g14mjS {
-    background: rgba(0,0,0,0.3);
-    -webkit-box-shadow: 0 0 0 1px rgba(185,187,190,.3),0 2px 10px 0 rgba(0,0,0,.1);
-    box-shadow: 0 0 0 1px rgba(185,187,190,.3),0 2px 10px 0 rgba(0,0,0,.1);
-}
 
 /* profile banner fade */
 .profileBanner-1owKI5, .popoutBanner-16rVDY, .profileBanner-2zIsK7 {
@@ -1178,6 +1151,21 @@ if customPrf {
 	}
 }
 
+/* profile popup dark */
+.theme-dark .root-g14mjS {
+    background-color: rgba(0,0,0,0.65);
+	-webkit-box-shadow: 0 0 0 1px rgba(32,34,37,0.6), 0 2px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 0 1px rgba(32,34,37,0.6), 0 2px 10px 0 rgba(0,0,0,0.2);
+    backdrop-filter: blur(1px);
+}
+
+/* profile popup light */
+.theme-light .root-g14mjS {
+    background: defBG;
+    -webkit-box-shadow: 0 0 0 1px rgba(185,187,190,0.3),0 2px 10px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 0 0 1px rgba(185,187,190,.3),0 2px 10px 0 rgba(0,0,0,0.1);
+}
+
 /* toggles */
 .checked-25WXMf {
     background: altAccent !important;
@@ -1291,7 +1279,7 @@ rect[mask="url(#svg-mask-status-offline)"] {
 }
 
 .guildIcon-3ZfRfI {
-    background-color: var(--background-primary);
+    background-color: defBG;
     flex: 1 1 auto;
     margin-left: 10px;
     max-width: 70px;
@@ -1333,7 +1321,8 @@ section.section-3G9aLW {
 	}
 }
 
-.peopleListItem-u6dGxF.active-2UF8Zh, .peopleListItem-u6dGxF:hover, .peopleListItem-u6dGxF {
+.peopleListItem-u6dGxF.active-2UF8Zh, 
+.peopleListItem-u6dGxF:hover, .peopleListItem-u6dGxF {
 	transition: sT;
 }
 
@@ -1363,6 +1352,7 @@ section.section-3G9aLW {
 	}
 }
 
+/* embeds */
 .embedFull-1HGV2S {
     background: none;
     box-shadow: 0 4px 16px 0 rgb(0 0 0);
@@ -1377,7 +1367,8 @@ section.section-3G9aLW {
 .expandedFolderBackground-1kSAf6 {
 	background-color: cfolder !important;
 }
- /*add server pop*/
+
+/* add server modal */
 .container-x8Y1ix, .rowContainer-3t7486  {
 	transition: sT;
 	
@@ -1386,9 +1377,25 @@ section.section-3G9aLW {
 		transition: sT;
 	}
 }
+
 /* snow home button */
 div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > div > svg > g:nth-child(1) > rect {
 	clip-path: circle(0px at center);
+}
+
+/* code blocks */
+.markup-eYLPri code {
+	background-color: defBG;
+}
+
+/* commands popup */
+.categoryHeader-OpJ1Ly {
+    background-color: transparent;
+}
+
+.theme-dark .autocomplete-3NRXG8, .attachedBars-2BCP3l {
+    background-color: defBG;
+	backdrop-filter: blur(3px);
 }
 /* ------------------------------ */
 }
