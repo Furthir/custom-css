@@ -76,6 +76,12 @@ defBG = rgba(0,0,0,0.35)
 }
 
 @font-face {
+	font-family: Whitney;
+	font-style: fancy;
+	src: url("https://cdn.jsdelivr.net/gh/Furthir/custom-css@main/fonts/Whitney/whitney.woff2");
+}
+
+@font-face {
 	font-family: Poynter;
 	font-style: normal;
 	src: url("https://cdn.jsdelivr.net/gh/Furthir/custom-css@main/fonts/Poynter/PoynterText%20Regular.woff2");
