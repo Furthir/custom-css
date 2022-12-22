@@ -70,16 +70,15 @@ defBG = rgba(0,0,0,0.35)
 
 /* fonts */
 @font-face {
-    font-family: "Whitney";
-    font-style: normal;
-    font-weight: 300;
-    src: url("https://cdn.jsdelivr.net/gh/snappycreeper/olddiscordfont/fonts/Whitney-Normal-300.woff2") format("woff2");
+	font-family: Whitney;
+	font-style: normal;
+	src: url("");
 }
 
 @font-face {
 	font-family: Poynter;
 	font-style: normal;
-	src: url("https://github.com/Furthir/custom-css/blob/249a15eadcd78e67d0ed6fd9fa251efce7a55d6f/fonts/Poynter/PoynterText%20Regular.ttf?raw=true");
+	src: url("https://cdn.jsdelivr.net/gh/Furthir/custom-css@main/fonts/Poynter/PoynterText%20Regular.woff2");
 }
 @-moz-document domain("discord.com") {
 /* Root Discord backgrounds and colors changes */
