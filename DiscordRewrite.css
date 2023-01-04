@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.19.5
+ * @version      0.19.5.01
  * @author       Fython
  * @description  Purplelized theme for Discord with lots of customizations
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordRewrite.css?dummy=.user.css
@@ -1425,7 +1425,11 @@ div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > d
 	.hljs-attribute { /* code attribute */
 		color: rgb(179, 255, 216);
 	}
-	
+
+.embed-hKpSrO code {
+	background: none;
+} 
+
 /* commands popup */
 .categoryHeader-OpJ1Ly {
     background-color: transparent;
@@ -1441,11 +1445,6 @@ div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > d
     border-radius: 4px;
     background: rgba(0,0,0,0.6);
 	transition: 0.3s ease-in-out;
-}
-
-.theme-dark.layer-2aCOJ3 {
-	width: min-content;
-	transition: 0.25s ease;
 }
 
 /* image msgs */
