@@ -1,9 +1,9 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.19.5.01
+ * @version      0.19.6
  * @author       Fython
- * @description  Purplelized theme for Discord with lots of customizations
+ * @description  Purplized theme for Discord with lots of customization
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordRewrite.css?dummy=.user.css
  * homepageURL   https://github.com/Furthir/custom-css/
  * @preprocessor stylus
@@ -29,12 +29,12 @@
 }
 
  @var text 		custom-bg	"Custom BG, include url()" 		"url()"
- @var range 	bg-blur  	"Background blur"             	[0, 0, 10, 1, "px"]
+ @var range 	bg-blur  	"Background blur"             	[0, 0, 10, 1, 'px']
  @var color		bgoverlay	"Background Overlay"			rgba(0,0,0,0.26)
  
  @var text sep2 "-------------------------------" ___________________
  ----------------------------------------
- @var color		selectColor 	"Selection Color"			rgba(0, 0, 0, 0.2)
+ @var color		selectColor 	"Selection Color"			rgba(255, 80, 230, 0.2)
  @var color		statusOnline	"Online Status Color"		rgba(207, 95, 181, 1)
  @var color		statusIdle		"Idle Status Color"			rgba(17, 239, 171, 1)
  @var color		statusDND		"DND Status Color"			rgba(255, 0, 0, 1)
@@ -56,7 +56,9 @@
   "Noto Sans":			"Noto Sans",
   "gg sans (bad)":		"gg sans",
  }
- @var color		cfolder			"Custom Folder Color"		rgba(88, 101, 242, 0.4)
+ @var color		cfolder			"Custom Folder Color"		rgba(50, 70, 202, 0.4)
+ @var number 	searchWidth		"Search box width"			[414, 400, 1000, 1, 'px']
+ @var number	mlistWidth		"Member list width"			[244, 200, 350, 1, 'px']
  
 ==/UserStyle== */
 
@@ -219,16 +221,16 @@ body {
 
 /* Discord Root CSS */
 .theme-dark, .theme-light {
-	--header-primary: accentColor;
+	--header-primary: (accentColor + rgb(5,5,5));
 	--header-secondary: (accentColor - rgb(10,10,10));
 	--text-normal: #e4f2ff;
-	--text-muted: #76b4ff;
+	--text-muted: (accentColor + rgb(25,20,25));
 	--text-link: var(--background-accent);
 	--text-link-low-saturation: var(--background-accent);
 	--text-positive: var(--background-accent);
 	--interactive-normal: (accentColor + rgb(10,10,10));
 	--interactive-hover: (accentColor + rgb(20,60,60));
-	--interactive-active: (accentColor + rgb(10,10,10));
+	--interactive-active: (accentColor + rgb(25,20,25));
 	--interactive-muted: (accentColor - rgb(60,60,60));
 	--background-accent: accentColor;
 	--background-floating: rgba(0,0,0,0.5);
@@ -240,7 +242,7 @@ body {
 	--background-modifier-hover: (accentColor - rgba(0,0,0,0.65));
 	--background-message-hover: (accentColor - rgba(50,50,50,0.8));
 	--mention-foreground: (accentColor + rgb(50,50,50)) !important;
-	--mention-background: (accentColor - rgba(0,0,0,0.7)) !important;
+	--mention-background: (accentColor - rgba(0,0,0,0.7))  !important;
 	--channels-default: (accentColor - rgb(25,30,25));
 	--modal-background: rgba(0,0,0,0.3);
 	--modal-footer-background: transparent;
@@ -293,6 +295,7 @@ body {
 
 .theme-custom {
 	--primary-dark-600: defBG;
+	--brand-560: white;
 }
 @css {
 	
@@ -457,7 +460,7 @@ body {
 	color: white;
 }
 
-/* remove help button, delete this section if you want */
+/* remove help button, delete this section if needed */
 #app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > div > div > div.chat-2ZfjoI > section > div.toolbar-3_r2xA > a {
 	display: none;
 }
@@ -1117,7 +1120,7 @@ if rgbhome {
 	}
 }
 
-/*no friends*/
+/* no friends */
 .image-20MDYu {
 	filter: invert(0.9) opacity(0.5);
 }
@@ -1425,11 +1428,7 @@ div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > d
 	.hljs-attribute { /* code attribute */
 		color: rgb(179, 255, 216);
 	}
-
-.embed-hKpSrO code {
-	background: none;
-} 
-
+	
 /* commands popup */
 .categoryHeader-OpJ1Ly {
     background-color: transparent;
@@ -1456,12 +1455,27 @@ div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > d
 	.messageAttachment-CZp8Iv {
 		min-width: 30%;
 	}
-	
+}
+
 @media only screen and (min-width:1800px) {
 	.messageAttachment-CZp8Iv {
 		min-width: 20%;
 	}
 }
+
+/* search box container */
+.searchResultsWrap-5RVOkx {
+	width: searchWidth;
+}
+
+/* member list */
+.container-2o3qEW, .membersWrap-3NUR2t, .members-3WRCEx {
+	width: mlistWidth;
+}
+
+.member-2gU6Ar, .membersWrap-3NUR2t {
+	min-width: mlistWidth;
+	max-width: mlistWidth;
 }
 /* ------------------------------ */
 }
