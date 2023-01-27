@@ -202,7 +202,7 @@ defBG = rgba(0,0,0,0.35)
 	background-color: var(--background-tertiary) !important;
 }
 
-.theme-light .scroller-3X7KbA {
+.theme-light .scroller-3X7KbA, .theme-dark .scroller-3X7KbA {
     background: none;
 }
 
