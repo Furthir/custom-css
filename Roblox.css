@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Roblox Light Glass 
  * @namespace    roblox.com
- * @version      0.26.1
+ * @version      0.26.1.1
  * @author       Fython
  * @description  Glassy Theme for Roblox
  * @preprocessor stylus
@@ -1020,7 +1020,6 @@ div[class="server-filter-option"] {
 @-moz-document url("https://www.roblox.com/home") {
 .btr-hide-ads .content {
 	max-width: 90%;
-	text-align: -webkit-center;
 }
 }
 
