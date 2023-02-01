@@ -1,9 +1,10 @@
 /* ==UserStyle==
  * @name         Roblox Light Glass 
  * @namespace    roblox.com
- * @version      0.26.1.1
+ * @version      0.26.1.2
  * @author       Fython
  * @description  Glassy Theme for Roblox
+ * @updateURL	 https://raw.githubusercontent.com/Furthir/custom-css/main/Roblox.css
  * @preprocessor stylus
  ------------------------------------------------
  @var select bg-image "Preset Background Image" {
@@ -18,7 +19,7 @@
  @var range bgblur  "Background blur"              [0, 0, 10, 1, "px"]
 ==/UserStyle== */
 /* set vars */
-sT = transition: 0.25s ease;
+sT = transition: 0.25s ease
 
 @-moz-document domain("roblox.com") {
 ::selection {
