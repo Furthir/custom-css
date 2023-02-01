@@ -19,7 +19,7 @@
  @var range bgblur  "Background blur"              [0, 0, 10, 1, "px"]
 ==/UserStyle== */
 /* set vars */
-sT = transition: 0.25s ease
+sT = 0.25s ease
 
 @-moz-document domain("roblox.com") {
 ::selection {
