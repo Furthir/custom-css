@@ -1021,6 +1021,11 @@ div[class="server-filter-option"] {
 @-moz-document url("https://www.roblox.com/home") {
 .btr-hide-ads .content {
 	max-width: 90%;
+	text-align: center;
+}
+
+.game-card-link {
+	text-align: left !important
 }
 }
 

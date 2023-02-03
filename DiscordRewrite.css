@@ -1092,7 +1092,7 @@ if sidebar-drawer {
 if hovexpand {
 	/* hover to expand images */
 	@media only screen and (min-width:1450px) and (max-width: 1800px) {
-		.imageWrapper-oMkQl4 {
+		[class|="imageWrapper"] {
 			transform: scale(1);
 			transition-delay: 0.1s;
 			transition-duration: 0.1s
@@ -1107,7 +1107,7 @@ if hovexpand {
 	}
 	
 	@media only screen and (min-width:1800px) and (min-height:1350px) {
-		.imageWrapper-oMkQl4 {
+		[class|="imageWrapper"] {
 			transform: scale(1);
 			transition-delay: 0.1s;
 			transition-duration: 0.1s
@@ -1122,7 +1122,7 @@ if hovexpand {
 	}
 	
 	@media only screen and (min-width:3000px) {
-		.imageWrapper-oMkQl4 {
+		[class|="imageWrapper"] {
 			transform: scale(1);
 			transition-delay: 0.1s;
 			transition-duration: 0.1s
@@ -1466,11 +1466,6 @@ section.section-3G9aLW {
 	}
 }
 
-/* snow home button */
-div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > div > svg > g:nth-child(1) > rect {
-	clip-path: circle(0px at center);
-}
-
 /* code blocks */
 .markup-eYLPri code {
 	background-color: defBG;
@@ -1506,7 +1501,7 @@ div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > d
 }
 
 /* image msgs */
-.imageWrapper-oMkQl4 {
+[class|="imageWrapper"] {
     border-radius: 16px !important;
 }
 
