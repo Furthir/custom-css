@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Roblox Light Glass 
  * @namespace    roblox.com
- * @version      0.27
+ * @version      0.27.01
  * @author       Fython
  * @description  A Glass Theme for Roblox
  * @updateURL	 https://raw.githubusercontent.com/Furthir/custom-css/main/Roblox.css
@@ -996,7 +996,7 @@ if rgbhome {
 
 /* center text */
 if cntrtext {
-	.game-card-title, .game-card-info {
+	.game-card-name, .game-card-info {
 		text-align: center;
 	}
 }
@@ -1009,6 +1009,8 @@ if cntrtext {
 	max-width: 90%;
 	text-align: -webkit-center;
 }
+
+
 
 .game-card-link {
 	text-align: left !important
