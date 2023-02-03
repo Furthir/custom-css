@@ -1,13 +1,16 @@
 /* ==UserStyle==
  * @name         Roblox Light Glass 
  * @namespace    roblox.com
- * @version      0.26.1.2
+ * @version      0.27
  * @author       Fython
- * @description  Glassy Theme for Roblox
+ * @description  A Glass Theme for Roblox
  * @updateURL	 https://raw.githubusercontent.com/Furthir/custom-css/main/Roblox.css
  * @preprocessor stylus
  ------------------------------------------------
- @var select bg-image "Preset Background Image" {
+ @var checkbox	rgbhome		"RGB Logo (Uses CPU/GPU)" 		1
+ @var checkbox	cntrtext	"Center Text"					1
+ 
+ @var select	bg-image 	"Preset Background Image" {
  "Default":		"url(https://i.postimg.cc/ZqQMg7tP/skylake.jpg)",
  "Lightscape":  "url(https://i.postimg.cc/1Xgkg6pS/lightscape.jpg)",
  "Energy":		"url(https://i.postimg.cc/BQktY9NZ/energy.png)",
@@ -15,11 +18,13 @@
  "Custom":		"custom-bg",
 }
 
- @var text  custom-bg  "Custom BG, include url()"  "url()"
- @var range bgblur  "Background blur"              [0, 0, 10, 1, "px"]
+ @var text 		custom-bg	"Custom BG, include url()"  	"url()"
+ @var range		bgblur		"Background blur"           	[0, 0, 10, 1, "px"]
 ==/UserStyle== */
-/* set vars */
-sT = 0.25s ease
+/* vars */
+sT = background-color 0.25s ease
+cubez = cubic-bezier(0.75, 0.04, 0.24, 0.98)
+rlogo = url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPgoJPHRpdGxlPklNR18yOTg1PC90aXRsZT4KCTxzdHlsZT4KCQkuczAgeyBmaWxsOiAjZmZmZmZmIH0gCgk8L3N0eWxlPgoJPHBhdGggaWQ9IlNoYXBlIDEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xhc3M9InMwIiBkPSJtOS44IDEuMmwzNyA4LjYtOC42IDM3LTM3LTguNnptOS41IDI1LjhsNy43IDEuOCAxLjgtNy44LTcuNy0xLjh6Ii8+Cjwvc3ZnPg==")
 
 @-moz-document domain("roblox.com") {
 ::selection {
@@ -112,16 +117,12 @@ sT = 0.25s ease
 /* notification button */
 .dark-theme .btn-uiblox-common-common-notification-bell-md {
     background-color: transparent;
-    transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color;
+    transition: sT;
 }
 
 .dark-theme .btn-uiblox-common-common-notification-bell-md:hover {
     background-color: rgba(0,0,0,0.3);
-    transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color;
+    transition: sT;
 }
 
 .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .container-empty, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-loading {
@@ -192,30 +193,15 @@ sT = 0.25s ease
 }
 
 .light-theme .icon-default-logo, .light-theme .icon-logo, .dark-theme .icon-logo {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPgoJPHRpdGxlPklNR18yOTg1PC90aXRsZT4KCTxzdHlsZT4KCQkuczAgeyBmaWxsOiAjZmZmZmZmIH0gCgk8L3N0eWxlPgoJPHBhdGggaWQ9IlNoYXBlIDEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xhc3M9InMwIiBkPSJtOS44IDEuMmwzNyA4LjYtOC42IDM3LTM3LTguNnptOS41IDI1LjhsNy43IDEuOCAxLjgtNy44LTcuNy0xLjh6Ii8+Cjwvc3ZnPg==") !important;
-}
-
-.icon-default-logo, .icon-logo {
-    width: 58px;
-    height: 30px;
-    background-size: 58px 30px;
-    transition: transform .7s ease 0.1s;
-    animation-name: RGBFilter;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
-}
-
-.icon-default-logo:hover, .icon-logo:hover {
-    background-position: 0 0;
-    transform: rotate(270deg);
+    background-image: rlogo !important;
 }
 
 .dark-theme .icon-default-logo-r, .dark-theme .icon-logo-r, .dark-theme .icon-logo-r-95 {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPgoJPHRpdGxlPklNR18yOTg1PC90aXRsZT4KCTxzdHlsZT4KCQkuczAgeyBmaWxsOiAjZmZmZmZmIH0gCgk8L3N0eWxlPgoJPHBhdGggaWQ9IlNoYXBlIDEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xhc3M9InMwIiBkPSJtOS44IDEuMmwzNyA4LjYtOC42IDM3LTM3LTguNnptOS41IDI1LjhsNy43IDEuOCAxLjgtNy44LTcuNy0xLjh6Ii8+Cjwvc3ZnPg==") !important; 
+    background-image: rlogo !important; 
 }
 
 .light-theme .icon-default-logo-r, .light-theme .icon-logo-r, .light-theme .icon-logo-r-95 {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPgoJPHRpdGxlPklNR18yOTg1PC90aXRsZT4KCTxzdHlsZT4KCQkuczAgeyBmaWxsOiAjZmZmZmZmIH0gCgk8L3N0eWxlPgoJPHBhdGggaWQ9IlNoYXBlIDEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xhc3M9InMwIiBkPSJtOS44IDEuMmwzNyA4LjYtOC42IDM3LTM3LTguNnptOS41IDI1LjhsNy43IDEuOCAxLjgtNy44LTcuNy0xLjh6Ii8+Cjwvc3ZnPg==") !important;
+    background-image: rlogo !important;
 }
 
 .dark-theme .rbx-header .navbar-search .input-field, .light-theme .rbx-header .navbar-search .input-field {
@@ -252,40 +238,30 @@ sT = 0.25s ease
 
 .dark-theme .navbar-search .navbar-search-option:hover, .light-theme .navbar-search .navbar-search-option:hover {
     background-color: rgba(0,0,0,0.3);
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-    transition-property: background-color;
+    transition: sT;
 }
 
 .scroller.prev {
     border-radius: 0;
     left: -40px;
     border: none;
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-    transition-property: background-color;
+    transition: sT;
 }
 
 .scroller.prev:hover {
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-    transition-property: background-color;
+    transition: sT;
 }
 
 .scroller.next {
     border-radius: 0;
     right: -40px;
     border: none;
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-    transition-property: background-color;
+    transition: sT;
 }
 
 .dark-theme .scroller, .light-theme .scroller {
     background-color: rgba(0,0,0,0.35);
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-    transition-property: background-color;
+    transition: sT;
 }
 
 .dark-theme .rbx-header .rbx-navbar li .nav-menu-title:focus, .dark-theme .rbx-header .rbx-navbar li .nav-menu-title:hover, .light-theme .rbx-header .rbx-navbar li .nav-menu-title:focus, .light-theme .rbx-header .rbx-navbar li .nav-menu-title:hover {
@@ -297,18 +273,14 @@ sT = 0.25s ease
     border-bottom: 2px solid #fff;
     background-color: rgba(0,0,0,0);
     border-radius: 6px;
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-    transition-property: background-color;
+    transition: sT;
 }
 
 .dark-theme .rbx-header .rbx-navbar li:hover, .light-theme .rbx-header .rbx-navbar li:hover {
     border: 0 #fff;
     border-bottom: 2px solid #fff;
     background-color: rgba(0,0,0,0.3);
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-    transition-property: background-color;
+    transition: sT;
 }
 
 .dark-theme .dropdown-menu li.active, .dark-theme .dropdown-menu li:active, .light-theme .dropdown-menu li.active, .light-theme .dropdown-menu li:active {
@@ -321,18 +293,14 @@ dark-theme .dropdown-menu li.active, .dark-theme .dropdown-menu li, .light-theme
     box-shadow: none;
     background-color: transparent;
     backdrop-filter: blur(1px);
-    transition-timing-function: ease;
-    transition-property: background-color;
-    transition-duration: 0.3s;
+    transition: sT;
 }
 
 .dark-theme .dropdown-menu li:focus, .dark-theme .dropdown-menu li:hover, .light-theme .dropdown-menu li:focus, .light-theme .dropdown-menu li:hover {
     background-color: rgba(0,0,0,0.4);
     box-shadow: none;
     color: #fff;
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-    transition-property: background-color;
+    transition: sT;
 }
 
 .modal-backdrop.in {
@@ -343,18 +311,14 @@ dark-theme .dropdown-menu li.active, .dark-theme .dropdown-menu li, .light-theme
     background-color: transparent;
     box-shadow: none;
     color: #fff;
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-    transition-property: background-color;
+    transition: sT;
 }
 
 .dark-theme .interaction-item:focus, .dark-theme .interaction-item:hover, .light-theme .interaction-item:focus, .light-theme .interaction-item:hover {
     background-color: rgba(0,0,0,0.3);
     box-shadow: none;
     color: #fff;
-    transition-timing-function: ease;
-    transition-duration: 0.45s;
-    transition-property: background-color;
+    transition: sT;
 }
 
 .game-carousel {
@@ -499,24 +463,11 @@ dark-theme .dropdown-menu li.active, .dark-theme .dropdown-menu li, .light-theme
 }
 
 .dark-theme .icon-default-logo-r, .dark-theme .icon-logo-r, .dark-theme .icon-logo-r-95 {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPgoJPHRpdGxlPklNR18yOTg1PC90aXRsZT4KCTxzdHlsZT4KCQkuczAgeyBmaWxsOiAjZmZmZmZmIH0gCgk8L3N0eWxlPgoJPHBhdGggaWQ9IlNoYXBlIDEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xhc3M9InMwIiBkPSJtOS44IDEuMmwzNyA4LjYtOC42IDM3LTM3LTguNnptOS41IDI1LjhsNy43IDEuOCAxLjgtNy44LTcuNy0xLjh6Ii8+Cjwvc3ZnPg==") !important;
+    background-image: rlogo !important;
 }
 
 .light-theme .icon-default-logo-r, .light-theme .icon-logo-r, .light-theme .icon-logo-r-95 {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiPgoJPHRpdGxlPklNR18yOTg1PC90aXRsZT4KCTxzdHlsZT4KCQkuczAgeyBmaWxsOiAjZmZmZmZmIH0gCgk8L3N0eWxlPgoJPHBhdGggaWQ9IlNoYXBlIDEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xhc3M9InMwIiBkPSJtOS44IDEuMmwzNyA4LjYtOC42IDM3LTM3LTguNnptOS41IDI1LjhsNy43IDEuOCAxLjgtNy44LTcuNy0xLjh6Ii8+Cjwvc3ZnPg==");
-}
-
-.icon-logo-r {
-    transition: transform .7s ease 0.1s;
-    animation-name: RGBFilter;
-    animation-duration: 15s; 
-    animation-iteration-count: infinite;
-    
-}
-
-.icon-logo-r:hover {
-    background-position: 0 0;
-    transform: rotate(270deg);
+    background-image: rlogo
 }
 
 #nav-robux-icon .icon-robux-28x28 {
@@ -908,12 +859,13 @@ div[class="server-filter-option"] {
     font-size: large !important;
     margin-left: 5%;
     font-weight: 500 !important;
-}
+	}
+	
     .people-info-card-container .place-container .place-info-container {
     padding-left: 10% !important;
     margin-left: 0% !important;
     width: 69% !important;
-}
+	}
 }
 
 .people-info-card-container .place-container {
@@ -996,6 +948,7 @@ div[class="server-filter-option"] {
 	transition: sT;
 	}
 }
+
 /* tooltips */
 .dark-theme .tooltip .tooltip-inner, .light-theme .tooltip .tooltip-inner {
     background-color: rgba(0,0,0,0.4);
@@ -1016,17 +969,51 @@ div[class="server-filter-option"] {
     display: none;
 }
 
+/* home button */
+.icon-default-logo, .icon-logo {
+    width: 58px;
+    height: 30px;
+    background-size: 58px 30px;
+    transition: transform 1s cubic-bezier(0.75, 0.04, 0.24, 0.98) 0.05s;
+}
+
+.icon-logo-r {
+	transition: transform 1s cubic-bezier(0.75, 0.04, 0.24, 0.98) 0.05s;
+}
+
+.icon-logo-r:hover, .icon-default-logo:hover, .icon-logo:hover {
+    background-position: 0 0;
+    transform: rotate(450deg);
+}
+
+if rgbhome {
+	.icon-logo-r, .icon-default-logo, .icon-logo {
+		animation-name: RGBFilter;
+		animation-duration: 15s; 
+		animation-iteration-count: infinite;
+	}
+}
+
+/* center text */
+if cntrtext {
+	.game-card-title, .game-card-info {
+		text-align: center;
+	}
+}
+
 /* ------------------------ */
 }
+
 @-moz-document url("https://www.roblox.com/home") {
 .btr-hide-ads .content {
 	max-width: 90%;
-	text-align: center;
+	text-align: -webkit-center;
 }
 
 .game-card-link {
 	text-align: left !important
 }
+/* ------------------------ */
 }
 
 @-moz-document domain("roblox.com") {
@@ -1044,5 +1031,5 @@ html {
     box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.1);
 	background-image: bg-image !important;
 
-}
+	}
 }
