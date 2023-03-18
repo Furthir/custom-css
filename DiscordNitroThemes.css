@@ -2,9 +2,10 @@
  * @name        	Discord Nitro Themes
  * @namespace    	github.com/furthir/custom-css
  * @version      	0.1
- * @description  	CSS is free, Nitro isn't.
+ * @description  	CSS is free, Nitro isn't
  * @author       	Fython
  * @homepageURL		https://www.github.com/furthir/custom-css
+ * @updateURL		https://www.github.com/furthir/custom-css/DiscordNitroTHemes.css
  * @preprocessor	stylus
  
  -----------------------------------
@@ -31,7 +32,6 @@ trbg = rgba(0,0,0,0.5)
 .scroller-hE2gWq {
 	border: none;
 }
-
 
 .scroller-WSmht3 {
 	background-color: transparent; 
@@ -62,7 +62,7 @@ trbg = rgba(0,0,0,0.5)
 }
 
 /* settings page */
-.sidebarRegionScroller-FXiQOh {
+.sidebarRegionScroller-FXiQOh, .layer-86YKbF, .contentRegionScroller-2_GT_N {
 	background: none !important;
 }
 
@@ -117,7 +117,7 @@ body {
 
 /* user list sidebar */
 .container-2o3qEW {
-	background: none;
+/* 	background: none; */
 }
 
 /* server discover page */
@@ -163,13 +163,34 @@ body {
 			--bg-overlay-opacity-app-frame: var(--bg-overlay-opacity-5);
 		}
 		
+		/* server list */
 		.scroller-3X7KbA {
 			background: var(--bg-overlay-app-frame,var(--background-tertiary)) !important;
 		}
 			
 		/* settings */
 		.sidebarRegionScroller-FXiQOh, .contentRegion-3HkfJJ {
-			background: rgba(0,0,0,0.5) !important;
+			background: rgba(255,255,255,0.5) !important;
+		}
+		
+		/* friend search */
+		.searchBar-2aylmZ {
+			background: rgb(249,222,229);
+		}
+		
+		/* chat */
+		.chatContent-3KubbW {
+			background: rgba(255,255,255,0.8);
+		}
+		
+		/* chat header */
+		.container-ZMc96U.themed-Hp1KC_ {
+			background: var(--bg-overlay-1) !important;
+		}
+		
+		/* profile panel */
+		.theme-dark .container-YkUktl {
+			background: var(--background-secondary-alt);
 		}
 		
 		@css {
