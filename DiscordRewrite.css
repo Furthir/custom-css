@@ -1,11 +1,11 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.19.7.1
+ * @version      0.19.7.2
  * @author       Fython
  * @description  Purplized theme for Discord with lots of customization
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordRewrite.css?dummy=.user.css
- * homepageURL   https://github.com/Furthir/custom-css/
+ * @homepageURL  https://github.com/Furthir/custom-css/
  * @preprocessor stylus
  
  @var checkbox 	image-groups 	"Group Multi-attachment messages" 	1
@@ -60,6 +60,7 @@
  @var color		cfolder			"Custom Folder Color"		rgba(50, 70, 202, 0.4)
  @var number 	searchWidth		"Search box width"			[414, 400, 1000, 1, 'px']
  @var number	mlistWidth		"Member list width"			[244, 200, 350, 1, 'px']
+ @var number	clistWidth		"Channel list width"		[313, 150, 400, 1, 'px']
  
 ==/UserStyle== */
 
@@ -126,6 +127,7 @@ defBG = rgba(0,0,0,0.35)
 	background-position: unset;
 	background-size: cover;
 	box-shadow: inset 0 0 0 2000px bgoverlay; /* used for darkening background */
+	background-repeat: no-repeat !important;
 }
 
 .scroller-WSmht3 {
@@ -1091,11 +1093,28 @@ if sidebar-drawer {
 
 if hovexpand {
 	/* hover to expand images */
-	@media only screen and (min-width:1450px) and (max-width: 1800px) {
-		[class|="imageWrapper"] {
+	@media only screen and (min-width:1000px) and (max-width:1450px) {
+		[class|="inlineMediaEmbed"] {
+			background-color: red;
 			transform: scale(1);
 			transition-delay: 0.1s;
-			transition-duration: 0.1s
+			transition-duration: 0.1s;
+			
+			&:hover {
+				transition-delay: 1s;
+				transform: scale(1.5);
+				transition-property: transform;
+				transition-duration: 0.35s;
+				z-index: 1000;
+			}
+		}
+	}
+	
+	@media only screen and (min-width:1450px) and (max-width: 1800px) {
+		[class|="inlineMediaEmbed"] {
+			transform: scale(1);
+			transition-delay: 0.1s;
+			transition-duration: 0.1s;
 			
 			&:hover {
 				transition-delay: 1s;
@@ -1106,15 +1125,15 @@ if hovexpand {
 		}
 	}
 	
-	@media only screen and (min-width:1800px) and (min-height:1350px) {
-		[class|="imageWrapper"] {
+	@media only screen and (min-width:1800px) and (min-height:1350px) and (max-width:3000px) {
+		[class|="inlineMediaEMbed"] {
 			transform: scale(1);
 			transition-delay: 0.1s;
-			transition-duration: 0.1s
+			transition-duration: 0.1s;
 			
 			&:hover {
 				transition-delay: 1s;
-				transform: scale(1.4);
+				transform: scale(2);
 				transition-property: transform;
 				transition-duration: 0.35s;
 			}
@@ -1122,10 +1141,10 @@ if hovexpand {
 	}
 	
 	@media only screen and (min-width:3000px) {
-		[class|="imageWrapper"] {
+		[class|="inlineMediaEmbed"] {
 			transform: scale(1);
 			transition-delay: 0.1s;
-			transition-duration: 0.1s
+			transition-duration: 0.1s;
 			
 			&:hover {
 				transition-delay: 1s;
@@ -1187,6 +1206,8 @@ if rgbhome {
 /* BG Blur */
 .bg-1QIAus {
 	backdrop-filter: blur(bg-blur);
+	background: none !important;
+	background-repeat: no-repeat;
 }
 
 /* accent apply */
@@ -1314,12 +1335,12 @@ rect[mask="url(#svg-mask-status-offline)"] {
 .tabBar-ra-EuL .addFriend-emTWY1.addFriend-emTWY1.addFriend-emTWY1 {
 		background-color: transparent;
 		color: var(--interactive-normal);
-		transition: sT
+		transition: sT;
 	
 
 	&:hover {
 		background-color: var(--background-modifier-hover) !important;
-		transition: sT
+		transition: sT;
 	}
 
 	~/[aria-selected=true] {
@@ -1404,8 +1425,8 @@ section.section-3G9aLW {
 	transition: sT;
 	
 	&:hover {
-	background-color: (accentHover - rgba(0,0,0,.0.7));
-	transition-: sT;
+	background-color: (accentHover - rgba(0,0,0,0.7));
+	transition: sT;
 	}
 }
 
@@ -1466,6 +1487,11 @@ section.section-3G9aLW {
 	}
 }
 
+/* snow home button */
+div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > div > svg > g:nth-child(1) > rect {
+	clip-path: circle(0px at center);
+}
+
 /* code blocks */
 .markup-eYLPri code {
 	background-color: defBG;
@@ -1501,7 +1527,7 @@ section.section-3G9aLW {
 }
 
 /* image msgs */
-[class|="imageWrapper"] {
+.imageWrapper-oMkQl4 {
     border-radius: 16px !important;
 }
 
@@ -1531,5 +1557,12 @@ section.section-3G9aLW {
 	min-width: mlistWidth;
 	max-width: mlistWidth;
 }
+
+/* channel list */
+.sidebar-1tnWFu {
+	width: clistWidth !important;
+}
+
+
 /* ------------------------------ */
 }

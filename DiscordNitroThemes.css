@@ -1,0 +1,42 @@
+/* ==UserStyle==
+ * @name        	Discord Nitro Themes
+ * @namespace    	github.com/furthir/custom-css
+ * @version      	0.1
+ * @description  	CSS is free, Nitro isn't.
+ * @author       	Fython
+ * @homepageURL		https://www.github.com/furthir/custom-css
+ * @preprocessor	stylus
+ 
+ -----------------------------------
+ 
+ @var select theme "Theme" {
+    "Candyfloss":       
+
+==/UserStyle== */
+
+@-moz-document domain("discord.com") {
+    .theme-light.custom-theme-background {
+    --bg-overlay-color: 255 255 255;
+    --bg-overlay-color-inverse: 0 0 0;
+    --bg-overlay-opacity-1: 0.9;
+    --bg-overlay-opacity-2: 0.8;
+    --bg-overlay-opacity-3: 0.7;
+    --bg-overlay-opacity-4: 0.6;
+    --bg-overlay-opacity-5: 0.3;
+    --bg-overlay-opacity-6: 0.15;
+    --bg-overlay-opacity-hover: 0.7;
+    --bg-overlay-opacity-hover-inverse: 0.02;
+    --bg-overlay-opacity-active: 0.65;
+    --bg-overlay-opacity-active-inverse: 0.03;
+    --bg-overlay-opacity-selected: 0.6;
+    --bg-overlay-opacity-selected-inverse: 0.04;
+    --bg-overlay-opacity-chat: 0.9;
+    --bg-overlay-opacity-home: 0.7;
+    --bg-overlay-opacity-home-card: 0.9;
+    --bg-overlay-opacity-app-frame: var(--bg-overlay-opacity-5);
+}
+
+.custom-theme-background {
+    --custom-theme-background: linear-gradient(180.14deg, var(--bg-gradient-cotton-candy-1) 8.5%, var(--bg-gradient-cotton-candy-2) 94.28%);
+}
+}
