@@ -1,3 +1,4 @@
 # custom-css
-Private custom CSS for various sites
+custom CSS for various sites
+
 hehehehaw
