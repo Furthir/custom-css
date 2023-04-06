@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.19.7.2
+ * @version      0.19.7.3
  * @author       Fython
  * @description  Purplized theme for Discord with lots of customization
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordRewrite.css?dummy=.user.css
@@ -1227,17 +1227,7 @@ if rgbhome {
 
 /* Discord Profile themes */
 if customPrf {
-	#user-popout {
-		--profile-gradient-primary-color: prfPrimary !important;
-		--profile-gradient-secondary-color: prfSecond !important;
-		--profile-gradient-overlay-color: prfOverlay !important;
-		--profile-body-background-color: prfBodyBG !important;
-		--profile-avatar-border-color: prfBorder !important;
-		--profile-gradient-button-color: (altAccent - rgb(30,30,30))
-
-	}
-
-	.profileColors-3Y0XaR {
+	.profileColors-2AgAV4 {
 		--profile-gradient-primary-color: prfPrimary !important;
 		--profile-gradient-secondary-color: prfSecond !important;
 		--profile-gradient-overlay-color: prfOverlay !important;
@@ -1247,13 +1237,14 @@ if customPrf {
 	}
 
 		/* overlay */
-	.userProfileModalInner-3fh3QA:before, .userPopoutInner-1hXSeY:before {
+	.userProfileModalInner-3fh3QA:before, .userPopoutInner-1hXSeY:before, .userProfileInner-1ngKnf:before {
 		border-radius: 4px;
-		height: calc(100% - 16px);
+		height: calc(100% - 4px);
 		width: calc(100% - 8px);
 		margin-bottom: 4px;
 		align-self: center;
 	}
+
 
 	.userProfileInner-3F03PX {
 		justify-content: flex-end;
