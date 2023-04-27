@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Roblox Light Glass 
  * @namespace    roblox.com
- * @version      0.27.01
+ * @version      0.28
  * @author       Fython
  * @description  A Glass Theme for Roblox
  * @updateURL	 https://raw.githubusercontent.com/Furthir/custom-css/main/Roblox.css
@@ -9,6 +9,7 @@
  ------------------------------------------------
  @var checkbox	rgbhome		"RGB Logo (Uses CPU/GPU)" 		1
  @var checkbox	cntrtext	"Center Text"					1
+ @var checkbox  beta		"Beta stuff"					0
  
  @var select	bg-image 	"Preset Background Image" {
  "Default":		"url(https://i.postimg.cc/ZqQMg7tP/skylake.jpg)",
@@ -103,8 +104,11 @@ rlogo = url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwO
 }
 
 .light-theme .section-content, .dark-theme .section-content {
-    background-color: rgba(155,155,155,0.07);
+    background-color: rgba(0,0,0,0.4);
     color: #393b3d;
+    backdrop-filter: blur(6px);
+	border-radius: 8px;
+    z-index: 10000;
 }
 
 .light-theme .input-field, .dark-theme .input-field {
@@ -580,6 +584,11 @@ button.close {
     background-size: inherit !important;
 }
 
+.dark-theme .section-content.remove-panel {
+    background-color: transparent;
+    padding: 12px;
+}
+
 #container-main {
     background-attachment: fixed;
     background-position: left center, right center !important;
@@ -745,9 +754,6 @@ div#rbx-private-running-games {
 }
 
 .dark-theme .btn-common-play-game-lg:hover, .light-theme .btn-common-play-game-lg:hover {
-/*     animation-name: RGBBackground; */
-/*     animation-duration: 5s; */
-/*     animation-iteration-count: infinite; */
     background-color: rgb(17, 239, 171);
     border-color: #00fffb;
     color: #fff;
@@ -938,7 +944,6 @@ div[class="server-filter-option"] {
 	/* items */
 .item-card-container {
 	transform: scale(1);
-	z-index: 100;
 	border-radius: 4px;
 	transition: sT;
 	
@@ -946,6 +951,7 @@ div[class="server-filter-option"] {
     transform: scale(1.2);
     background: rgba(0,0,0,0.2);
 	transition: sT;
+	z-index: 100;
 	}
 }
 
@@ -964,8 +970,35 @@ div[class="server-filter-option"] {
 	display: none;
 }
 
+/* premium page */
+.dark-theme .premium-landing-page {
+	& .stipend-section,
+	& .game-benefit-section,
+ 	& .catalog-benefit-section,
+	& .trade-benefit-section,
+ 	& .membership-section {
+		background: transparent;
+		
+		& .benefits-detail-container {
+		background: transparent;
+		}
+	}
+}
+
+/* messages page */
+.dark-theme .messages .messageDivider.message-news {
+    background-color: rgba(0,0,0,0.5);
+    margin-bottom: 4px;
+    border-radius: 8px;
+}
+
 /* hide desktop app banner */
 #desktop-app-banner .banner-container, #desktop-app-banner .banner-container:after, #desktop-app-banner .banner-container:before {
+    display: none;
+}
+
+/* hide loading.. banner */
+.dark-theme .alert-loading, .light-theme .alert-loading {
     display: none;
 }
 
@@ -998,6 +1031,33 @@ if rgbhome {
 if cntrtext {
 	.game-card-name, .game-card-info {
 		text-align: center;
+	}
+	
+	.btr-gamedetails .server-list-section:not(#rbx-private-running-games) .card-list > li {
+		text-align: center;
+	}
+}
+
+if beta {
+	.btr-gamedetails .server-list-section:not(#rbx-private-running-games) .card-list > li:hover {
+		width: 140%;
+		display: flex;
+		justify-content: center;
+		justify-self: center;
+		flex-direction: row;
+		align-content: center;
+		flex-wrap: wrap;
+		transition: 0.4s;
+		z-index: 1000;
+		transform: scale(1.2);
+	}
+	
+	.stack .card-list .card-item {
+		margin: 9px;
+		padding: 10px;
+		display: flex;
+		justify-content: space-around;
+		flex-direction: column;
 	}
 }
 
