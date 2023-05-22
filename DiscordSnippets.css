@@ -8,6 +8,7 @@
  * @homepageURL  https://github.com/Furthir/custom-css/
  * @preprocessor stylus
  
+ @var checkbox	transparency	"Transparency effects"				1
  @var checkbox 	image-groups 	"Group Multi-attachment messages" 	1
  @var checkbox 	sidebar-drawer	"Sidebar drawer"		 		 	1
  @var checkbox	rgbhome			"RGB Home Button (high CPU)"		0
@@ -17,17 +18,8 @@
  @var checkbox	hide-help		"Hide Help button"					1
  @var text sep "-------------------------------" ___________________
  ----------------------------------------
- @var select bg-img "Background Image" {
- "Default": 		"url(https://i.postimg.cc/zDyDH2Sn/default.jpg)",
- "Energy":			"url(https://i.postimg.cc/BQktY9NZ/energy.png)",
- "Lightscape":		"url(https://i.postimg.cc/1Xgkg6pS/lightscape.jpg)",
- "Skylake":			"url(https://i.postimg.cc/ZqQMg7tP/skylake.jpg)",
- "Custom":			"custom-bg",
- "AMOLED":			"black",
- "None": 			"#18191b",
-}
-
- @var text 		custom-bg	"Custom BG, include url()" 		"url()"
+ @var checkbox	custom-bg	"Use custom background"			0
+ @var text 		custbgimg	"Custom BG, include url()" 		"url()"
  @var range 	bg-blur  	"Background blur"             	[0, 0, 10, 1, "px"]
  @var color		bgoverlay	"Background Overlay"			rgba(0,0,0,0.26)
  
@@ -88,145 +80,146 @@ defBG = rgba(0,0,0,0.35)
 @-moz-document domain("discord.com") {
 /* Root Discord backgrounds and colors changes */
 /* BG Image */
-.theme-dark, .theme-light {
-	--background-primary: defBG !important;
-	--background-secondary: none !important;
-	--background-secondary-alt: none !important;
-	--background-tertiary: bg-img !important;
-}
+if custom-bg {
+	.theme-dark, .theme-light {
+		--background-primary: defBG !important;
+		--background-secondary: none !important;
+		--background-secondary-alt: none !important;
+		--background-tertiary: custbgimg !important;
+	}
 
-/* Selection color */
-::selection {
-	background-color: selectColor;
-}
+	/* Selection color */
+	::selection {
+		background-color: selectColor;
+	}
 
-/* remove/merge homepage backgrounds*/
-.theme-light .container-2cd8Mz, .theme-dark .container-2cd8Mz {
-	background-color: transparent !important;
-}
+	/* remove/merge homepage backgrounds*/
+	.theme-light .container-2cd8Mz, .theme-dark .container-2cd8Mz {
+		background-color: transparent !important;
+	}
 
-.nowPlayingColumn-1eCBCN {
-	background: none !important;
-}
+	.nowPlayingColumn-1eCBCN {
+		background: none !important;
+	}
 
-.scroller-hE2gWq {
-	border: none;
-}
+	.scroller-hE2gWq {
+		border: none;
+	}
 
-.emptyCard-KDifrB {
-	background: defBG;
-}
+	.emptyCard-KDifrB {
+		background: defBG;
+	}
 
-.app-2CXKsg { 
-	background-image: var(--background-tertiary);
-	background-position: unset;
-	background-size: cover;
-	box-shadow: inset 0 0 0 2000px bgoverlay; /* used for darkening background */
-	background-repeat: no-repeat !important;
-}
+	.app-2CXKsg { 
+		background-image: var(--background-tertiary);
+		background-position: unset;
+		background-size: cover;
+		box-shadow: inset 0 0 0 2000px bgoverlay; /* used for darkening background */
+		background-repeat: no-repeat !important;
+	}
 
-.scroller-WSmht3 {
-	background-color: transparent !important; 
-}
+	.scroller-WSmht3 {
+		background-color: transparent !important; 
+	}
 
-.sidebar-1tnWFu {
-	background: none !important;
-}
+	.sidebar-1tnWFu {
+		background: none !important;
+	}
 
-/* forum channel background */
-.theme-light .container-3wLKDe, .theme-dark .container-3wLKDe {
-	background-color: transparent !important;
-}
+	/* forum channel background */
+	.theme-light .container-3wLKDe, .theme-dark .container-3wLKDe {
+		background-color: transparent !important;
+	}
 
-/* voice channel background */
-.callContainer-HtHELf .theme-dark {
-	background: none !important;
-}
+	/* voice channel background */
+	.callContainer-HtHELf .theme-dark {
+		background: none !important;
+	}
 
-/* loading */
-.loading-1yrGTe {
-	background: none !important;
-}
+	/* loading */
+	.loading-1yrGTe {
+		background: none !important;
+	}
 
-/* ??? */
-.contentRegion-3HkfJJ {
-	background: none !important;
-}
+	/* ??? */
+	.contentRegion-3HkfJJ {
+		background: none !important;
+	}
 
-/* settings page */
-.sidebarRegionScroller-FXiQOh {
-	background: none !important;
-}
+	/* settings page */
+	.sidebarRegionScroller-FXiQOh {
+		background: none !important;
+	}
 
-/* app directory */
-.theme-light .directoryModal-YJsOMv, .theme-dark .directoryModal-YJsOMv {
-	background-color: transparent !important;
-}
+	/* app directory */
+	.theme-light .directoryModal-YJsOMv, .theme-dark .directoryModal-YJsOMv {
+		background-color: transparent !important;
+	}
 
-/* title/topbar */
-.container-ZMc96U.themed-Hp1KC_ {
-	background: none !important;
-}
+	/* title/topbar */
+	.container-ZMc96U.themed-Hp1KC_ {
+		background: none !important;
+	}
 
-/* full app background removal */
-.app-3xd6d0, .mobileApp-3_TCAV {
-	background: none !important;
-}
+	/* full app background removal */
+	.app-3xd6d0, .mobileApp-3_TCAV {
+		background: none !important;
+	}
 
-.theme-light .appMount-2yBXZl, .theme-dark .appMount-2yBXZl {
-    background: var(--background-tertiary);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+	.theme-light .appMount-2yBXZl, .theme-dark .appMount-2yBXZl {
+		background: var(--background-tertiary);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 
-.content-1SgpWY {
-	background: none !important;
-}
+	.content-1SgpWY {
+		background: none !important;
+	}
 
-.layer-86YKbF.baseLayer-W6S8cY {
-	background-color: transparent !important;
-}
+	.layer-86YKbF.baseLayer-W6S8cY {
+		background-color: transparent !important;
+	}
 
-.bg-1QIAus {
-	background-color: transparent !important;
-}
+	.bg-1QIAus {
+		background-color: transparent !important;
+	}
 
-.chat-2ZfjoI {
-	background: none !important;
-}
+	.chat-2ZfjoI {
+		background: none !important;
+	}
 
-.appMount-3lHmkl, body {
-	background-color: var(--background-tertiary) !important;
-}
+	.appMount-3lHmkl, body {
+		background-color: var(--background-tertiary) !important;
+	}
 
-.theme-light .scroller-3X7KbA, .theme-dark .scroller-3X7KbA {
-    background: none;
-}
+	.theme-light .scroller-3X7KbA, .theme-dark .scroller-3X7KbA {
+		background: none;
+	}
 
-body {
-	background: transparent !important;
-}
+	body {
+		background: transparent !important;
+	}
 
-/* user list sidebar */
-.container-2o3qEW {
-	background: none;
-}
+	/* user list sidebar */
+	.container-2o3qEW {
+		background: none;
+	}
 
-/* server discover page */
-.theme-dark .pageWrapper-2PwDoS, .theme-light .pageWrapper-2PwDoS {
-	background-color: transparent;
+	/* server discover page */
+	.theme-dark .pageWrapper-2PwDoS, .theme-light .pageWrapper-2PwDoS {
+		background-color: transparent;
 
-}
-/* download apps pop */
-.downloadApps-14IgKV {
-	background-color: rgba(0,0,0,0.6) !important;
-}
+	}
+	/* download apps pop */
+	.downloadApps-14IgKV {
+		background-color: rgba(0,0,0,0.6) !important;
+	}
 
-/* darken login background */
-.wrapper-1f5byN {
-	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+	/* darken login background */
+	.wrapper-1f5byN {
+		box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+	}
 }
-
 /* Discord Root CSS */
 :root {
 	--font-primary: cfont !important;
@@ -311,6 +304,15 @@ body {
 	75% {background-color: #90f;}
 	87.5% {background-color: #f09;}
 	100% {background-color: red;}
+}
+
+.scroller-3X7KbA.none-1rXy4P.scrollerBase-1Pkza4:after {
+    content: "Snip aeta";
+    color: white;
+    margin-top: 100px;
+    position: absolute;
+    padding-left: 5px;
+    font-weight: bold;
 }
 
 /* verification banner(?) */
@@ -419,10 +421,6 @@ body {
 
 /* settings page */
 .side-2ur1Qk .item-3XjbnG {
-    padding-top: 6px;
-    padding-bottom: 6px;
-    margin-bottom: 2px;
-    border-radius: 4px;
     transition-duration: 0.3s;
     transition-timing-function: ease;
     transition-property: background-color;
@@ -441,126 +439,9 @@ body {
     transition-duration: 0.25s;
     transition-property: background-color;
 }
-	/* voice&video sliders */
-.theme-light .bar-1Bhnl9, .theme-light .markDash-yk2kJ-, .theme-dark .bar-1Bhnl9, .theme-dark .markDash-yk2kJ- {
-    background: linear-gradient(89deg, #d858f2, #f29d58);
-    -webkit-mask: linear-gradient(to left, #d858f2, transparent 105%);
-    mask: linear-gradient(to bottom, #000, transparent 93%);
-}
-
-/* app blur effect in settings */
-div.layer-86YKbF.baseLayer-W6S8cY.stop-animations[aria-hidden="true"] {
-    opacity: 0.8 !important;
-    filter: blur(4px) !important;       
-}
-
-.side-2ur1Qk .item-3XjbnG:hover { 
-    padding-top: 6px;
-    padding-bottom: 6px;
-    margin-bottom: 2px;
-    border-radius: 4px;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    transition-property: background-color;
-}
-
-.standardSidebarView-E9Pc3j {
-    position: absolute;
-    top: 0;
-    left: 16%;
-    bottom: 0;
-    right: 0px;
-    z-index: 101;
-	background: none;
-}
-
-.sidebarRegion-1VBisG, .sidebarRegionScroller-FXiQOh {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    left: -250px;
-    -webkit-box-flex: 1;
-    width: 130px;
-    -webkit-box-pack: end;
-    justify-content: flex-end;
-    z-index: -1;
-}
-
-.sidebarRegionScroller-FXiQOh {
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-pack: end;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-}
-
-.sidebar-nqHbhN {
-    width: 250px;
-    padding: 60px 6px 60px 20px;
-}
-
-.contentRegion-3HkfJJ {
-    position: relative;
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 800px;
-    left: -130px;
-    flex: 4 1 0px;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-}
-
-.contentColumnDefault-3eyv5o {
-    padding: 60px 0px 80px;
-}
-
-.contentColumn-1C7as6, .customColumn-2n-oKU {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    max-width: 830px;
-    min-width: 600px;
-    min-height: 100%;
-}
-
-.contentRegionScroller-2_GT_N {
-    height: 100%;
-    position: static;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    overflow-x: hidden;
-	background: none;
-}
-
-.container-O54IuJ {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    padding-left: 25px;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
 
 /* Members list */
 .layout-1qmrhw {
-    border-radius: 6px;
     transition: 0.27s background-color;
 }
 
@@ -573,13 +454,6 @@ div.layer-86YKbF.baseLayer-W6S8cY.stop-animations[aria-hidden="true"] {
     background: rgba(0,0,0,0.5);
 }
 
-/* loading?/dc|rc screen */
-.container-2RRFHK {
-    padding-top: 22px;
-    top: -22px;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(1px);
-}
 
 /* more status indicators */
 section[aria-label="Channel header"] div[aria-label="Offline"] rect[fill*="hsl"] {
@@ -636,16 +510,6 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
     y: 3;
 }
 
-/* server buttons */
-.childWrapper-1j_1ub, .wrapper-3kah-n {
-    width: 48px;
-    height: 46px;
-}
-
-.wrapper-3kah-n {
-    margin-top: 2px;
-}
-
 /* account switch pop */
 .theme-light .root-g14mjS, .theme-dark .root-g14mjS {
     background: rgba(0,0,0,0.3);
@@ -664,23 +528,6 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
     padding-left: 3px !important;
 }
 
-/* search */
-.avatar-2e8lTP {
-    left: -25px;
-    margin-top: calc(4px - .125rem);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.cozy-VmLDNB .contents-2MsGLg {
-    position: static;
-    margin-left: 28px;
-    padding-left: 0;
-    text-indent: 0;
-}
-
 /* server home page */
 .theme-dark .background-fkKrXt {
     background-color: transparent;
@@ -689,14 +536,6 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 /* server channel list */
 .container-3XgAHv {
     background: none;
-}
-
-.resizeHandle-PBRzPC {
-    border-left-width: 1px !important;
-    border-left-style: dashed;
-    border-color: darkmagenta;
-    width: 8px;
-
 }
 
 .iconVisibility-vptxma  {
@@ -708,23 +547,7 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 .iconVisibility-vptxma:hover {
     background: var(--background-modifier-hover);
     transition-property: background, color, opacity;
-    transition-duration: 0.4s
-}
-
-.content-1gYQeQ {
-    padding: 0 8px;
-    margin-left: 0px;
-    border-radius: 9px;
-}
-
-.mainContent-20q_Hp {
-    border-radius: 9px;
-    padding: 6px 0;
-}
-
-.wrapper-NhbLHG {
-    padding: 1px 0;
-    border-radius: 9px;
+    transition-duration: 0.4s;
 }
 
 /* discover page */
@@ -844,6 +667,29 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 }
 
 /* Rewrite and variables */
+if transparency {
+	/* app blur effect in settings */
+	div.layer-86YKbF.baseLayer-W6S8cY.stop-animations[aria-hidden="true"] {
+		opacity: 0.8 !important;
+		filter: blur(4px) !important;       
+	}
+
+	.side-2ur1Qk .item-3XjbnG:hover { 
+		transition-duration: 0.3s;
+		transition-timing-function: ease;
+		transition-property: background-color;
+	}
+
+	.standardSidebarView-E9Pc3j, .contentRegion-3HkfJJ, .sidebarRegionScroller-FXiQOh {
+		z-index: 101;
+		background: none;
+	}
+
+	.contentRegionScroller-2_GT_N, .layer-86YKbF {
+		background: none;
+	}
+}
+
 if image-groups {
 	.container-2sjPya {
 		display: flex;
