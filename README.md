@@ -4,9 +4,12 @@ custom CSS for various sites
 hehehehaw
 
 ### Stylus Extension
- - [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en)
+ - [Chromium](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en) 
  - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
 
-[Stylus lang](https://stylus-lang.com/)
+### Published CSS
+ - [Discord Purple](https://userstyles.world/style/6507/discord-purple-night)
+ - [Roblox Glass](https://userstyles.world/style/6513/roblox-light-glass)
 
+[Stylus lang](https://stylus-lang.com/)
 [np++](https://notepad-plus-plus.org/downloads/)
