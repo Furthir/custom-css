@@ -1,7 +1,7 @@
 /* ==UserStyle==
- * @name         Discord Purple Night
+ * @name         Discord Purple Night (new)
  * @namespace    discord.com
- * @version      0.19.7.3
+ * @version      0.19.8
  * @author       Fython
  * @description  Purplized theme for Discord with lots of customization
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordRewrite.css?dummy=.user.css
@@ -14,7 +14,7 @@
  @var checkbox	hovexpand		"Hover to enlarge opened images"	1
  @var checkbox 	hide-chat-btn	"Hide chat buttons" 				1
  @var checkbox 	hide-call-btn	"Hide call buttons"					0
- @var checkbox	hide-nitro		"Hide Nitro Button"					1
+ @var checkbox	hide-nitro		"Hide Nitro tab"					1
  @var color		accentColor 	"Accent Color"	 					#CF5FB5
  @var color		altAccent 		"Alt Accent Color"					rebeccapurple
  @var text sep "-------------------------------" ___________________
@@ -122,10 +122,10 @@ defBG = rgba(0,0,0,0.35)
 	background: defBG;
 }
 
-.app-2CXKsg { 
+.app-2CXKsg, .bg__7adbf { 
 	background-image: var(--background-tertiary);
 	background-position: unset;
-	background-size: cover;
+	background-size: cover !important;
 	box-shadow: inset 0 0 0 2000px bgoverlay; /* used for darkening background */
 	background-repeat: no-repeat !important;
 }
@@ -524,6 +524,12 @@ body {
 	right: 5px;
 }
 
+/* message quick actions */
+.container-2gUZhU {
+	top: -30px;
+	right: -10px;
+}
+
 /* message edited text */
 .edited-1v5nT8 {
     position: absolute;
@@ -542,7 +548,6 @@ body {
 .backdrop-2ByYRN {
     opacity: 0.2 !important;
     position: fixed;
-
 }
 
 .layer-1Ixpg3 {
@@ -567,19 +572,14 @@ body {
 
 
 /* profile banner fade */
-.profileBanner-1owKI5, .popoutBanner-16rVDY, .profileBanner-2zIsK7 {
+.banner-1YaD3N {
     -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
     mask: linear-gradient(to bottom, #000 50%, transparent);
 }
 
-.popoutBannerPremium-2RvDNZ, .popoutBannerPremium-3i5EEI {
-    height: 140px;
-    -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
-    mask: linear-gradient(to bottom, #000 50%, transparent);
-}
-
-.bannerSVGWrapper-qc0szY {
-    -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
+.bannerSVGWrapper-2CLfzN {
+    min-height: 180px;
+    -webkit-mask: linear-gradient(to bottom, #000 50%, transparent) !important;
     mask: linear-gradient(to bottom, #000 50%, transparent);
 }
 
@@ -645,12 +645,6 @@ body {
     background: linear-gradient(89deg, #d858f2, #f29d58);
     -webkit-mask: linear-gradient(to left, #d858f2, transparent 105%);
     mask: linear-gradient(to bottom, #000, transparent 93%);
-}
-
-/* app blur effect in settings */
-#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div.layer-86YKbF.baseLayer-W6S8cY.stop-animations {
-    opacity: 0.3 !important;
-    filter: blur(5px) !important;       
 }
 
 .side-2ur1Qk .item-3XjbnG:hover { 
@@ -808,7 +802,7 @@ section[aria-label="Channel header"] div[aria-label="Online"] rect[fill*="hsl"] 
 
 rect[mask="url(#413550a8-19f9-4ad5-a716-9016a2eba69e)"] {
     mask: none !important;
-    x: 0px; /* ignore warnings */
+    x: 0px;
     y: 2px;
     clip-path: circle(23% at center) !important;
 }
@@ -834,6 +828,10 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
     clip-path: circle(23% at center);
     fill: #11efab;
     y: 3;
+}
+
+.status-2Phn5r, .svg-1G_H_8 > circle {
+    opacity: 0 !important;
 }
 
 /* server buttons */
@@ -1175,7 +1173,7 @@ if hide-call-btn {
 }
 
 if hide-nitro {
-	div.scroller-WSmht3.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN > ul > li:nth-child(4) > div > a {
+	div.scroller-WSmht3.thin-RnSY0a.scrollerBase-1Pkza4.fade-27X6bG > ul > li:nth-child(3) > div {
 		display: none;
 	}
 }
@@ -1382,7 +1380,7 @@ rect[mask="url(#svg-mask-status-offline)"] {
     background-color: defBG;
     flex: 1 1 auto;
     margin-left: 10px;
-    max-width: 70px;
+    min-width: 70px;
     min-height: 70px;
 }
 
@@ -1553,6 +1551,18 @@ div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > d
 .sidebar-1tnWFu {
 	width: clistWidth !important;
 }
+
+/* app blur effect in settings */
+div.layer-86YKbF.baseLayer-W6S8cY.stop-animations[aria-hidden="true"] {
+    opacity: 0.3 !important;
+    filter: blur(5px) !important;       
+}
+
+/* update notes:
+fixed settings blur
+fixed profile banner fade
+fixed hide nitro tab 
+------- */
 
 
 /* ------------------------------ */
