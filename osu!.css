@@ -1,0 +1,136 @@
+/* ==UserStyle==
+ * @name         osu!
+ * @namespace    osu.ppy.sh
+ * @version      0.1
+ * @author       Fython
+ * @description  currently wip css for osu!ppy
+ * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/osu!.css?dummy=.user.css
+ * @homepageURL  https://github.com/Furthir/custom-css/
+ * @preprocessor stylus
+ ------------------------------------------------
+ @var select	bg-image 	"Preset Background Image" {
+ "Default":		"'https://i.postimg.cc/85tBfZGs/dark-forest.png'",
+ "Lightscape":  "'https://i.postimg.cc/1Xgkg6pS/lightscape.jpg'",
+ "Energy":		"'https://i.postimg.cc/BQktY9NZ/energy.png'",
+ "Skymountain": "'https://i.postimg.cc/yYhHptZ7/Skymountain.jpg'",
+ "Custom":		"custom-bg",
+}
+ @var text 		custom-bg	"Custom BG, include quotes!"  	"'https://i.postimg.cc/ZqQMg7tP/skylake.jpg'"
+ @var range		bgblur		"Background blur"           	[4, 0, 10, 1, "px"]
+==/UserStyle== */
+
+/* set variables */
+sT = 0.3s ease
+
+@-moz-document domain("osu.ppy.sh") {
+/* set bg */
+body {
+	height: fit-content;
+}
+
+.blackout--overlay { /* blur */
+	opacity: 1;
+	display: block !important;
+	background-color: transparent;
+	z-index: -1;
+	backdrop-filter: blur(bgblur)
+}
+
+:root {
+	background: url(bg-image);
+	background-attachment: fixed !important;
+	background-repeat: no-repeat;
+	background-size: cover;
+	--hsl-b3: 0deg 0% 0% / 50%;
+	--hsl-b4: @--hsl-b3;
+	--hsl-d4: @--hsl-b3;
+	--hsl-d5: @--hsl-b3;
+	
+}
+
+.header-v4__bg, .header-v4__bg-container {
+	display: none;
+	
+	&:before {
+		display: none !important;
+	}
+}
+
+.header-v4__container--main {
+	padding-top: 100px;
+	min-height: 100px;
+}
+
+.osu-layout--body, .osu-layout--body-landing, .header-v4__bg-container, .beatmapset-info {
+	background-color: transparent;
+}
+
+.osu-page--generic-compact { /* profile */
+    background-color: rgba(0,0,0,0.5);
+	border-radius: 16px;
+}
+
+.page-extra, .page-extra__recent-medals-box, .play-detail, .profile-links, .profile-detail-bar, .profile-detail, .profile-info, .beatmap-playcount, .beatmap-playcount__detail { /* profile elements */
+	background-color: transparent !important;
+}
+
+.footer, .page-mode--profile-page-extra { /* footer, header */
+	background-color: transparent;
+	backdrop-filter: blur(10px);
+}
+
+.nav2-header__transition-overlay { /* header */
+    background-color: rgba(255, 41, 217, 0.5);
+    backdrop-filter: blur(8px);
+}
+
+.play-detail, .show-more-link, { /* top plays */
+	background-color: rgba(0,0,0,0.3);
+	--bg-main: transparent !important;
+	--bg: transparent !important;
+	transition: sT;
+	
+	&:hover {
+		--bg-main: transparent !important;
+		--bg: transparent !important;
+		background-color: rgba(0,0,0,0.5) !important;
+		transition: sT;
+	}
+}
+
+.beatmap-playcount { /* most played */
+	background-color: transparent;
+	transition: sT;
+	
+	&:hover {
+		background-color: rgba(0,0,0,0.5) !important;
+		transition: sT;
+	}
+}
+
+/* profile border radius */
+.header-v4__row--title {
+	border-radius: 16px 16px 0px 0px;
+}
+
+/* beatmap cover */
+.beatmapset-cover {
+	-webkit-mask: linear-gradient(to bottom, #00000012 5%, black 50%, #00800000 95%, #0000ff00 100%) !important;
+    mask: linear-gradient(to bottom, #00000012 5%, black 50%, #00800000 95%, #0000ff00 100%) !important;
+}
+
+.beatmapset-header__cover:after {
+	background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0));
+}
+
+/* comment toolbar */
+.comments__items--toolbar {
+	border-radius: 8px 8px 0px 0px;
+}
+
+/* context menu */
+.simple-menu {
+	backdrop-filter: blur(4px);
+	background-color:transparent;
+}
+}

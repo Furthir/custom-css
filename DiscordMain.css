@@ -1,11 +1,11 @@
 /* ==UserStyle==
- * @name         Discord Purple Night Realtime
+ * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.19.7
+ * @version      0.20
  * @author       Fython
- * @description  Purplized theme for Discord with lots of customization | used for realtime updates w/ text editor
- * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordRewrite.css?dummy=.user.css
- * homepageURL   https://github.com/Furthir/custom-css/
+ * @description  Purplized theme for Discord with lots of customization
+ * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordMain.css?dummy=.user.css
+ * @homepageURL  https://github.com/Furthir/custom-css/
  * @preprocessor stylus
  
  @var checkbox 	image-groups 	"Group Multi-attachment messages" 	1
@@ -14,7 +14,7 @@
  @var checkbox	hovexpand		"Hover to enlarge opened images"	1
  @var checkbox 	hide-chat-btn	"Hide chat buttons" 				1
  @var checkbox 	hide-call-btn	"Hide call buttons"					0
- @var checkbox	hide-nitro		"Hide Nitro Button"					1
+ @var checkbox	hide-nitro		"Hide Nitro tab"					1
  @var color		accentColor 	"Accent Color"	 					#CF5FB5
  @var color		altAccent 		"Alt Accent Color"					rebeccapurple
  @var text sep "-------------------------------" ___________________
@@ -47,7 +47,7 @@
  @var color		prfPrimary		"Profile Primary Color"			rgba(100 , 0, 255, 1)
  @var color		prfSecond		"Profile Secondary Color"		rgba(80, 0, 82, 1)
  @var color		prfBodyBG		"Profile Body Color"			rgba(0, 0, 0, 0.4)
- @var color 	prfOverlay		"Profile Overlay Color"			rgba(0, 0, 0, 0.45)
+ @var color 	prfOverlay		"Profile Overlay Color"			rgba(0, 0, 0, 0.6)
 
  @var select	cfont	"Font"	{
   "Whitney (old)":		"Whitney",
@@ -60,6 +60,7 @@
  @var color		cfolder			"Custom Folder Color"		rgba(50, 70, 202, 0.4)
  @var number 	searchWidth		"Search box width"			[414, 400, 1000, 1, 'px']
  @var number	mlistWidth		"Member list width"			[244, 200, 350, 1, 'px']
+ @var number	clistWidth		"Channel list width"		[313, 150, 400, 1, 'px']
  
 ==/UserStyle== */
 
@@ -121,11 +122,12 @@ defBG = rgba(0,0,0,0.35)
 	background: defBG;
 }
 
-.app-2CXKsg { 
+.app-2CXKsg, [class^="bg__"], .container__4bde3 { 
 	background-image: var(--background-tertiary);
 	background-position: unset;
-	background-size: cover;
+	background-size: cover !important;
 	box-shadow: inset 0 0 0 2000px bgoverlay; /* used for darkening background */
+	background-repeat: no-repeat !important;
 }
 
 .scroller-WSmht3 {
@@ -157,7 +159,7 @@ defBG = rgba(0,0,0,0.35)
 }
 
 /* settings page */
-.sidebarRegionScroller-FXiQOh {
+.sidebarRegionScroller-FXiQOh, .contentRegionScroller__86c79, .contentRegion__0bec1 {
 	background: none !important;
 }
 
@@ -176,7 +178,7 @@ defBG = rgba(0,0,0,0.35)
 	background: none !important;
 }
 
-.theme-light .appMount-2yBXZl, .theme-dark .appMount-2yBXZl {
+.theme-light .appMount-2yBXZl, .theme-dark .appMount-2yBXZl, .appMount_fae9dd {
     background: var(--background-tertiary);
     background-repeat: no-repeat;
     background-size: cover;
@@ -216,17 +218,17 @@ body {
 }
 
 /* server discover page */
-.theme-dark .pageWrapper-2PwDoS, .theme-light .pageWrapper-2PwDoS {
-	background-color: transparent;
-
+.theme-dark .pageWrapper_fef757, .theme-light .pageWrapper_fef757 {
+	background-color: rgba(0,0,0,0.2);
 }
+
 /* download apps pop */
 .downloadApps-14IgKV {
 	background-color: rgba(0,0,0,0.6) !important;
 }
 
 /* darken login background */
-.wrapper-1f5byN {
+.wrapper__2d9b1 {
 	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
 }
 
@@ -389,6 +391,7 @@ body {
 	--font-japanese: Whitney, Hiragino Sans, "\30D2\30E9\30AE\30CE\89D2\30B4 ProN W3", "Hiragino Kaku Gothic ProN", "\30E1\30A4\30EA\30AA", Meiryo, Osaka, "MS PGothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	--font-chinese-simplified: Whitney, "Microsoft YaHei New",  "Microsoft Yahei", "Microsoft JhengHei", SimSun, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	--font-chinese-traditional: Whitney, "Microsoft JhengHei", "Microsoft JhengHei UI", "Microsoft YaHei",  SimSun, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--black-500: rgba(0,0,0,0.5);
 }
 
 }
@@ -472,25 +475,8 @@ body {
 }
 
 /* remove help button, delete this section if needed */
-#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > div > div > div.chat-2ZfjoI > section > div.toolbar-3_r2xA > a {
+div[aria-label="Help"] {
 	display: none;
-}
-
-#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > div > div.content-1SgpWY > div.container-2cd8Mz > section > div.toolbar-3_r2xA > a {
-	display: none;
-}
-
-/* Message Hover Effects */
-.message-2CShn3.selected-2LX7Jy, .mouse-mode.full-motion .message-2CShn3 {
-	transition-timing-function: ease;
-	transition-duration: 0.25s;
-	transition-property: background-color;
-}
-
-.message-2CShn3.selected-2LX7Jy, .mouse-mode.full-motion .message-2CShn3:hover {
-    transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color;
 }
 
 /* message pad/margin mods */
@@ -522,6 +508,12 @@ body {
 	right: 5px;
 }
 
+/* message quick actions */
+.container-2gUZhU {
+	top: -30px;
+	right: -10px;
+}
+
 /* message edited text */
 .edited-1v5nT8 {
     position: absolute;
@@ -540,7 +532,6 @@ body {
 .backdrop-2ByYRN {
     opacity: 0.2 !important;
     position: fixed;
-
 }
 
 .layer-1Ixpg3 {
@@ -559,25 +550,20 @@ body {
     mask: linear-gradient(to bottom, #000, transparent 93%);
 }
 
-.userPopoutInnerNonPremium-1EOFgI {
-    background: linear-gradient(90deg, var(--profile-gradient-primary-color),var(--profile-gradient-primary-color) 60px,var(--profile-gradient-secondary-color));
+[class^="userProfileInnerThemedNonPremium"], .userProfileInnerThemedNonPremium__3d0a6 {
+    background: linear-gradient(90deg, var(--profile-gradient-primary-color),var(--profile-gradient-primary-color) 60px,var(--profile-gradient-secondary-color)) !important;
 }
 
 
 /* profile banner fade */
-.profileBanner-1owKI5, .popoutBanner-16rVDY, .profileBanner-2zIsK7 {
+.banner-1YaD3N, [class^="profileBanner__"], [class^="bannerSVGWrapper__"] {
     -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
     mask: linear-gradient(to bottom, #000 50%, transparent);
 }
 
-.popoutBannerPremium-2RvDNZ, .popoutBannerPremium-3i5EEI {
-    height: 140px;
-    -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
-    mask: linear-gradient(to bottom, #000 50%, transparent);
-}
-
-.bannerSVGWrapper-qc0szY {
-    -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
+.bannerSVGWrapper-2CLfzN {
+    min-height: 180px;
+    -webkit-mask: linear-gradient(to bottom, #000 50%, transparent) !important;
     mask: linear-gradient(to bottom, #000 50%, transparent);
 }
 
@@ -643,12 +629,6 @@ body {
     background: linear-gradient(89deg, #d858f2, #f29d58);
     -webkit-mask: linear-gradient(to left, #d858f2, transparent 105%);
     mask: linear-gradient(to bottom, #000, transparent 93%);
-}
-
-/* app blur effect in settings */
-#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div.layer-86YKbF.baseLayer-W6S8cY.stop-animations {
-    opacity: 0.3 !important;
-    filter: blur(5px) !important;       
 }
 
 .side-2ur1Qk .item-3XjbnG:hover { 
@@ -756,12 +736,6 @@ body {
     align-items: center;
 }
 
-/* Members list */
-.layout-1qmrhw {
-    border-radius: 6px;
-    transition: 0.27s background-color;
-}
-
 /* user settings context menu */
 #user-settings-cog {	
 	background-color: rgba(0,0,0,0.6) !important;
@@ -806,7 +780,7 @@ section[aria-label="Channel header"] div[aria-label="Online"] rect[fill*="hsl"] 
 
 rect[mask="url(#413550a8-19f9-4ad5-a716-9016a2eba69e)"] {
     mask: none !important;
-    x: 0px; /* ignore warnings */
+    x: 0px;
     y: 2px;
     clip-path: circle(23% at center) !important;
 }
@@ -832,6 +806,10 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
     clip-path: circle(23% at center);
     fill: #11efab;
     y: 3;
+}
+
+.status-2Phn5r, .svg-1G_H_8 > circle {
+    opacity: 0 !important;
 }
 
 /* server buttons */
@@ -1091,11 +1069,28 @@ if sidebar-drawer {
 
 if hovexpand {
 	/* hover to expand images */
-	@media only screen and (min-width:1450px) and (max-width: 1800px) {
-		.imageWrapper-oMkQl4 {
+	@media only screen and (min-width:1000px) and (max-width:1450px) {
+		[class|="inlineMediaEmbed"] {
+			background-color: red;
 			transform: scale(1);
 			transition-delay: 0.1s;
-			transition-duration: 0.1s
+			transition-duration: 0.1s;
+			
+			&:hover {
+				transition-delay: 1s;
+				transform: scale(1.5);
+				transition-property: transform;
+				transition-duration: 0.35s;
+				z-index: 1000;
+			}
+		}
+	}
+	
+	@media only screen and (min-width:1450px) and (max-width: 1800px) {
+		[class|="inlineMediaEmbed"] {
+			transform: scale(1);
+			transition-delay: 0.1s;
+			transition-duration: 0.1s;
 			
 			&:hover {
 				transition-delay: 1s;
@@ -1106,15 +1101,15 @@ if hovexpand {
 		}
 	}
 	
-	@media only screen and (min-width:1800px) and (min-height:1350px) {
-		.imageWrapper-oMkQl4 {
+	@media only screen and (min-width:1800px) and (min-height:1350px) and (max-width:3000px) {
+		[class|="inlineMediaEMbed"] {
 			transform: scale(1);
 			transition-delay: 0.1s;
-			transition-duration: 0.1s
+			transition-duration: 0.1s;
 			
 			&:hover {
 				transition-delay: 1s;
-				transform: scale(1.4);
+				transform: scale(2);
 				transition-property: transform;
 				transition-duration: 0.35s;
 			}
@@ -1122,10 +1117,10 @@ if hovexpand {
 	}
 	
 	@media only screen and (min-width:3000px) {
-		.imageWrapper-oMkQl4 {
+		[class|="inlineMediaEmbed"] {
 			transform: scale(1);
 			transition-delay: 0.1s;
-			transition-duration: 0.1s
+			transition-duration: 0.1s;
 			
 			&:hover {
 				transition-delay: 1s;
@@ -1156,7 +1151,11 @@ if hide-call-btn {
 }
 
 if hide-nitro {
-	div.scroller-WSmht3.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN > ul > li:nth-child(4) > div > a {
+	div.scroller-WSmht3.thin-RnSY0a.scrollerBase-1Pkza4.fade-27X6bG > ul > li:nth-child(3) > div {
+		display: none;
+	}
+	
+	[data-list-item-id$="___shop"] {
 		display: none;
 	}
 }
@@ -1187,6 +1186,8 @@ if rgbhome {
 /* BG Blur */
 .bg-1QIAus {
 	backdrop-filter: blur(bg-blur);
+	background: none !important;
+	background-repeat: no-repeat;
 }
 
 /* accent apply */
@@ -1206,33 +1207,24 @@ if rgbhome {
 
 /* Discord Profile themes */
 if customPrf {
-	#user-popout {
-		--profile-gradient-primary-color: prfPrimary !important;
-		--profile-gradient-secondary-color: prfSecond !important;
-		--profile-gradient-overlay-color: prfOverlay !important;
-		--profile-body-background-color: prfBodyBG !important;
-		--profile-avatar-border-color: prfBorder !important;
-		--profile-gradient-button-color: (altAccent - rgb(30,30,30))
-
-	}
-
-	.profileColors-3Y0XaR {
-		--profile-gradient-primary-color: prfPrimary !important;
-		--profile-gradient-secondary-color: prfSecond !important;
-		--profile-gradient-overlay-color: prfOverlay !important;
-		--profile-body-background-color: prfBodyBG !important;
-		--profile-avatar-border-color: prfBorder !important;
+	[class^="profileColors"], .profileColors__2e2f0 {
+		--profile-gradient-primary-color: prfPrimary;
+		--profile-gradient-secondary-color: prfSecond;
+		--profile-gradient-overlay-color: prfOverlay;
+		--profile-body-background-color: prfBodyBG;
+		--profile-avatar-border-color: prfBorder;
 		--profile-gradient-button-color: (altAccent - rgb(30,30,30))
 	}
 
 		/* overlay */
-	.userProfileModalInner-3fh3QA:before, .userPopoutInner-1hXSeY:before {
+	.userProfileModalInner-3fh3QA:before, .userPopoutInner-1hXSeY:before, .userProfileInner-1ngKnf:before, .userPopoutInner_f545a3:before, [class^="userProfileModalInner"]:before {
 		border-radius: 4px;
-		height: calc(100% - 16px);
+		height: calc(100% - 4px);
 		width: calc(100% - 8px);
 		margin-bottom: 4px;
 		align-self: center;
 	}
+
 
 	.userProfileInner-3F03PX {
 		justify-content: flex-end;
@@ -1285,23 +1277,21 @@ rect[mask="url(#svg-mask-status-offline)"] {
 }
 
 /* server context buttons */
-.colorDefault-CDqZdO {
+.colorDefault__0b482 {
     transition: sT;
-
-	&:hover {
-		background-color: (accentColor - rgba(50,50,30,0.7)) !important;
-		transition: 0.3s background-color, color;
-	}
 	
-	&.focused-3qFvc8 {
-		background-color:(accentColor - rgba(50,50,30,0.7)) !important;
+	&.focused__27621{
+		background-color:(accentColor - rgba(50,50,30,0.4)) !important;
 		transition: 0.3s background-color, color;
 	}
+}
 
-	&.focused-3qFvc8:hover {
-		background-color: (accentColor - rgba(50,50,30,0.7)) !important;
-		color: white;
-		transition: 0.3s background-color, color;
+/* Message Hover Effects */
+.message__80c10.selected_fd9051, .mouse-mode.full-motion .message__80c10 {
+	transition: sT;
+	
+&:hover {
+		transition: sT;
 	}
 }
 
@@ -1314,12 +1304,12 @@ rect[mask="url(#svg-mask-status-offline)"] {
 .tabBar-ra-EuL .addFriend-emTWY1.addFriend-emTWY1.addFriend-emTWY1 {
 		background-color: transparent;
 		color: var(--interactive-normal);
-		transition: sT
+		transition: sT;
 	
 
 	&:hover {
 		background-color: var(--background-modifier-hover) !important;
-		transition: sT
+		transition: sT;
 	}
 
 	~/[aria-selected=true] {
@@ -1333,16 +1323,28 @@ rect[mask="url(#svg-mask-status-offline)"] {
 	border: 5px solid var(--background-modifier-selected);
 }
 
+/* * search */
+[class^="searchBar"], .searchBar_ff8800, .searchBar_e0c60b {
+	background: rgba(0,0,0,0.5);
+}
+
+.option_b5597b:after {
+	background: none !important;
+}
+
 /* Mentioned outline */
-.mentioned-Tre-dv,
-.message-2CShn3.mentioned-Tre-dv.selected-2LX7Jy,
-.mouse-mode.full-motion .mentioned-Tre-dv:hover,
-.mouse-mode.full-motion .message-2CShn3.mentioned-Tre-dv:hover {
+[class~="mentioned"], .wrapper__09ecc.mentioned__58017 {
     border-color: accentColor !important;
     box-shadow: inset 0px 0px 14px 1px accentColor, 0px 0px 6px 6px accentColor;
 }
 
-.mentioned-Tre-dv:before {
+.wrapper__09ecc {
+    margin-left: 20px;
+    margin-right: 20px;
+	border-radius: 6px;
+}
+
+div[class~="mentioned"]:before, .mentioned__58017:before {
 	background: none !important;
 }
 
@@ -1356,22 +1358,22 @@ rect[mask="url(#svg-mask-status-offline)"] {
 	font-weight: bolder;
 }
 
-.content-1r-J1r {
+.wrapper_efe67f {
     width: max-content;
     border: solid;
     border-radius: 10px;
     border-color: accentColor !important;
     box-shadow: inset 0px 0px 14px 1px accentColor, 0px 0px 6px 6px accentColor;
-    padding: 10px;
-    gap: 16px;
+    padding: 15px;
+	margin-top: 10px;
 }
 
-.guildIcon-3ZfRfI {
+.iconSizeLarge__1e6d4 {
     background-color: defBG;
-    flex: 1 1 auto;
+/*     flex: 1 1 auto; */
     margin-left: 10px;
-    max-width: 70px;
-    min-height: 70px;
+    min-width: 80px;
+    min-height: 80px;
 }
 
 /* homepage, active now */
@@ -1404,8 +1406,8 @@ section.section-3G9aLW {
 	transition: sT;
 	
 	&:hover {
-	background-color: (accentHover - rgba(0,0,0,.0.7));
-	transition-: sT;
+	background-color: (accentHover - rgba(0,0,0,0.7));
+	transition: sT;
 	}
 }
 
@@ -1422,13 +1424,26 @@ section.section-3G9aLW {
 }
 
 /* inbox */
-.container-nwU-8G {
-    backdrop-filter: blur(1.3px);
+.container__20de0, .container__23c08, .messagesPopoutWrap_b3b384 {
+    backdrop-filter: blur(4px);
 	background-color: rgba(0,0,0,0.25);
     align-items: center;
     min-height: 400px;
     text-align: center;
     padding: 0 16px;
+}
+
+.container__2c498 {
+    min-width: 100%;
+    border-radius: 4px;
+}
+
+.row_fd1939 {
+	transition: sT;
+	
+	&:hover {
+		transition: sT;
+	}
 }
 
 /* side buttons */
@@ -1441,10 +1456,11 @@ section.section-3G9aLW {
 }
 
 /* embeds */
-.embedFull-1HGV2S {
+[class^="embedFull"], .embedFull__8dc21 {
     background: none;
     box-shadow: 0 4px 16px 0 rgb(0 0 0);
     border-left: solid 4px accentColor !important;
+	border-color: accentColor !important;
 }
 
 /* server list */
@@ -1499,10 +1515,13 @@ div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > d
 }
 
 /* server context menu */
-.menu-1QACrS[aria-label="Server Actions"] {
+.menu_dc52c6[aria-label="Server Actions"] {
     border-radius: 4px;
     background: rgba(0,0,0,0.6);
 	transition: 0.3s ease-in-out;
+	box-shadow: 0 4px 16px 0 rgb(0 0 0);
+/* 	backdrop-filter: blur(0px); */
+	
 }
 
 /* image msgs */
@@ -1532,9 +1551,70 @@ div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > d
 	width: mlistWidth;
 }
 
+.clickable__17ccb.container__4f20e {
+    border-radius: 6px;
+    background: none !important;
+	
+	&:hover {
+		background: none !important;
+	}
+}
+
+.clickable__17ccb .layout_bb8e67 {
+	transition: sT;
+	
+	&:hover {
+		transition: sT;
+	}
+}
+
 .member-2gU6Ar, .membersWrap-3NUR2t {
 	min-width: mlistWidth;
 	max-width: mlistWidth;
 }
+
+/* channel list */
+.sidebar-1tnWFu {
+	width: clistWidth !important;
+}
+
+.wrapper__7bcde .link__95dc0 {
+	transition: sT;
+	
+	&:hover {
+		transition: sT;
+	}
+}
+
+/* app blur effect in settings */
+.layer__2efaa.baseLayer__8fda3[aria-hidden="true"] {
+    opacity: 0.9 !important;
+    filter: blur(4px) !important;       
+}
+
+/* login page */
+.authBox__7196a[data-theme=dark] {
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    -webkit-box-shadow: 0 0 0 1px rgba(32,34,37,0.6), 0 2px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 0 1px rgba(32,34,37,0.6), 0 2px 10px 0 rgba(0,0,0,0.2);
+    border-radius: 12px;
+}
+
+/* update notes: ------
+-	fixed settings blur & bg
+-	fixed profile colors
+-	fixed login page
+-	fixed bg repeat
+-	hide shop page, you really shouldn't need this bro
+-	fixed messsage hover transitions
+-	fixed message mention outlines
+-	fixed other hover transitions (contexts, lists, etc.)
+-	modified inbox
+-	AAAAAAAAAAAAAAAAAAAAAAAA
+		    	 ------ */
+
+
 /* ------------------------------ */
 }
+

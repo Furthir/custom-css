@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Roblox Light Glass 
  * @namespace    roblox.com
- * @version      0.28
+ * @version      0.29
  * @author       Fython
  * @description  A Glass Theme for Roblox
  * @updateURL	 https://raw.githubusercontent.com/Furthir/custom-css/main/Roblox.css
@@ -9,7 +9,7 @@
  ------------------------------------------------
  @var checkbox	rgbhome		"RGB Logo (Uses CPU/GPU)" 		1
  @var checkbox	cntrtext	"Center Text"					1
- @var checkbox  beta		"Beta stuff"					0
+ @var checkbox  beta		"Experimental stuff"			0
  
  @var select	bg-image 	"Preset Background Image" {
  "Default":		"url(https://i.postimg.cc/ZqQMg7tP/skylake.jpg)",
@@ -108,7 +108,6 @@ rlogo = url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwO
     color: #393b3d;
     backdrop-filter: blur(6px);
 	border-radius: 8px;
-    z-index: 10000;
 }
 
 .light-theme .input-field, .dark-theme .input-field {
@@ -181,9 +180,12 @@ rlogo = url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwO
 }
 
 .dark-theme .dropdown-menu, .light-theme .dropdown-menu {
-    background-color: transparent;
+    background-color: rgba(255,255,255,0.25) !important;
     color: #fff;
+    box-shadow: 0 4px 16px 0 rgb(0 0 0) !important;
+    backdrop-filter: blur(12px);
 }
+
 
 .dark-theme .popover, .light-theme .popover {
     background-color: transparent;
@@ -228,17 +230,13 @@ rlogo = url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwO
     transition-duration: 0.4s;
 }
 
-.dark-theme .rbx-header .navbar-search .navbar-search-option.new-selected, .light-theme .rbx-header .navbar-search .navbar-search-option.new-selected  {
-    background-color: rgba(0,0,0,0.4);
-    box-shadow: none;
-    color: #fff;
-}
-
+.dark-theme .rbx-header .navbar-search .navbar-search-option.new-selected, .light-theme .rbx-header .navbar-search .navbar-search-option.new-selected,  
 .dark-theme .rbx-header .navbar-search-option .new-selected:hover, .light-theme .rbx-header .navbar-search-option .new-selected:hover {
     background-color: rgba(0,0,0,0.4);
     box-shadow: none;
     color: #fff;
 }
+
 
 .dark-theme .navbar-search .navbar-search-option:hover, .light-theme .navbar-search .navbar-search-option:hover {
     background-color: rgba(0,0,0,0.3);
@@ -325,26 +323,42 @@ dark-theme .dropdown-menu li.active, .dark-theme .dropdown-menu li, .light-theme
     transition: sT;
 }
 
+/* game cards */
 .game-carousel {
     overflow-x: visible !important;
     overflow-y: visible !important;
 }
 
-.dark-theme .game-card-container, .light-theme .game-card-container {
+.game-card-container {
     background-color: transparent;
     transition-timing-function: ease-in-out;
     transition-duration: 0.25s;
-    transition-property: background-color, transform;
+    transition-property: all;
     transform: scale(1)
+	transition-delay: 0.25s !important;
+	
+	&:hover {
+		background-color: rgba(0,0,0,0.25);
+		transition-timing-function: ease-in-out;
+		transition-duration: 0.25s;
+		transition-property: all;
+		transform: scale(1.15) rotateZ(5deg);
+		z-index: 100;
+		transition-delay: 0s !important;
+	}
 }
 
-.dark-theme .game-card-container:hover, .light-theme .game-card-container:hover {
-    background-color: rgba(0,0,0,0.25);
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.25s;
-    transition-property: background-color, transform;
-    transform: scale(1.15) rotateZ(7deg);
-    z-index: 100;
+.dark-theme .hover-game-tile.focused, .light-theme .hover-game-tile.focused {
+	background-color: transparent;
+	
+	& .featured-game-container {
+		background-color: rgba(0,0,0,0.5);
+		padding: 10px;
+	}
+}
+
+.game-grid.home-game-grid.grid-tile-game-grid .hover-game-tile.grid-tile .featured-game-container .featured-game-icon-container .brief-game-icon {
+	width: 100%;
 }
 
 .dark-theme .modal-dialog .modal-content, .light-theme .modal-dialog .modal-content {
@@ -417,10 +431,11 @@ dark-theme .dropdown-menu li.active, .dark-theme .dropdown-menu li, .light-theme
 }
 
 .dark-theme .input-field, .light-theme .input-field {
-    background-color: rgb(42 38 38 / 70%);
+    background-color: rgba(0,0,0,0.25);
     border-color: hsl(0deg 100% 50% / 20%);
     color: #bdbebe;
     border-radius: 8px;
+
 }
 
 .dark-theme .avatar-card-container, .light-theme .avatar-card-container {
@@ -660,7 +675,6 @@ div#rbx-private-running-games {
     background-color: rgba(0,0,0,0.1);
     border-radius: 12px;
     transition-duration: 0.2s;
-    transition-property: background-color, transform;
     transition-timing-function: ease-in;
     transition-delay: 0.15s;
     transform: scale(1)
@@ -669,7 +683,6 @@ div#rbx-private-running-games {
 .dark-theme .stack .card-list .card-item:hover, .light-theme .stack .card-list .card-item:hover {
     background-color: rgba(0,0,0,0.25);
     transition-duration: 0.2s;
-    transition-property: background-color, transform;
     transition-timing-function: ease-in;
     transition-delay: 0s;
     transform: scale(1.1);
@@ -690,7 +703,7 @@ div#rbx-private-running-games {
     background-color: transparent;
     border-color: #2306ff;
     color: #8dc5ff;
-    transform: scale(0.9);
+    transform: scale(1.05);
     transition-property: background-color, border-color, transform;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
@@ -740,7 +753,12 @@ div#rbx-private-running-games {
     transition-timing-function: ease-in;
     transition-delay: 0s;
 }
+/* game image slideshow thing */
+.carousel-item-active-out, .carousel-item-active {
+	z-index: -10;
+}
 
+/* play button */
 .dark-theme .btn-common-play-game-lg, .light-theme .btn-common-play-game-lg {
     background-color: #00b06f;
     border-color: #00b06f;
@@ -748,22 +766,22 @@ div#rbx-private-running-games {
     border-radius: 8px;
     transform: scale(1);
     transition-property: background-color, border-color, transform;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
     transition-delay: 0s;
-}
-
-.dark-theme .btn-common-play-game-lg:hover, .light-theme .btn-common-play-game-lg:hover {
-    background-color: rgb(17, 239, 171);
-    border-color: #00fffb;
-    color: #fff;
-    border-radius: 8px;
-    transform: scale(1.25);
-    transition-property: background-color, border-color, transform;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in;
-    transition-delay: 0s;
-    z-index: 100;
+	
+	&:hover {
+		background-color: rgb(17, 239, 171);
+		border-color: #00fffb;
+		color: #fff;
+		border-radius: 8px;
+		transform: scale(1.25);
+		transition-property: background-color, border-color, transform;
+		transition-duration: 0.3s;
+		transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+		transition-delay: 0s;
+		z-index: 100;
+	}
 }
 
 /* ropro server filter */
@@ -792,17 +810,17 @@ div[class="server-filter-option"] {
     transition-duration: 0.1s;
     transition-timing-function: ease-in;
     transition-delay: 0s;
-}
-
-.dark-theme .btn-control-md:focus, .dark-theme .btn-control-md:hover, .light-theme .btn-control-md:focus, .light-theme .btn-control-md:hover {
-    background-color: transparent;
-    border-color: #2306ff;
-    color: #fff;
-    transform: scale(1.07);
-    transition-property: background-color, border-color, transform;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in;
-    transition-delay: 0s;
+	
+	&:hover {
+		background-color: transparent;
+		border-color: #2306ff;
+		color: #fff;
+		transform: scale(1.07);
+		transition-property: background-color, border-color, transform;
+		transition-duration: 0.1s;
+		transition-timing-function: ease-in;
+		transition-delay: 0s;
+	}
 }
 
 .dark-theme .container-empty, .dark-theme .section-content-off {
@@ -810,7 +828,7 @@ div[class="server-filter-option"] {
     color: #bdbebe;
 }
 
-.dark-theme .btn-growth-sm, .light-theme .btn-growth-sm {
+.dark-theme .btn-growth-sm, .light-theme .btn-growth-sm, .btn-growth-xs {
     background-color: #00b06f;
     border-color: #00b06f;
     transform: scale(1);
@@ -818,29 +836,30 @@ div[class="server-filter-option"] {
     transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
-}
-
-.dark-theme .btn-growth-sm:hover, .light-theme .btn-growth-sm:hover {
-    background-color: #11efab;
-    border-color: #11efab;
-    transform: scale(1.07);
-    transition-property: background-color, border-color, transform;
-    transition-duration: 0.15s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
+	
+	&:hover {
+		background-color: #11efab !important;
+		border-color: #11efab;
+		transform: scale(1.07);
+		transition-property: background-color, border-color, transform;
+		transition-duration: 0.15s;
+		transition-timing-function: ease-in-out;
+		transition-delay: 0s;
+	}
 }
 
 /* homepage friends */
 .popover.bottom.people-info-card-container {
     background: rgba(0,0,0,0.1);
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(2px);
 }
 
 .people-info-card-container.card-with-game {
     width: 31%;
     max-width: 170%;
-    backdrop-filter: blur(1px);
-    background: rgba(0,0,0,0.1)
+    backdrop-filter: blur(2px);
+    background: rgba(0,0,0,0.1);
+	margin-top: -10px;
 }
 
 .people-info-card-container {
@@ -854,10 +873,18 @@ div[class="server-filter-option"] {
     align-items: center;
 }
 
-.people-info-card-container .place-container .place-info-container {
-    margin-left: 5%;
-    padding-left: 5%;
-    width: 69%;
+.people-info-card-container .place-container {
+    height: 114px;
+    padding: 12px 10px;
+    background-color: rgba(0,0,0,0.25);
+    backdrop-filter: blur(2px);
+	top: -15px;
+	box-shadow: 0 0 8px 0 #191b1d;
+	& .place-info-container {
+		margin-left: 5%;
+		padding-left: 5%;
+		width: 69%;
+	}
 }
 
 @media only screen and (max-width:1220px) {
@@ -922,15 +949,15 @@ div[class="server-filter-option"] {
     transition-duration: 0.25s;
     transition-property: background-color, transform;
 	transform: scale(1);
-}
 
-.dark-theme .avatar-card-btns .accept-friend:hover, .light-theme .avatar-card-btns .accept-friend:hover {
-    background-color: #00b1a530;
-    transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color, transform;
-	transform: scale(1.1);
-    border-color: #00a2ff;
+    &:hover {
+        background-color: #00b1a530;
+        transition-timing-function: ease;
+        transition-duration: 0.25s;
+        transition-property: background-color, transform;
+        transform: scale(1.1);
+        border-color: #00a2ff;
+    }
 }
 
 /* favorites page */
@@ -997,6 +1024,11 @@ div[class="server-filter-option"] {
     display: none;
 }
 
+/* hide push notifs banner */
+#push-notifications-registration-prompt {
+    display: none;
+}
+
 /* hide loading.. banner */
 .dark-theme .alert-loading, .light-theme .alert-loading {
     display: none;
@@ -1031,6 +1063,7 @@ if rgbhome {
 if cntrtext {
 	.game-card-name, .game-card-info {
 		text-align: center;
+		justify-content: center;
 	}
 	
 	.btr-gamedetails .server-list-section:not(#rbx-private-running-games) .card-list > li {
@@ -1039,17 +1072,18 @@ if cntrtext {
 }
 
 if beta {
-	.btr-gamedetails .server-list-section:not(#rbx-private-running-games) .card-list > li:hover {
-		width: 140%;
-		display: flex;
-		justify-content: center;
+	.btr-gamedetails .server-list-section:not(#rbx-private-running-games) .card-list > li {
+		width: 100%
+		transition: 0.2s all;
 		justify-self: center;
-		flex-direction: row;
-		align-content: center;
-		flex-wrap: wrap;
-		transition: 0.4s;
-		z-index: 1000;
-		transform: scale(1.2);
+		
+		&:hover {
+			width: 150%;
+			justify-self: center;
+			transition: 0.4s;
+			z-index: 1000;
+			transform: scale(1.1);
+		}
 	}
 	
 	.stack .card-list .card-item {
