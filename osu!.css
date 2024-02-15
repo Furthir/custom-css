@@ -1,12 +1,10 @@
 /* ==UserStyle==
- * @name         osu!
- * @namespace    osu.ppy.sh
- * @version      0.1
- * @author       Fython
- * @description  currently wip css for osu!ppy
- * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/osu!.css?dummy=.user.css
- * @homepageURL  https://github.com/Furthir/custom-css/
- * @preprocessor stylus
+@name      	    osu!
+@namespace      furthir/osu-css
+@version        0.1
+@description    wip osu custom css
+@author         Fython
+@preprocessor	stylus
  ------------------------------------------------
  @var select	bg-image 	"Preset Background Image" {
  "Default":		"'https://i.postimg.cc/85tBfZGs/dark-forest.png'",

@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.20
+ * @version      0.21
  * @author       Fython
  * @description  Purplized theme for Discord with lots of customization
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordMain.css?dummy=.user.css
@@ -17,6 +17,7 @@
  @var checkbox	hide-nitro		"Hide Nitro tab"					1
  @var color		accentColor 	"Accent Color"	 					#CF5FB5
  @var color		altAccent 		"Alt Accent Color"					rebeccapurple
+ @var color		selectColor 	"Selection Color"		        	rgba(255, 80, 230, 0.2)
  @var text sep "-------------------------------" ___________________
  ----------------------------------------
  @var select bg-img "Background Image" {
@@ -35,7 +36,6 @@
  
  @var text sep2 "-------------------------------" ___________________
  ----------------------------------------
- @var color		selectColor 	"Selection Color"			rgba(255, 80, 230, 0.2)
  @var color		statusOnline	"Online Status Color"		rgba(207, 95, 181, 1)
  @var color		statusIdle		"Idle Status Color"			rgba(17, 239, 171, 1)
  @var color		statusDND		"DND Status Color"			rgba(255, 0, 0, 1)
@@ -48,6 +48,7 @@
  @var color		prfSecond		"Profile Secondary Color"		rgba(80, 0, 82, 1)
  @var color		prfBodyBG		"Profile Body Color"			rgba(0, 0, 0, 0.4)
  @var color 	prfOverlay		"Profile Overlay Color"			rgba(0, 0, 0, 0.6)
+ @var checkbox  noprffx			"Disable Profile Effects"		1
 
  @var select	cfont	"Font"	{
   "Whitney (old)":		"Whitney",
@@ -67,10 +68,11 @@
 /* set variables */
 sT = background-color 0.25s ease
 prfBorder = transparent
-accentHover = (accentColor + rgb(35,60,35) - rgba(0,0,0,0.1))
+accentHover = (accentColor + rgb(35,60,35) - rgba(0,0,0,0.6))
 altHover = (altAccent + rgba(20,20,20,-0.2))
 accentDark = (accentColor - rgb(50,70,50))
 defBG = rgba(0,0,0,0.35)
+fade = opacity 0.15s ease-in
 
 /* fonts */
 @font-face {
@@ -139,8 +141,8 @@ defBG = rgba(0,0,0,0.35)
 }
 
 /* forum channel background */
-.theme-light .container-3wLKDe, .theme-dark .container-3wLKDe {
-	background-color: transparent !important;
+.chat__52833, .forumOrHome__75784, .container_b181b6 {
+	background: transparent !important;
 }
 
 /* voice channel background */
@@ -252,7 +254,7 @@ body {
 	--background-modifier-accent: (accentColor - rgba(90,49,60,0.6));
 	--background-modifier-active: (accentColor + rgb(40,40,40) - rgba(0,0,0,0.5));
 	--background-modifier-selected: (accentColor - rgba(0,0,0,0.3));
-	--background-modifier-hover: (accentColor - rgba(0,0,0,0.65));
+	--background-modifier-hover: (accentHover);
 	--background-message-hover: (accentColor - rgba(50,50,50,0.8));
 	--mention-foreground: (accentColor + rgb(50,50,50)) !important;
 	--mention-background: (accentColor - rgba(0,0,0,0.7))  !important;
@@ -495,23 +497,25 @@ div[aria-label="Help"] {
     text-indent: -4rem;
 }
 
+/* message action tooltip */
+.container__9d616 {
+    transition: opacity 0.2s ease-in;
+    top: -30px;
+	right: -10px;
+}
 /* message timestamps */
 .cozy-VmLDNB .timestamp-p1Df1m.alt-1dvXnH {
     position: absolute;
     right: 5px;
 	left: auto !important;
+    transition: fade;
 }
 
 .compact-2Nkcau .timestamp-p1Df1m, .cozy-VmLDNB .timestamp-p1Df1m.alt-1dvXnH, .cozy-VmLDNB .timestamp-p1Df1m {
 	position: absolute;
 	float: right !important;
 	right: 5px;
-}
-
-/* message quick actions */
-.container-2gUZhU {
-	top: -30px;
-	right: -10px;
+    transition: fade;
 }
 
 /* message edited text */
@@ -601,7 +605,7 @@ div[aria-label="Help"] {
 }
 
 /* settings page */
-.side-2ur1Qk .item-3XjbnG {
+.side_b4b3f6 .item__48dda {
     padding-top: 6px;
     padding-bottom: 6px;
     margin-bottom: 2px;
@@ -611,19 +615,16 @@ div[aria-label="Help"] {
     transition-property: background-color;
 }
 
-.itemFilled-1cPbtg {
+.item__48dda .selected__5711d {
     background-color: var(--background-secondary);
-    transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color;
+    transition: sT;
 }
 
-.itemFilled-1cPbtg:hover:not([aria-checked=true]) {
+.item__48dda .selected__5711d:hover:not([aria-checked=true]) {
     background-color: var(--background-modifier-hover);
-    transition-timing-function: ease;
-    transition-duration: 0.25s;
-    transition-property: background-color;
+    transition: sT;
 }
+
 	/* voice&video sliders */
 .theme-light .bar-1Bhnl9, .theme-light .markDash-yk2kJ-, .theme-dark .bar-1Bhnl9, .theme-dark .markDash-yk2kJ- {
     background: linear-gradient(89deg, #d858f2, #f29d58);
@@ -1134,7 +1135,7 @@ if hovexpand {
 
 if hide-chat-btn {
 	/* remove chat buttons */
-	.button-2fCJ0o {
+	.button__55e53:not([aria-label="Select emoji"]) {
 		display: none;
 	}
 }
@@ -1148,15 +1149,25 @@ if hide-call-btn {
 	div[aria-label="Start Video Call"] {
 		display: none;
 	}
+    
+    [id="user-context-call"] {
+        display: none;
+    }
 }
 
 if hide-nitro {
-	div.scroller-WSmht3.thin-RnSY0a.scrollerBase-1Pkza4.fade-27X6bG > ul > li:nth-child(3) > div {
+	[data-list-item-id="private-channels-uid_170___nitro"]{
 		display: none;
 	}
 	
 	[data-list-item-id$="___shop"] {
 		display: none;
+	}
+}
+
+if noprffx {
+	[class^="profileEffects_"] {
+   		display: none;
 	}
 }
 
@@ -1184,7 +1195,7 @@ if rgbhome {
 }
 
 /* BG Blur */
-.bg-1QIAus {
+.bg__12180 {
 	backdrop-filter: blur(bg-blur);
 	background: none !important;
 	background-repeat: no-repeat;
@@ -1230,25 +1241,46 @@ if customPrf {
 		justify-content: flex-end;
 	}
 }
+/* profile view button */
+.withTagAsButton_cc125f, .withTagless__98b7d {
+    transition: sT;
+
+    &:hover {
+        background-color: var(--background-modifier-hover);
+        transition: sT;
+    }
+}
+
+/* user control buttons */
+button.button__4f306, span.button__4f306 {
+    transition: sT;
+    
+    &:hover {
+        background-color: var(--background-modifier-hover) !important;
+        transition: sT;
+    }
+}
 
 /* profile popup dark */
-.theme-dark .root-g14mjS {
+.theme-dark .root_ba16f0 {
     background-color: rgba(0,0,0,0.65);
 	-webkit-box-shadow: 0 0 0 1px rgba(32,34,37,0.6), 0 2px 10px 0 rgba(0,0,0,0.2);
-    box-shadow: 0 0 0 1px rgba(32,34,37,0.6), 0 2px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 0 1px rgba(32,34,37,0.6), 0 2px 10px 0 rgba(0,0,0,0.2) !important;
     backdrop-filter: blur(1px);
+    overflow: scroll;
 }
 
 /* profile popup light */
-.theme-light .root-g14mjS {
+.theme-light .root_ba16f0 {
     background: defBG;
     -webkit-box-shadow: 0 0 0 1px rgba(185,187,190,0.3),0 2px 10px 0 rgba(0,0,0,0.1);
     box-shadow: 0 0 0 1px rgba(185,187,190,.3),0 2px 10px 0 rgba(0,0,0,0.1);
+    overflow: scroll;
 }
 
 /* toggles */
-.checked-25WXMf {
-    background: altAccent !important;
+.container__871ba.checked__6bdb0 {
+    background-color: altAccent !important;
 }
 
 /* Status Icons */
@@ -1286,6 +1318,11 @@ rect[mask="url(#svg-mask-status-offline)"] {
 	}
 }
 
+/* hide server 2fa request block */
+.channelNotice_bbc8e6 {
+    display: none;
+}
+
 /* Message Hover Effects */
 .message__80c10.selected_fd9051, .mouse-mode.full-motion .message__80c10 {
 	transition: sT;
@@ -1301,16 +1338,15 @@ rect[mask="url(#svg-mask-status-offline)"] {
 	min-width: 40px;
 }
 
-.tabBar-ra-EuL .addFriend-emTWY1.addFriend-emTWY1.addFriend-emTWY1 {
-		background-color: transparent;
-		color: var(--interactive-normal);
-		transition: sT;
+.tabBar__73938 .addFriend__80542.addFriend__80542.addFriend__80542 {
+    background-color: transparent;
+    color: var(--interactive-normal);
+    transition: sT;
 	
-
-	&:hover {
-		background-color: var(--background-modifier-hover) !important;
-		transition: sT;
-	}
+        &:hover {
+            background-color: var(--background-modifier-hover) !important;
+            transition: sT;
+        }
 
 	~/[aria-selected=true] {
 		background-color: var(--background-modifier-selected);
@@ -1318,9 +1354,27 @@ rect[mask="url(#svg-mask-status-offline)"] {
 	}
 }
 
-.container-3tKtM_ {
+.container_a308ae {
 	transition: sT;
 	border: 5px solid var(--background-modifier-selected);
+}
+
+/* friends list */
+.peopleListItem_d14722 {
+    transition: sT;
+    
+    &:hover {
+        transition: sT;
+    }
+}
+
+/* dm list */
+.interactive__776ee {
+    transition: sT;
+    
+    &:hover {
+        transition: sT;
+    }
 }
 
 /* * search */
@@ -1411,11 +1465,6 @@ section.section-3G9aLW {
 	}
 }
 
-.peopleListItem-u6dGxF.active-2UF8Zh, 
-.peopleListItem-u6dGxF:hover, .peopleListItem-u6dGxF {
-	transition: sT;
-}
-
 /* drop popups */
 .messagesPopoutWrap-3zryHW, /*pins*/
 .browser-mnQ1T7 { 			/*threads*/
@@ -1480,11 +1529,6 @@ section.section-3G9aLW {
 		background-color: --background-modifier-hover;
 		transition: sT;
 	}
-}
-
-/* snow home button */
-div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > div > svg > g:nth-child(1) > rect {
-	clip-path: circle(0px at center);
 }
 
 /* code blocks */
@@ -1602,19 +1646,17 @@ div.listItemWrapper-3d87LP.selected-3a1QGn > div > svg > foreignObject > div > d
 }
 
 /* update notes: ------
--	fixed settings blur & bg
--	fixed profile colors
--	fixed login page
--	fixed bg repeat
--	hide shop page, you really shouldn't need this bro
--	fixed messsage hover transitions
--	fixed message mention outlines
--	fixed other hover transitions (contexts, lists, etc.)
--	modified inbox
--	AAAAAAAAAAAAAAAAAAAAAAAA
+-   removed 2fa notice card that takes up channel list space
+-   fixed more transitions
+-   fixed profile popup scrolling
+-   add more transitions
+-	add profile effects toggle
+-	auggh
+
 		    	 ------ */
 
 
 /* ------------------------------ */
 }
+
 

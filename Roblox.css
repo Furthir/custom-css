@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Roblox Light Glass 
  * @namespace    roblox.com
- * @version      0.29
+ * @version      0.30
  * @author       Fython
  * @description  A Glass Theme for Roblox
  * @updateURL	 https://raw.githubusercontent.com/Furthir/custom-css/main/Roblox.css
@@ -21,6 +21,7 @@
 
  @var text 		custom-bg	"Custom BG, include url()"  	"url()"
  @var range		bgblur		"Background blur"           	[0, 0, 10, 1, "px"]
+ @var range		bgdim		"Background dim"				[0, 0, 1, .1, ""]
 ==/UserStyle== */
 /* vars */
 sT = background-color 0.25s ease
@@ -334,7 +335,7 @@ dark-theme .dropdown-menu li.active, .dark-theme .dropdown-menu li, .light-theme
     transition-timing-function: ease-in-out;
     transition-duration: 0.25s;
     transition-property: all;
-    transform: scale(1)
+    transform: scale(1);
 	transition-delay: 0.25s !important;
 	
 	&:hover {
@@ -665,6 +666,19 @@ button.close {
     background-color: transparent;
 }
 
+/* notifications */
+.dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list {
+	background-color: transparent;
+
+	& .notification-stream-item, .sendr-notification-background {
+		background-color: transparent;
+	}
+}
+
+.new-notification-stream-2022.notification-stream-base {
+    backdrop-filter: blur(8px);
+}
+
 /* game page */
 div#rbx-private-running-games {
 	z-index: 100;
@@ -753,6 +767,7 @@ div#rbx-private-running-games {
     transition-timing-function: ease-in;
     transition-delay: 0s;
 }
+
 /* game image slideshow thing */
 .carousel-item-active-out, .carousel-item-active {
 	z-index: -10;
@@ -1012,6 +1027,15 @@ div[class="server-filter-option"] {
 	}
 }
 
+/* transactions table */
+.dark-theme .table, .light-theme .table {
+	background-color: transparent !important;	
+}
+
+.dark-theme .table-striped>tbody>tr:nth-child(2n)>td, .dark-theme .table-striped>tbody>tr:nth-child(2n)>th, .light-theme .table-striped>tbody>tr:nth-child(2n)>td, .light-theme .table-striped>tbody>tr:nth-child(2n)>th {
+/* 	background-color: transparent !important; */
+}
+
 /* messages page */
 .dark-theme .messages .messageDivider.message-news {
     background-color: rgba(0,0,0,0.5);
@@ -1073,7 +1097,7 @@ if cntrtext {
 
 if beta {
 	.btr-gamedetails .server-list-section:not(#rbx-private-running-games) .card-list > li {
-		width: 100%
+		width: 100%;
 		transition: 0.2s all;
 		justify-self: center;
 		
@@ -1124,8 +1148,9 @@ html {
     background-repeat: no-repeat !important;
     min-height: 100%;
     background-position: right, bottom !important;
-    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, bgdim);
 	background-image: bg-image !important;
 
 	}
 }
+
