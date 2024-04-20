@@ -1,14 +1,14 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.22
+ * @version      0.22.1
  * @author       Fython
  * @description  Purplized theme for Discord with lots of customization
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordMain.css?dummy=.user.css
  * @homepageURL  https://github.com/Furthir/custom-css/
  * @preprocessor stylus
  
- @var checkbox 	image-groups 	"Group Multi-attachment messages" 	1
+// var checkbox 	image-groups 	"Group Multi-attachment messages" 	1
  @var checkbox 	sidebar-drawer	"Sidebar drawer"		 		 	1
  @var checkbox	rgbhome			"RGB Home Button"					0
  @var checkbox 	hide-chat-btn	"Hide chat buttons" 				1
@@ -49,6 +49,7 @@
  @var color		prfBodyBG		"Profile Body Color"			rgba(0, 0, 0, 0.4)
  @var color 	prfOverlay		"Profile Overlay Color"			rgba(0, 0, 0, 0.5)
  @var checkbox  noprffx			"Disable Profile Effects"		1
+ @var checkbox	noprfdeco		"Disable Profile Decorations"	1
 
  @var select	cfont	"Font"	{
   "Whitney (old)":		"Whitney",
@@ -1172,6 +1173,12 @@ if noprffx {
 	}
 }
 
+if noprfdeco {
+	[class*="avatarDecoration"] {
+		display: none !important;
+	}
+}
+
 /* RGB Home Button */
 if rgbhome {
 	.wrapper__8436d[aria-label="Direct Messages"] > div {
@@ -1671,14 +1678,9 @@ section.section-3G9aLW {
 }
 
 /* update notes: ------
--   fixed more transitions (classic)
--   fixed some toggles not working (rgb home, sidebar drawer, etc.)
--	adjusted hover color modifier
--	removed redundant backgrounds
--	fixed profiles
--	added toggle to override nitro profile colors
--	made a font type look not so out of place
--	augghh
+-   add remove avatar deco toggle
+-	"remove" gruop attachment toggle
+-	augghhh
 		    	 ------ */
 
 
