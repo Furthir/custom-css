@@ -1,0 +1,54 @@
+/* ==UserStyle==
+@name           YouTube Music
+@namespace      furthir/custom-css
+@version        0.1
+@description   ytm css
+@author         Fython
+==/UserStyle== */
+
+
+@-moz-document domain("music.youtube.com") {
+:root {
+	--paper-toast-background-color: rgba(0,0,0,0.35);
+	--paper-dialog-background-color: rgba(0,0,0,0.35);
+}
+}
+@-moz-document domain("music.youtube.com") {
+
+html, body {
+	background: black !important;
+}
+
+/* apply blur */
+tp-yt-paper-toast, tp-yt-paper-dialog, ytmusic-player-bar, #player-bar-background.ytmusic-app-layout {
+	backdrop-filter: blur(4px);
+}
+
+.side-panel.ytmusic-player-page {
+	display: block;
+}
+
+ytmusic-guide-renderer {
+	padding-bottom: 0;
+}
+
+ytmusic-player-bar, #player-bar-background.ytmusic-app-layout {
+	background: transparent;
+	background-color: transparent;
+}
+	
+#primaryProgress.tp-yt-paper-progress {
+	background: rgb(255, 144, 238) !important;
+
+}
+
+#progress-bar.ytmusic-player-bar[focused], ytmusic-player-bar:hover #progress-bar.ytmusic-player-bar {
+	--paper-slider-knob-color: rgb(255, 144, 238) !important;
+}
+
+.logo.ytmusic-logo {
+    filter: hue-rotate(306deg) contrast(2) grayscale(0.05) brightness(1.5);
+}
+
+/* ------------------ */
+}
