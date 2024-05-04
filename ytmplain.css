@@ -1,20 +1,7 @@
-/* ==UserStyle==
-@name           YouTube Music
-@namespace      furthir/custom-css
-@version        0.1
-@description   ytm css
-@author         Fython
-==/UserStyle== */
-
-
-@-moz-document domain("music.youtube.com") {
 :root {
 	--paper-toast-background-color: rgba(0,0,0,0.3);
 	--paper-dialog-background-color: rgba(0,0,0,0.3);
 }
-}
-@-moz-document domain("music.youtube.com") {
-
 html, body {
 	background: black !important;
 }
@@ -59,5 +46,3 @@ ytmusic-guide-renderer {
     filter: hue-rotate(306deg) contrast(2) grayscale(0.05) brightness(1.5);
 }
 
-/* ------------------ */
-}
