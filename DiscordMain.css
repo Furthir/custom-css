@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.22.1
+ * @version      0.22.2
  * @author       Fython
  * @description  Purplized theme for Discord with lots of customization
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordMain.css?dummy=.user.css
@@ -497,6 +497,10 @@ div[aria-label="Help"] {
     margin-left: 1rem;
     padding-left: 3rem;
     text-indent: -4rem;
+}
+
+.form_d8a4a1 {
+	margin-top: 0px;
 }
 
 /* message action tooltip */
@@ -1415,12 +1419,16 @@ rect[mask="url(#svg-mask-status-offline)"] {
 }
 
 /* Mentioned outline */
-[class~="mentioned"], .wrapper__09ecc.mentioned__58017 {
+[class*="mentioned_"], .wrapper__09ecc.mentioned__58017 {
     border-color: accentColor !important;
     box-shadow: inset 0px 0px 14px 1px accentColor, 0px 0px 6px 6px accentColor;
 }
 
-.wrapper__09ecc {
+.mentioned_fa6fd2:before {
+	background: none !important;
+}
+
+.wrapper_a62503 {
     margin-left: 20px;
     margin-right: 20px;
 	border-radius: 6px;
@@ -1533,7 +1541,7 @@ section.section-3G9aLW {
 }
 
 /* embeds */
-[class^="embedFull"], .embedFull__8dc21 {
+[class*="embedFull__"] {
     background: none;
     box-shadow: 0 4px 16px 0 rgb(0 0 0);
     border-left: solid 4px accentColor !important;
@@ -1577,14 +1585,19 @@ section.section-3G9aLW {
 	}
 	
 /* commands popup */
-.categoryHeader-OpJ1Ly {
-    background-color: transparent;
-}
-
-.theme-dark .autocomplete-3NRXG8, .attachedBars-2BCP3l {
-    background-color: defBG;
+[class*="autocomplete_"], [class*="categoryHeader_"]{
+    background-color: defBG !important;
 	backdrop-filter: blur(3px);
 }
+
+.clickable__0b25f[aria-disabled=false]>.base__87e58 /*man wtf is this selector*/ {
+	transition: sT;
+	
+	&:hover {
+		transition: sT;
+	}
+}
+
 
 /* server context menu */
 .menu_dc52c6[aria-label="Server Actions"] {
@@ -1611,6 +1624,20 @@ section.section-3G9aLW {
 	.messageAttachment-CZp8Iv {
 		min-width: 20%;
 	}
+}
+
+/* poll msgs */
+[class*="pollContainer"] {
+	background-color: defBG;
+	max-width: 50%;
+}
+
+[class*="votePercentageBar"] {
+	background-color: (accentColor - rgba(0,0,0,0.75));
+}
+
+[class*="answerSelectionIcon"] > path {
+	fill: var(--control-brand-foreground) !important;
 }
 
 /* search box container */
@@ -1678,8 +1705,10 @@ section.section-3G9aLW {
 }
 
 /* update notes: ------
--   add remove avatar deco toggle
--	"remove" gruop attachment toggle
+-   fixed embeds
+-	fixed mentions
+-	modded polls
+-	fixed commands popup
 -	augghhh
 		    	 ------ */
 
