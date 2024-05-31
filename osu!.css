@@ -2,23 +2,26 @@
 @name      	    osu!
 @namespace      furthir/osu-css
 @version        0.1
-@description    wip osu custom css
+@description    osu custom css
 @author         Fython
 @preprocessor	stylus
  ------------------------------------------------
  @var select	bg-image 	"Preset Background Image" {
- "Default":		"'https://i.postimg.cc/85tBfZGs/dark-forest.png'",
- "Lightscape":  "'https://i.postimg.cc/1Xgkg6pS/lightscape.jpg'",
- "Energy":		"'https://i.postimg.cc/BQktY9NZ/energy.png'",
- "Skymountain": "'https://i.postimg.cc/yYhHptZ7/Skymountain.jpg'",
+ "Default":		"'https://ftn.s-ul.eu/U5C1wTyA'",
+ "Lightscape":  "'https://ftn.s-ul.eu/Xe8OXY1r'",
+ "Energy":		"'https://ftn.s-ul.eu/L03unytlg'",
+ "Skymountain": "'https://ftn.s-ul.eu/oT7OqKu8'",
  "Custom":		"custom-bg",
 }
- @var text 		custom-bg	"Custom BG, include quotes!"  	"'https://i.postimg.cc/ZqQMg7tP/skylake.jpg'"
+ @var text 		custom-bg	"Custom BG, include quotes!"  	"'https://ftn.s-ul.eu/EpXIznx4'"
  @var range		bgblur		"Background blur"           	[4, 0, 10, 1, "px"]
+ @var range		mesize		"me! size"						[100, 0, 200, 1, "em"]
+ @var color		themec		"Theme"							#f500ab
 ==/UserStyle== */
 
 /* set variables */
 sT = 0.3s ease
+gls = rgba(0,0,0,0.5)
 
 @-moz-document domain("osu.ppy.sh") {
 /* set bg */
@@ -31,19 +34,31 @@ body {
 	display: block !important;
 	background-color: transparent;
 	z-index: -1;
-	backdrop-filter: blur(bgblur)
+	backdrop-filter: blur(bgblur);
 }
 
+[class*="osu-page-"], [class*="login-box__section"], .login-box__form-input, .tournament, [class*="artist__"], .artist-album, .input-container, .nav2-header__menu-bg { /* set bg */
+	background-color: gls;
+}
+
+.login-box__content { /* login box */
+	backdrop-filter: blur(8px);
+}
 :root {
 	background: url(bg-image);
 	background-attachment: fixed !important;
 	background-repeat: no-repeat;
 	background-size: cover;
+	--hsl-h1: hue(themec), saturation(themec), lightness(themec);
+	--hsl-h2: @--hsl-h1;
 	--hsl-b3: 0deg 0% 0% / 50%;
 	--hsl-b4: @--hsl-b3;
+	--hsl-b5: @--hsl-b3;
 	--hsl-d4: @--hsl-b3;
 	--hsl-d5: @--hsl-b3;
-	
+	--hsl-b6: @--hsl-b3;
+	--input-bg: gls;
+	--base-hue-deg: hue(themec);
 }
 
 .header-v4__bg, .header-v4__bg-container {
@@ -59,16 +74,20 @@ body {
 	min-height: 100px;
 }
 
+
+.nav2-header__menu-bg { /* nav menu */
+	backdrop-filter:blur(8px);
+}
 .osu-layout--body, .osu-layout--body-landing, .header-v4__bg-container, .beatmapset-info {
 	background-color: transparent;
 }
 
 .osu-page--generic-compact { /* profile */
-    background-color: rgba(0,0,0,0.5);
+    background-color: gls;
 	border-radius: 16px;
 }
 
-.page-extra, .page-extra__recent-medals-box, .play-detail, .profile-links, .profile-detail-bar, .profile-detail, .profile-info, .beatmap-playcount, .beatmap-playcount__detail { /* profile elements */
+.page-extra, .page-extra__recent-medals-box, .play-detail, .profile-links, .profile-detail-bar, .profile-detail, .profile-info, .beatmap-playcount, .beatmap-playcount__detail, .well { /* set bg */
 	background-color: transparent !important;
 }
 
@@ -77,11 +96,27 @@ body {
 	backdrop-filter: blur(10px);
 }
 
-.nav2-header__transition-overlay { /* header */
-    background-color: rgba(255, 41, 217, 0.5);
-    backdrop-filter: blur(8px);
+.user-action-button, .btn-circle, .artist-track-search-form-switches__link { /* buttons */
+	background: gls;
+	transition: sT;
+	
+	&:hover {
+		background: rgba(100,100,100,0.3);
+		transition: sT;
+	}
 }
 
+.nav2-header__transition-overlay { /* header */
+    background-color: rgba(themec, 0.5);
+    backdrop-filter: blur(8px);
+}
+.page-extra__content-overflow-wrapper-outer { /* set me! container to max */
+    max-height: 100%;
+}
+
+.page-extra__content-overflow-wrapper-inner { /* set me size to custom */
+	max-height: mesize;
+}
 .play-detail, .show-more-link, { /* top plays */
 	background-color: rgba(0,0,0,0.3);
 	--bg-main: transparent !important;
@@ -106,9 +141,13 @@ body {
 	}
 }
 
-/* profile border radius */
+/* border radius */
 .header-v4__row--title {
 	border-radius: 16px 16px 0px 0px;
+}
+
+.tournament {
+	border-radius: 0px 0px 16px 16px;
 }
 
 /* beatmap cover */
@@ -123,7 +162,7 @@ body {
 
 /* comment toolbar */
 .comments__items--toolbar {
-	border-radius: 8px 8px 0px 0px;
+	border-radius: 16px 16px 0px 0px;
 }
 
 /* context menu */
