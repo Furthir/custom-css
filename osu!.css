@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name      	    osu!
 @namespace      furthir/osu-css
-@version        0.1
+@version        0.3
 @description    osu custom css
 @author         Fython
 @preprocessor	stylus
@@ -16,11 +16,13 @@
  @var text 		custom-bg	"Custom BG, include quotes!"  	"'https://ftn.s-ul.eu/EpXIznx4'"
  @var range		bgblur		"Background blur"           	[4, 0, 10, 1, "px"]
  @var range		mesize		"me! size"						[100, 0, 200, 1, "em"]
- @var color		themec		"Theme"							#f500ab
+ @var color		themec		"Theme"							#11efab
+ @var checkbox	accentoverride "Override Profile Accent"	1
 ==/UserStyle== */
 
 /* set variables */
 sT = 0.3s ease
+themehue = hue(themec)
 gls = rgba(0,0,0,0.5)
 
 @-moz-document domain("osu.ppy.sh") {
@@ -37,10 +39,18 @@ body {
 	backdrop-filter: blur(bgblur);
 }
 
-[class*="osu-page-"], [class*="login-box__section"], .login-box__form-input, .tournament, [class*="artist__"], .artist-album, .input-container, .nav2-header__menu-bg { /* set bg */
+[class*="osu-page-"], [class*="login-box__section"], .login-box__form-input, .tournament, [class*="artist__"], .artist-album, .input-container, .nav2-header__menu-bg, .daily-challenge, .daily-challenge-popup, .beatmapset-stats__row, .beatmap-success-rate, .beatmap-score-top__section, .beatmap-scoreboard-table__cell, .comments__items--toolbar, .comment-editor, .comment-editor__message, .beatmapset-beatmap-picker, .beatmapset-status { /* set bg */
 	background-color: gls;
 }
 
+.daily-challenge-popup__content--top {
+	background-color: rgba(0,0,0,0.25);
+}
+
+/* daily challenge */
+.daily-challenge-popup {
+	backdrop-filter: blur(4px);
+}
 .login-box__content { /* login box */
 	backdrop-filter: blur(8px);
 }
@@ -49,7 +59,7 @@ body {
 	background-attachment: fixed !important;
 	background-repeat: no-repeat;
 	background-size: cover;
-	--hsl-h1: hue(themec), saturation(themec), lightness(themec);
+	--hsl-h1: themehue, saturation(themec), lightness(themec);
 	--hsl-h2: @--hsl-h1;
 	--hsl-b3: 0deg 0% 0% / 50%;
 	--hsl-b4: @--hsl-b3;
@@ -58,7 +68,13 @@ body {
 	--hsl-d5: @--hsl-b3;
 	--hsl-b6: @--hsl-b3;
 	--input-bg: gls;
-	--base-hue-deg: hue(themec);
+	--base-hue-deg: themehue;
+}
+
+body {
+	if accentoverride {
+		--base-hue-override: round(unit(themehue, '')) !important;
+	}
 }
 
 .header-v4__bg, .header-v4__bg-container {
@@ -87,13 +103,18 @@ body {
 	border-radius: 16px;
 }
 
-.page-extra, .page-extra__recent-medals-box, .play-detail, .profile-links, .profile-detail-bar, .profile-detail, .profile-info, .beatmap-playcount, .beatmap-playcount__detail, .well { /* set bg */
+.page-extra, .page-extra__recent-medals-box, .play-detail, .profile-links, .profile-detail-bar, .profile-detail, .profile-info, .beatmap-playcount, .beatmap-playcount__detail, .well, .daily-challenge__value { /* remove bg */
 	background-color: transparent !important;
 }
 
 .footer, .page-mode--profile-page-extra { /* footer, header */
 	background-color: transparent;
 	backdrop-filter: blur(10px);
+}
+
+/* banner */
+.profile-info__bg {
+	-webkit-mask: linear-gradient(to bottom, black 50%, #00800000 95%, #0000ff00 100%) !important;
 }
 
 .user-action-button, .btn-circle, .artist-track-search-form-switches__link { /* buttons */
@@ -141,6 +162,18 @@ body {
 	}
 }
 
+/* beatmap panels */
+.beatmapset-panel__cover-col .beatmapset-cover {
+	-webkit-mask: linear-gradient(to right, black 0%, #00800000 95%, #0000ff00 100%) !important;
+}
+.beatmapset-panel {
+	--transition: sT !important;
+	
+	&:hover {
+		--transition: sT !important;
+	}
+}
+
 /* border radius */
 .header-v4__row--title {
 	border-radius: 16px 16px 0px 0px;
@@ -150,15 +183,50 @@ body {
 	border-radius: 0px 0px 16px 16px;
 }
 
+
+
 /* beatmap cover */
-.beatmapset-cover {
-	-webkit-mask: linear-gradient(to bottom, #00000012 5%, black 50%, #00800000 95%, #0000ff00 100%) !important;
+.beatmapset-header .beatmapset-cover {
+	-webkit-mask: linear-gradient(to bottom, #00000012 5%, rgba(0,0,0,0.6) 50%, #00800000 95%, #0000ff00 100%) !important;
     mask: linear-gradient(to bottom, #00000012 5%, black 50%, #00800000 95%, #0000ff00 100%) !important;
 }
 
 .beatmapset-header__cover:after {
 	background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0));
 }
+
+/* beatmap status */
+.beatmapset-header__status {
+	margin: -5px -5px 15px auto;
+}
+/* beatmap preview button */
+.beatmapset-stats__row--preview {
+	border-radius: 12px 12px 0px 0px;
+}
+
+/* beatmap rating */
+.beatmapset-stats__row--rating {
+	border-radius: 0px 0px 12px 12px;
+}
+
+/* beatmap success graph */
+.beatmap-success-rate {
+	border-radius: 12px;
+}
+
+/* beatmap scoreboard */
+.beatmap-scoreboard-table__cell,  .beatmap-scoreboard-table__body-row:hover .beatmap-scoreboard-table__cell{
+	transition: sT;
+	
+	&:hover {
+		transition: sT;
+	}
+}
+
+.beatmap-scoreboard-table {
+		--row-background-color-highlight: rgba(136, 136, 136, .2) !important;
+}
+
 
 /* comment toolbar */
 .comments__items--toolbar {
