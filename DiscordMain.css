@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.22.2
+ * @version      0.23
  * @author       Fython
  * @description  Purplized theme for Discord with lots of customization
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordMain.css?dummy=.user.css
@@ -14,6 +14,7 @@
  @var checkbox 	hide-chat-btn	"Hide chat buttons" 				1
  @var checkbox 	hide-call-btn	"Hide call buttons"					0
  @var checkbox	hide-nitro		"Hide Nitro tabs"					1
+ @var checkbox  hide-dl-button  "Hide download button"              1
  @var color		accentColor 	"Accent Color"	 					#CF5FB5
  @var color		altAccent 		"Alt Accent Color"					rebeccapurple
  @var color		selectColor 	"Selection Color"		        	rgba(255, 80, 230, 0.2)
@@ -125,7 +126,7 @@ fade = opacity 0.15s ease-in
 	background: defBG;
 }
 
-.app_b1f720, [class^="bg__"] { 
+.app_b1f720, [class^="bg_"] { 
 	background-image: var(--background-tertiary);
 	background-position: unset;
 	background-size: cover !important;
@@ -133,12 +134,23 @@ fade = opacity 0.15s ease-in
 	background-repeat: no-repeat !important;
 }
 
-.scroller-WSmht3 {
-	background-color: transparent !important; 
+/* server list */
+nav[aria-label="Servers sidebar"] {
+    background: bgoverlay;
 }
 
-.sidebar-1tnWFu {
-	background: none !important;
+/* channel list/profile sidebar */
+.sidebar_a4d4d9 {
+    background: bgoverlay;
+}
+
+/* chat */
+div[class^="chat_"] {
+    background: bgoverlay;
+}
+
+main[class^="chatContent_"] {
+    background: none;
 }
 
 /* forum channel background */
@@ -162,7 +174,7 @@ fade = opacity 0.15s ease-in
 }
 
 /* settings page */
-.sidebarRegionScroller-FXiQOh, .contentRegionScroller__86c79, .contentRegion__0bec1 {
+.sidebarRegionScroller-FXiQOh, .contentRegion_c25c6d, .contentRegionScroller_c25c6d {
 	background: none !important;
 }
 
@@ -871,7 +883,7 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 
 /* server channel list */
 .container-3XgAHv {
-    background: none;
+    background: defBG;
 }
 
 .resizeHandle-PBRzPC {
@@ -1137,11 +1149,11 @@ if hovexpand {
 
 if hide-chat-btn {
 	/* remove chat buttons */
-	.buttons__7ecff > button[aria-label="Send a gift"] {
+	.buttons_d0696b > div > button:not([aria-label="Select emoji"]) {
 		display: none;
-	}
-	
-	.buttons__7ecff > div > button:not([aria-label="Select emoji"]) {
+    }
+    
+    button[aria-label="Open GIF picker"], button[aria-label="Send a gift"] {
 		display: none;
 	}
 }
@@ -1169,6 +1181,12 @@ if hide-nitro {
 	a[data-list-item-id$="___shop"] {
 		display: none;
 	}
+}
+
+if hide-dl-button {
+    div[aria-label="Download Apps"] {
+        display: none;
+    }
 }
 
 if noprffx {
@@ -1705,11 +1723,8 @@ section.section-3G9aLW {
 }
 
 /* update notes: ------
--   fixed embeds
--	fixed mentions
--	modded polls
--	fixed commands popup
--	augghhh
+-   fixed chat buttons
+-	use different background overlay method
 		    	 ------ */
 
 
