@@ -1,7 +1,7 @@
 /* ==UserStyle==
  * @name         Discord Purple Night
  * @namespace    discord.com
- * @version      0.23
+ * @version      0.23.1
  * @author       Fython
  * @description  Purplized theme for Discord with lots of customization
  * @updateURL    https://raw.githubusercontent.com/Furthir/custom-css/main/DiscordMain.css?dummy=.user.css
@@ -572,7 +572,7 @@ div[aria-label="Help"] {
     mask: linear-gradient(to bottom, #000, transparent 93%);
 }
 
-[class^="userProfileInnerThemedNonPremium"], .userProfileInnerThemedNonPremium__3d0a6 {
+[class^="custom-profile-theme"], .userProfileInnerThemedNonPremium__3d0a6 {
     background: linear-gradient(90deg, var(--profile-gradient-primary-color),var(--profile-gradient-primary-color) 60px,var(--profile-gradient-secondary-color)) !important;
 }
 
@@ -980,18 +980,22 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
 }
 
 /* profile theme popout */
-.avatar-2OC07D {
+/* .biteSizeInnerThemed_c69a7b {
     border: 6px solid rgb(117 0 255);
     background-color: rgb(117 0 255);
 }
 
-.userPopoutInner-PA9zkU {
+.biteSizeInnerThemed_c69a7b {
     border-radius: 8px 8px 0 0;
     background: linear-gradient(#8400ff 120px,rgb(125 0 255) 0,rgb(251 0 255));
-    /* -webkit-mask: linear-gradient(to top, #000 50%, transparent); */
+    -webkit-mask: linear-gradient(to top, #000 50%, transparent);
+} */
+
+.biteSizeInnerThemed_c69a7b {
+	background: rgba(0,0,0,0.5) !important;
+	backdrop-filter: blur(6px);
+	
 }
-
-
 .popoutBannerPremium-2RvDNZ {
     height: 140px;
     -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
@@ -1012,7 +1016,7 @@ div[aria-label="Set Status"] rect[fill="hsl(139, calc(var(--saturation-factor, 1
     margin-top: 3%;
 }
 
-.popoutBanner-16rVDY {
+.banner_d5fdb1 {
     height: 100px;
     -webkit-mask: linear-gradient(to bottom, #000 50%, transparent);
     mask: linear-gradient(to bottom, #000 50%, transparent);
@@ -1281,7 +1285,7 @@ if customPrf {
 }
 
 if overridePrf {
-	[class*="userProfileInnerThemedWithBanner"], [class*="userProfileOuterThemed__"][class*="userPopoutOuter__"], [class*="userProfileOuterThemed__"][class*="userProfileOuter__"] {
+	[class*="userProfileInnerThemedWithBanner"], [class*="userProfileOuterThemed__"][class*="userPopoutOuter__"], [class*="custom-profile-theme"] {
 		--profile-gradient-primary-color: prfPrimary !important;
 		--profile-gradient-secondary-color: prfSecond !important;
 		--profile-gradient-overlay-color: prfOverlay !important;
@@ -1723,8 +1727,7 @@ section.section-3G9aLW {
 }
 
 /* update notes: ------
--   fixed chat buttons
--	use different background overlay method
+-   lazy profile color fix
 		    	 ------ */
 
 

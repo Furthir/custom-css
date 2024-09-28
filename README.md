@@ -1,8 +1,7 @@
 # custom-css
-custom CSS for various sites
+custom CSS for various sites aimed to be customizable
 
 hehehehaw
-
 ### Stylus Extension
  - [Chromium](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en) 
  - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
@@ -13,10 +12,25 @@ hehehehaw
 
 ### Currently Maintained
  - Discord PN
+	 - Available settings
+	 
+		<img src="https://ftn.s-ul.eu/XmeRPgNP"> <img src="https://ftn.s-ul.eu/4lu3dUsX">
  - Roblox
+	 - Available settings
+	 
+		<img src="https://ftn.s-ul.eu/Y7SROcVw">
  - osu!
+	 - Available settings
+	 
+		<img src="https://ftn.s-ul.eu/gsdQVv6s">
  
 
-[Stylus lang](https://stylus-lang.com/)
+Using [Stylus lang](https://stylus-lang.com/)
 
-[np++](https://notepad-plus-plus.org/downloads/)
+## Screenshots
+
+- ### Discord
+![Discord](https://ftn.s-ul.eu/SvKutJTc)
+
+- ### osu!
+![osu!](https://ftn.s-ul.eu/ESQB4tH6)
