@@ -4,8 +4,8 @@ custom CSS for various sites aimed to be customizable, using [Stylus lang](https
 hehehehaw
 
 ## Usage
-1. Install the [Stylus](/README.md#stylus-extension) extension
-2. Install a [theme](/README.md#published-css)
+1. Install the [Stylus](#stylus-extension) extension
+2. Install a [theme](#published-css)
 3. Settings can be found by clicking on the extension while on the page it is for, then clicking the cog
    
    <img src="https://ftn.s-ul.eu/wt9wj7xY">
