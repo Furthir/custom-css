@@ -18,7 +18,7 @@
  @var text 		custom-bg		"Custom BG, include quotes!"  	"'https://ftn.s-ul.eu/EpXIznx4'"
  @var range		bgblur			"Background blur"           	[4, 0, 10, 1, "px"]
  @var range		mesize			"me! size"						[100, 0, 200, 1, "em"]
- @var color		themec			"Theme"							#11efab
+ @var color		themec			"Accent Color"					#11efab
  @var checkbox	accentoverride	"Override Profile Accent"		1
 ==/UserStyle== */
 
