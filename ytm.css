@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube Music
 @namespace      furthir/ytm-css
-@version        0.1.1
+@version        0.1.2
 @description  	ytm css
 @author         Fython
 ==/UserStyle== */
@@ -12,6 +12,10 @@
 	--paper-toast-background-color: rgba(0,0,0,0.3);
 	--paper-dialog-background-color: rgba(0,0,0,0.3);
 	--pink: rgb(255, 144, 238);
+}
+
+html[dark] {
+	--yt-spec-menu-background: rgba(0,0,0,0.5);
 }
 }
 @-moz-document domain("music.youtube.com") {
@@ -36,7 +40,7 @@ ytmusic-player-bar, #player-bar-background.ytmusic-app-layout {
 
 /* apply blur */
 tp-yt-paper-toast, tp-yt-paper-dialog, ytmusic-player-bar, #player-bar-background.ytmusic-app-layout, ytmusic-tabs, #nav-bar-background, #header.ytmusic-item-section-renderer, tp-yt-paper-listbox.ytmusic-menu-popup-renderer, ytmusic-add-to-playlist-renderer {
-	backdrop-filter: blur(8px) !important;
+	backdrop-filter: blur(10px) !important;
 }
 
 .side-panel.ytmusic-player-page {
@@ -57,23 +61,27 @@ ytmusic-guide-renderer {
 }
 
 #hover-time-info.ytmusic-player-bar { /* seek tooltip */
-	backdrop-filter: blur(8px);
 	background-color: rgba(0,0,0,0.8);
 }
 
 ytmusic-app-layout[player-visible]>[slot=player-bar] { /* layer tooltip above */
-	z-index: 123;
+	z-index: 105;
 }
 
-#contentWrapper.tp-yt-iron-dropdown > *, tp-yt-paper-listbox.ytmusic-menu-popup-renderer { /* context menus */
-	border-radius: 12px;
+#contentWrapper.tp-yt-iron-dropdown > *, tp-yt-paper-listbox.ytmusic-menu-popup-renderer. tp-yt-iron-dropdown { /* context menus */
+	border-radius: 10px;
+	z-index: 107;
 	
 }
 tp-yt-paper-listbox.ytmusic-menu-popup-renderer {
 	border: 1px solid var(--pink);
 }
 
-.logo.ytmusic-logo {
+ytd-multi-page-menu-renderer { /* google profile context */
+	border: 1px solid var(--pink) !important;
+}
+
+.logo.ytmusic-logo { /* set logo color */
     filter: hue-rotate(306deg) contrast(2) grayscale(0.05) brightness(1.5);
 }
 
