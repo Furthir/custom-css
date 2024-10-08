@@ -1,10 +1,12 @@
 /* ==UserStyle==
-@name      	    osu!
-@namespace      furthir/osu-css
-@version        0.3.1
-@description    osu custom css
-@author         Fython
-@preprocessor	stylus
+ * @name			osu!
+ * @namespace		furthir/osu-css
+ * @version			0.3.1
+ * @description		osu custom css
+ * @author			Fython
+ * @preprocessor	stylus
+ * @updateURL    	https://raw.githubusercontent.com/Furthir/custom-css/main/osu!.css?dummy=.user.css
+ * @homepageURL  	https://github.com/Furthir/custom-css/
  ------------------------------------------------
  @var select	bg-image 	"Preset Background Image" {
  "Default":		"'https://ftn.s-ul.eu/U5C1wTyA'",
