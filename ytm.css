@@ -65,7 +65,7 @@ ytmusic-guide-renderer {
 }
 
 ytmusic-app-layout[player-visible]>[slot=player-bar] { /* layer tooltip above */
-	z-index: 105;
+	z-index: 155;
 }
 
 #contentWrapper.tp-yt-iron-dropdown > *, tp-yt-paper-listbox.ytmusic-menu-popup-renderer. tp-yt-iron-dropdown { /* context menus */
