@@ -21,7 +21,7 @@ hehehehaw
  - [osu!](https://userstyles.world/style/18337/frosted-osu)
 
 
-## Currently Maintained
+## Currently (un)Maintained
  - ### Discord PN
 	 - Available settings
 	 
